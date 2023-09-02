@@ -1,8 +1,7 @@
 <script>
   import { Meta, Story, Template } from '@storybook/addon-svelte-csf'
 
-  import { Button } from '$lib/index.ts'
-
+  import { Button } from '../Button/index.js'
   import ThemeProvider from './ThemeProvider.svelte'
 </script>
 
