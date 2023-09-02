@@ -2,7 +2,7 @@ import React from 'react'
 import { Source } from '@storybook/blocks';
 
 export function Intro({ description, name }) {
-  const importExample = `import { ${name} } from '@naco/svelte'`
+  const importExample = `import { ${name} } from '@naco-ui/svelte'`
   return (
     <div className='intro'>
       <h1>{ name }</h1>
