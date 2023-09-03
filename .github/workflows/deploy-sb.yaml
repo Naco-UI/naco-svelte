@@ -1,7 +1,9 @@
 name: Deploy Storybook
 
 on:
-  - push
+  push:
+    branches:
+      - main
 
 permissions:
   contents: read
