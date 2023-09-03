@@ -17,7 +17,7 @@
 </script>
 
 <Meta
-  title="Button"
+  title="Components/Button"
   component={Button}
   argTypes={{
     variant: {

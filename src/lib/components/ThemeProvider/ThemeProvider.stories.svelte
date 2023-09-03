@@ -6,7 +6,7 @@
 </script>
 
 <Meta
-  title="ThemeProvider"
+  title="Components/ThemeProvider"
   component={ThemeProvider}
   argTypes={{
     os: {

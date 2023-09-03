@@ -8,7 +8,7 @@
   let titleValue = 'point-click'
 </script>
 
-<Meta title="Segment" component={Segment} />
+<Meta title="Components/Segment" component={Segment} />
 
 <Template id="basic" let:args>
   <Segment {...args} />

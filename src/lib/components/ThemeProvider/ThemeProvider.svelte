@@ -1,5 +1,5 @@
 <script lang="ts">
-  import './themes/styles.ts'
+  import './themes/styles.js'
 
   import type { ThemeProviderProps } from './ThemeProvider.types.js'
 
