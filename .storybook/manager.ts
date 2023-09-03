@@ -1,13 +1,4 @@
 import { addons } from '@storybook/manager-api';
-import { themes } from '@storybook/theming';
-import { create } from '@storybook/theming/create';
+import { theme } from './theme';
 
-addons.setConfig({
-  theme: create({
-    base: 'light',
-    brandTitle: 'My custom Storybook',
-    brandUrl: 'https://example.com',
-    brandImage: '/images/logo-storybook.svg',
-    brandTarget: '_self',
-  }),
-});
+addons.setConfig({ theme });

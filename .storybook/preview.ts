@@ -1,17 +1,24 @@
-import type { Preview } from '@storybook/svelte'
+import type { Parameters } from '@storybook/svelte'
 
 import './global.css';
+import { theme } from './theme';
+import { withThemeProvider, globalTypes } from './decorators/withThemeProvider';
 
-const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/,
-      },
+export const parameters: Parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
     },
   },
+  docs: {
+    theme
+  }
 }
 
-export default preview
+export { globalTypes }
+
+export const decorators = [
+  withThemeProvider
+];
