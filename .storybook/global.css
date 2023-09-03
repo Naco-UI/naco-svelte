@@ -2,14 +2,14 @@
   font-size: 1.64rem;
   line-height: 1.14286;
   font-weight: 400;
-  letter-spacing: .007em;
+  letter-spacing: 0.007em;
 }
 
 .sbdocs.sbdocs-content :where(h1:not(.sb-anchor, .sb-unstyled, .sb-unstyled h1)) {
   font-size: 2.82rem;
   line-height: 1.08;
   font-weight: 600;
-  letter-spacing: -.003em;
+  letter-spacing: -0.003em;
   font-weight: 700;
   margin-bottom: 32px;
 }
@@ -18,7 +18,7 @@
   font-size: 1.64706rem;
   line-height: 1.14286;
   font-weight: 600;
-  letter-spacing: .007em;
+  letter-spacing: 0.007em;
   border: none;
 }
 
@@ -26,15 +26,14 @@
 .sbdocs.sbdocs-content :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) {
   font-size: 17px;
   line-height: 25px;
-  letter-spacing -0.374px;
+  letter-spacing: -0.374px;
 }
 
 .docs-story > div {
   padding: 0;
 }
 
-.docs-story .ThemeProvider {
+.docs-story .naco {
   padding: 30px 20px;
   background-color: var(--color-background-primary);
 }
-

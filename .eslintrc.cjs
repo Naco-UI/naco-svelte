@@ -1,5 +1,9 @@
 module.exports = {
-  extends: ['standard-with-typescript', 'plugin:svelte/recommended', 'plugin:storybook/recommended'],
+  extends: [
+    'standard-with-typescript',
+    'plugin:svelte/recommended',
+    'plugin:storybook/recommended',
+  ],
   plugins: ['eslint-plugin-simple-import-sort'],
   parser: '@typescript-eslint/parser',
   parserOptions: {

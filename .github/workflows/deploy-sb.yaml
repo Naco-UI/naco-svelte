@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -30,8 +30,8 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           run_install: |
-              cwd: ./
-              args: [--frozen-lockfile]
+            cwd: ./
+            args: [--frozen-lockfile]
           version: ${{ env.PNPM_VERSION }}
 
       - name: Build Storybook

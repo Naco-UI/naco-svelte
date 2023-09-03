@@ -18,7 +18,7 @@
     "lint:scripts": "prettier --plugin-search-dir . --check . && eslint .",
     "lint:styles": "stylelint 'src/**/*.{svelte,css,scss}'",
     "lint-fix": "pnpm run '/^lint-fix:.*/'",
-    "lint-fix:scripts": "prettier --plugin-search-dir . --write . && eslint --fix ./**/*.{svelte,ts,js}",
+    "lint-fix:scripts": "prettier --plugin-search-dir . --write . && eslint --fix .",
     "lint-fix:styles": "stylelint --fix 'src/**/*.{svelte,css,scss}'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

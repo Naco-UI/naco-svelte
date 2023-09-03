@@ -7,32 +7,37 @@
   import type { ButtonProps } from './Button.types.js'
 
   const buttonVariants: Array<ButtonProps['variant']> = ['default', 'primary']
-  const buttonColors: Array<ButtonProps['color']> = ['default', 'accent', 'warning', 'error', 'success']
+  const buttonColors: Array<ButtonProps['color']> = [
+    'default',
+    'accent',
+    'warning',
+    'error',
+    'success',
+  ]
 </script>
 
-<Meta title="Button" component={Button} argTypes={{
-  variant: {
-    defaultValue: 'default',
-    options: buttonVariants,
-    control: 'select',
-  },
-  color: {
-    defaultValue: 'default',
-    options: buttonColors,
-    control: 'select',
-  },
-}}/>
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    variant: {
+      defaultValue: 'default',
+      options: buttonVariants,
+      control: 'select',
+    },
+    color: {
+      defaultValue: 'default',
+      options: buttonColors,
+      control: 'select',
+    },
+  }}
+/>
 
 <Template id="basic" let:args>
-  <Button on:click={() => alert('Hello')} {...args}>
-    Show message
-  </Button>
+  <Button on:click={() => alert('Hello')} {...args}>Show message</Button>
 </Template>
 
-<Story
-  template="basic"
-  name="Basic"
-/>
+<Story template="basic" name="Basic" />
 
 <Story name="Variant">
   <ActionsLayout>

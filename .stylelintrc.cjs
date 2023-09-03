@@ -8,10 +8,10 @@ module.exports = {
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global']
-      }
-    ]
+        ignorePseudoClasses: ['global'],
+      },
+    ],
   },
   defaultSeverity: 'error',
-  customSyntax: 'postcss-html'
+  customSyntax: 'postcss-html',
 }

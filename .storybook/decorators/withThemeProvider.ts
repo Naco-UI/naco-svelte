@@ -50,11 +50,11 @@ export const globalTypes = {
 }
 
 export const withThemeProvider = (_, context) => {
-  const os = context?.globals?.os;
-  const scheme = context?.globals?.scheme;
+  const os = context?.globals?.os
+  const scheme = context?.globals?.scheme
 
   return {
     Component: ThemeProvider,
-    props: { os, scheme }
+    props: { os, scheme },
   }
-};
+}

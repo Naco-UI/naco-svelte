@@ -30,33 +30,41 @@
     --button-color-background: var(--color-background-secondary);
     --button-border-radius: var(--border-radius-m);
 
-    font: var(--typography-text-m);
-    display: inline-block;
     position: relative;
-    letter-spacing: var(--typography-letter-spacing);
-    border: none;
-    appearance: none;
-    border-radius: var(--button-border-radius);
-    background: var(--button-color-background);
-    color: var(--button-color-primary);
+
+    display: inline-block;
+
     padding: var(--button-padding);
+
+    font: var(--typography-text-m);
+    color: var(--button-color-primary);
+    letter-spacing: var(--typography-letter-spacing);
+
+    appearance: none;
+    background: var(--button-color-background);
+    border: none;
+    border-radius: var(--button-border-radius);
 
     &::after,
     &::before {
+      content: ' ';
+
+      position: absolute;
       z-index: 1;
       top: 0;
       left: 0;
-      content: ' ';
+
       display: block;
-      position: absolute;
+
       width: 100%;
       height: 100%;
+
       border-radius: var(--button-border-radius);
     }
 
     &::after {
-      background-color: var(--color-content-primary);
       opacity: 0;
+      background-color: var(--color-content-primary);
     }
 
     &:focus {
@@ -72,13 +80,13 @@
     }
 
     &:disabled {
-      opacity: 0.5;
       pointer-events: none;
+      opacity: 0.5;
     }
 
     &.variant-primary {
+      color: #fff;
       background: var(--button-color-primary);
-      color: #FFF;
     }
 
     &.color-accent {
@@ -98,13 +106,14 @@
     }
   }
 
-  :global(.ThemeProvider.dark) button.variant-primary.color-default {
-    color: var(--color-background-primary)
+  :global(.naco.dark) button.variant-primary.color-default {
+    color: var(--color-background-primary);
   }
 
   :global(.os-linux) {
     button {
       --button-padding: 6px 20px;
+
       border: 1px solid var(--color-border-main);
 
       &::after {
@@ -124,6 +133,7 @@
   :global(.os-mac) {
     button {
       --button-padding: 2px 13px;
+
       box-shadow: 0 0.5px 1.5px rgb(0 0 0 / 15%);
 
       &:active::after {
@@ -135,7 +145,7 @@
           180deg,
           rgb(255 255 255 / 20%) 0%,
           rgb(86 86 86 / 7%) 100%
-        )
+        );
       }
     }
   }

@@ -6,7 +6,7 @@
 </script>
 
 <div
-  class="ActionsLayout"
+  class="actions-layout"
   class:fixed-width={fixedWidth}
   class:align-end={align === 'end'}
 >
@@ -14,10 +14,10 @@
 </div>
 
 <style lang="scss">
-  .ActionsLayout {
+  .actions-layout {
     display: flex;
-    align-items: flex-start;
     gap: var(--space-m);
+    align-items: flex-start;
 
     &.align-end {
       align-items: flex-end;

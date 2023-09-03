@@ -1,15 +1,12 @@
-import { Canvas, Meta, Story} from "@storybook/addon-docs";
-import { Source } from '@storybook/blocks';
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
 import Button from './Button.svelte'
 import * as Stories from './Button.stories.svelte'
 import { Intro, Props } from '../../../../.storybook/components'
 
-<Meta of={Stories}  />
+<Meta of={Stories} />
 
-<Intro
-  name="Button"
-  description="A button initiates an instantaneous action."
-/>
+<Intro name="Button" description="A button initiates an instantaneous action." />
 
 <Canvas>
   <Story of={Stories.Basic} />
@@ -21,11 +18,11 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 ## Usage recommendations
 
-* The button text should start with a capital letter, do not use <kbd>Caps Lock</kbd>;
-* The text of the button must fit completely into the button container
-* Almost always, a verb that answers the question "What to do?" is appropriate for the button text. For example: Find, Save, Accept, etc;
-* Specify the text of the button as precisely as possible;
-* Keep the button text as short as possible. Limit yourself to a maximum of 3 words for the button text;
+- The button text should start with a capital letter, do not use <kbd>Caps Lock</kbd>;
+- The text of the button must fit completely into the button container
+- Almost always, a verb that answers the question "What to do?" is appropriate for the button text. For example: Find, Save, Accept, etc;
+- Specify the text of the button as precisely as possible;
+- Keep the button text as short as possible. Limit yourself to a maximum of 3 words for the button text;
 
 ## Variant
 

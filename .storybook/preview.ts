@@ -1,8 +1,8 @@
 import type { Parameters } from '@storybook/svelte'
 
-import './global.css';
-import { theme } from './theme';
-import { withThemeProvider, globalTypes } from './decorators/withThemeProvider';
+import './global.css'
+import { theme } from './theme'
+import { withThemeProvider, globalTypes } from './decorators/withThemeProvider'
 
 export const parameters: Parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,12 +13,10 @@ export const parameters: Parameters = {
     },
   },
   docs: {
-    theme
-  }
+    theme,
+  },
 }
 
 export { globalTypes }
 
-export const decorators = [
-  withThemeProvider
-];
+export const decorators = [withThemeProvider]

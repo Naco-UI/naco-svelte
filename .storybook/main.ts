@@ -1,5 +1,5 @@
 import type { StorybookConfig } from '@storybook/sveltekit'
-import { mergeConfig } from 'vite';
+import { mergeConfig } from 'vite'
 
 const config: StorybookConfig = {
   stories: ['../docs/*.mdx', '../src/**/*.mdx', '../src/**/*.stories.svelte'],
@@ -25,12 +25,10 @@ const config: StorybookConfig = {
     return mergeConfig(config, {
       server: {
         fs: {
-          allow: [
-            `${process.cwd()}/docs`
-          ],
+          allow: [`${process.cwd()}/docs`],
         },
       },
-    });
+    })
   },
 }
 export default config
