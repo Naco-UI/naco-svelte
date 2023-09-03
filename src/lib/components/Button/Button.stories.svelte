@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meta, Story, Template } from '@storybook/addon-svelte-csf'
 
-  import ActionsLayout from '../Layouts/ActionsLayout.svelte'
+  import ActionsLayout from '../../layouts/ActionsLayout/ActionsLayout.svelte'
   import Typography from '../Typography/Typography.svelte'
   import Button from './Button.svelte'
   import type { ButtonProps } from './Button.types.js'
