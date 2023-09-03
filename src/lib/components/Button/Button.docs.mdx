@@ -1,16 +1,52 @@
-import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import { Canvas, Meta, Story} from "@storybook/addon-docs";
 import { Source } from '@storybook/blocks';
-import { Intro } from '../../../../.storybook/components'
+import Button from './Button.svelte'
+import * as Stories from './Button.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
 
-<Meta title="Button" />
+<Meta of={Stories}  />
 
 <Intro
   name="Button"
   description="A button initiates an instantaneous action."
 />
 
-## Checkbox components
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+* The button text should start with a capital letter, do not use <kbd>Caps Lock</kbd>;
+* The text of the button must fit completely into the button container
+* Almost always, a verb that answers the question "What to do?" is appropriate for the button text. For example: Find, Save, Accept, etc;
+* Specify the text of the button as precisely as possible;
+* Keep the button text as short as possible. Limit yourself to a maximum of 3 words for the button text;
+
+## Variant
+
+The button is available in two basic versions.
 
 <Canvas>
-  <Story id="button--base" />
+  <Story of={Stories.Variant} />
+</Canvas>
+
+## Color
+
+Use the `color` property to change the color of the button.
+
+<Canvas>
+  <Story of={Stories.Color} />
+</Canvas>
+
+## Disabled state
+
+The `disabled` property locks the button - it is no longer possible to press it. In addition, such a button cannot get focus by pressing the <kbd>Tab</kbd> key, by mouse or in any other way.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
 </Canvas>
