@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs'
 import { Source } from '@storybook/blocks'
 import { Intro } from '../../../../.storybook/components'
+import * as Stories from './ThemeProvider.stories.svelte'
 
 <Meta title="ThemeProvider" />
 
@@ -10,5 +11,5 @@ import { Intro } from '../../../../.storybook/components'
 />
 
 <Canvas>
-  <Story id="themeprovider--base" />
+  <Story of={Stories.Basic} />
 </Canvas>

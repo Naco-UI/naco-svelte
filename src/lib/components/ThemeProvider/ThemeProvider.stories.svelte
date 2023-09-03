@@ -28,4 +28,4 @@
   </ThemeProvider>
 </Template>
 
-<Story template="base" id="base" name="Base ThemeProvider" />
+<Story template="base" name="Basic" />
