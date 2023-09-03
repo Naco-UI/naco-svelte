@@ -96,8 +96,14 @@
     "pre-commit": "pnpm nano-staged"
   },
   "nano-staged": {
-    "*.{js,jsx,ts}": "eslint --fix",
-    "*.{css,scss}": "stylelint --fix",
+    "*.{js,jsx,ts}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{css,scss}": [
+      "prettier --write",
+      "stylelint --fix"
+    ],
     "*.svelte": [
       "prettier --write",
       "eslint --fix",
