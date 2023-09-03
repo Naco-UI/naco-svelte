@@ -7,8 +7,8 @@ function build_kit() {
 }
 
 function postbuild_cleanup() {
-  rm "$DIST_DIR"/components/*/*.stories.*
-  rm "$DIST_DIR"/components/*/*.mdx
+  rm "$DIST_DIR"/*/*/*.stories.*
+  rm "$DIST_DIR"/*/*/*.mdx
 }
 
 function verify_build() {
