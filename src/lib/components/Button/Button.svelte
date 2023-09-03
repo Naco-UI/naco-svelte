@@ -17,7 +17,7 @@
 
 <button
   {disabled}
-  class="Button variant-{variant} color-{color}"
+  class="Button variant-{variant} color-{color} {$$restProps.class || ''}"
   class:full-width={fullWidth}
   on:click={handleClick}
 >
