@@ -15,6 +15,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vitest --run",
     "test:watch": "vitest",
+    "spell-check": "cspell './**/*.{md,mdx}'",
     "lint": "pnpm run '/^lint:.*/'",
     "lint:scripts": "prettier --plugin-search-dir . --check . && eslint .",
     "lint:styles": "stylelint 'src/**/*.{svelte,css,scss}'",
@@ -57,6 +58,7 @@
     "@types/node": "^20.5.8",
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "@typescript-eslint/parser": "^6.0.0",
+    "cspell": "^7.3.2",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.1.0",
@@ -100,6 +102,9 @@
       "prettier --write",
       "eslint --fix",
       "stylelint --fix"
+    ],
+    "*.{md,mdx}": [
+      "cspell"
     ],
     "*.{json,md,mdx}": [
       "prettier --write"
