@@ -29,5 +29,8 @@ jobs:
       - name: Check code style
         run: pnpm lint
 
+      - name: Check spelling
+        run: pnpm spell-check
+
       - name: Run tests
         run: pnpm test
