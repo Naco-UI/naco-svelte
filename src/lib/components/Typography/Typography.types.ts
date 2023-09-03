@@ -1,4 +1,4 @@
 export interface TypographyProps {
-  variant: 'text-m' | 'heading-s' | 'heading-m'
+  variant: 'text-m' | 'text-l' | 'heading-s' | 'heading-m'
   as: keyof HTMLElementTagNameMap
 }
