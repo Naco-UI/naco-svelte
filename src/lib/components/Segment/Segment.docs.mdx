@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import Segment from './Segment.svelte'
+import * as Stories from './Segment.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Segment"
+  description="Component to choose from a small set of mutually exclusive options."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## When to use
+
+- When you want the user to select only one option;
+- When you need to switch tabs (macOS).
+
+## Disabled
+
+The `disabled` property locks the segment control - it is no longer possible to press it. In addition, such a control cannot get focus by pressing the Tab key, by mouse or in any other way.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
+
+## Controlled disabled
+
+The disabled state of each item can be set separately. To do this, set `disabled: true` in the option parameters.
+
+<Canvas>
+  <Story of={Stories.ControlledDisabled} />
+</Canvas>
+
+## Title
+
+The option header may differ from the value returned by the option. To do this, set the `title` property for the option.
+
+<Canvas>
+  <Story of={Stories.Title} />
+</Canvas>

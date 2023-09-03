@@ -1,0 +1,47 @@
+.segment .segment-option {
+  pointer-events: none;
+
+  &:not(.selected) {
+    background: transparent;
+    box-shadow: none;
+
+    &:not(:disabled) {
+      pointer-events: all;
+    }
+  }
+}
+
+.naco.os-mac .segment .segment-option {
+  font: var(--typography-text-l);
+  padding: 3px 13px;
+}
+
+.naco.os-linux .segment .segment-option {
+  border: none;
+  background: var(--color-border-main);
+  border-radius: 0;
+
+  &:not(.selected) {
+    background: var(--color-background-secondary);
+  }
+
+  &:hover::after {
+    opacity: 0.4;
+  }
+
+  &::after {
+    border-radius: 0;
+    background-color: var(--color-border-main);
+  }
+
+  &:first-child,
+  &:first-child::after {
+    border-top-left-radius: var(--border-radius-m);
+    border-bottom-left-radius: var(--border-radius-m);
+  }
+  &:last-child,
+  &:last-child::after {
+    border-top-right-radius: var(--border-radius-m);
+    border-bottom-right-radius: var(--border-radius-m);
+  }
+}
