@@ -1,0 +1,41 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import { Intro, Props } from '../../../../.storybook/components'
+import * as Stories from './Toggle.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Toggle"
+  description="A toggle lets people choose between a pair of opposing states, like on and off, using a different appearance to indicate each state."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Use a toggle for parameters with two values when changes take effect immediately;
+- Use a toggle when the action does not require confirmation;
+- Do not place too many toggles in a row. No more than 2-3, then a divider is required.
+
+## Size
+
+The macOS System Settings uses a small version of toggle, while GTK uses the standard version. That's why a small version of the switch is used for macOS. To make it large on macOS, set the `sizeMac="m"` parameter. This has no effect on the display for Linux.
+
+<Canvas>
+  <Story of={Stories.Size} />
+</Canvas>
+
+## Disabled
+
+The `disabled` property locks the toggle - it is no longer possible to press it. In addition, such a toggle cannot get focus by pressing the Tab key, by mouse or in any other way.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
