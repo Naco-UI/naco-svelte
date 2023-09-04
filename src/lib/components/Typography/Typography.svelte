@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { TypographyProps } from './Typography.types.js'
-  export let as: TypographyProps['as'] = 'p'
+  export let as: TypographyProps['as'] = 'span'
   export let variant: TypographyProps['variant']
 </script>
 
@@ -14,6 +14,7 @@
 
 <style lang="scss">
   .typography {
+    margin: 0;
     color: var(--color-content-primary);
     letter-spacing: var(--typography-letter-spacing);
   }
