@@ -1,0 +1,50 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './SettingsGroup.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="SettingsGroup"
+  description="A SettingsGroup allows you to build configuration interfaces."
+  imports={['SettingsGroup', 'SettingsRow']}
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Use simple actions and clear titles;
+- One heading can refer to 2-3 groups;
+- Group related items together. This will make it easier for the user to understand.
+
+## Multiple groups
+
+When using more than one group, wrap them in `<Stack gap="m">`. A margin will be set correctly, given the presence of a titles.
+
+<Canvas>
+  <Story of={Stories.MultipleGroups} />
+</Canvas>
+
+## Multiple actions
+
+One row can have multiple actions. To do this, simply pass multiple components to SettingsRow. But do not use too many, limit yourself to two.
+
+<Canvas>
+  <Story of={Stories.MultipleActions} />
+</Canvas>
+
+## Postfix
+
+By passing the component into the `postfix` slot you can set the content to be displayed under the header and actions.
+
+<Canvas>
+  <Story of={Stories.Postfix} />
+</Canvas>
