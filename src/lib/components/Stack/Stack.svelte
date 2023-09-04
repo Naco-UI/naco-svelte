@@ -24,6 +24,10 @@
       flex-direction: column;
     }
 
+    &.direction-horizontal {
+      align-items: center;
+    }
+
     &.align-end {
       justify-content: flex-end;
     }
