@@ -37,3 +37,8 @@
   padding: 30px 20px;
   background-color: var(--color-background-secondary);
 }
+
+.sbdocs {
+  max-width: 780px;
+  margin: 0 auto;
+}
