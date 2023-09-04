@@ -40,29 +40,31 @@
 <Story template="basic" name="Basic" />
 
 <Story name="Variant">
-  <Stack>
+  <Stack direction="horizontal" gap="s">
     <Button variant="default">Default</Button>
     <Button color="accent" variant="primary">Primary</Button>
   </Stack>
 </Story>
 
 <Story name="Color">
-  {#each buttonVariants as variant}
-    <div class="story-color-row">
-      <Typography variant="heading-s">
-        {variant}
-      </Typography>
-      <Stack>
-        {#each buttonColors as color}
-          <Button {color} {variant}>{color}</Button>
-        {/each}
+  <Stack gap="l">
+    {#each buttonVariants as variant}
+      <Stack gap="s">
+        <Typography variant="heading-s">
+          {variant}
+        </Typography>
+        <Stack direction="horizontal" gap="s">
+          {#each buttonColors as color}
+            <Button {color} {variant}>{color}</Button>
+          {/each}
+        </Stack>
       </Stack>
-    </div>
-  {/each}
+    {/each}
+  </Stack>
 </Story>
 
 <Story name="Disabled">
-  <Stack>
+  <Stack direction="horizontal" gap="s">
     <Button disabled variant="default">Default</Button>
     <Button disabled color="accent" variant="primary">Primary</Button>
   </Stack>
