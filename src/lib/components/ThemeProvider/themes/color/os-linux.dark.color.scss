@@ -1,12 +1,15 @@
 .os-linux.dark {
-  --color-content-accent: #e9531f;
-  --color-content-error: #ff453b;
-  --color-content-warning: #ff9f0e;
-  --color-content-success: #33d74c;
+  --color-content-accent: #e95521;
+  --color-content-error: #cc2b3d;
+  --color-content-warning: #de9220;
+  --color-content-success: #3cb34e;
   --color-content-primary: rgba(255, 255, 255, 0.9);
   --color-content-accent-translucent: rgba(58, 108, 217, 0.5);
   --color-background-primary: #272727;
   --color-background-secondary: #373737;
+  --color-background-elevated: #373737;
   --color-background-tertiary: #363636;
   --color-border-main: #1a1a1a;
+  --color-border-dimmed: var(--color-border-main);
+  --color-border-secondary: rgba(255, 255, 255, 0.17);
 }

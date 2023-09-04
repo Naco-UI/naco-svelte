@@ -7,6 +7,9 @@
   --color-content-accent-translucent: rgba(58, 108, 217, 0.5);
   --color-background-primary: #fafafa;
   --color-background-secondary: #fff;
+  --color-background-elevated: #fff;
   --color-background-tertiary: #e6e6e6;
   --color-border-main: #dbdbdb;
+  --color-border-dimmed: var(--color-border-main);
+  --color-border-secondary: var(--color-background-tertiary);
 }

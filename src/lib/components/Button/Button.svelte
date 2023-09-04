@@ -17,7 +17,7 @@
 
 <button
   {disabled}
-  class="Button variant-{variant} color-{color} {$$restProps.class || ''}"
+  class="Button variant-{variant} color-{color} {$$restProps.class ?? ''}"
   class:full-width={fullWidth}
   on:click={handleClick}
 >
@@ -27,7 +27,7 @@
 <style lang="scss">
   button {
     --button-color-primary: var(--color-content-primary);
-    --button-color-background: var(--color-background-secondary);
+    --button-color-background: var(--color-background-elevated);
     --button-border-radius: var(--border-radius-m);
 
     position: relative;

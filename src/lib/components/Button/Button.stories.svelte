@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meta, Story, Template } from '@storybook/addon-svelte-csf'
 
-  import ActionsLayout from '../../layouts/ActionsLayout/ActionsLayout.svelte'
+  import Stack from '../Stack/Stack.svelte'
   import Typography from '../Typography/Typography.svelte'
   import Button from './Button.svelte'
   import type { ButtonProps } from './Button.types.js'
@@ -40,10 +40,10 @@
 <Story template="basic" name="Basic" />
 
 <Story name="Variant">
-  <ActionsLayout>
+  <Stack>
     <Button variant="default">Default</Button>
     <Button color="accent" variant="primary">Primary</Button>
-  </ActionsLayout>
+  </Stack>
 </Story>
 
 <Story name="Color">
@@ -52,18 +52,18 @@
       <Typography variant="heading-s">
         {variant}
       </Typography>
-      <ActionsLayout>
+      <Stack>
         {#each buttonColors as color}
           <Button {color} {variant}>{color}</Button>
         {/each}
-      </ActionsLayout>
+      </Stack>
     </div>
   {/each}
 </Story>
 
 <Story name="Disabled">
-  <ActionsLayout>
+  <Stack>
     <Button disabled variant="default">Default</Button>
     <Button disabled color="accent" variant="primary">Primary</Button>
-  </ActionsLayout>
+  </Stack>
 </Story>
