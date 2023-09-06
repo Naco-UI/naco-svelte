@@ -2,6 +2,7 @@
 DIST_DIR="./dist"
 
 function build_kit() {
+  pnpm vite build
   pnpm svelte-kit sync
   pnpm svelte-package
 }
