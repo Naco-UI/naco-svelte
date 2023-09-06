@@ -4,9 +4,10 @@
   import type { SettingsRowProps } from './SettingsRow.types.js'
 
   export let title: SettingsRowProps['title'] = ''
+  const hasPostfix = Boolean($$props.$$slots?.postfix)
 </script>
 
-<div class="settings-row">
+<div class="settings-row" class:with-postfix={hasPostfix}>
   <Typography variant="text-m">{title}</Typography>
   <Stack direction="horizontal" align="end">
     <slot />
@@ -26,7 +27,12 @@
       'post post';
     align-items: center;
 
+    min-height: var(--settings-row-min-height);
     padding: var(--settings-row-padding-v) var(--settings-row-padding-h);
+
+    &:not(.with-postfix) {
+      grid-template-rows: 1fr;
+    }
 
     & > * {
       display: block;

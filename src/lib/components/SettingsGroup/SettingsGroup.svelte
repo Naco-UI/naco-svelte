@@ -38,11 +38,13 @@
     --settings-row-padding-v: 12px;
     --settings-row-padding-h: 14px;
     --settings-border-radius: 0;
+    --settings-row-min-height: 34px;
   }
 
   :global(.naco.os-mac) .settings-layout {
     --settings-row-padding-v: 9px;
     --settings-row-padding-h: 9px;
     --settings-border-radius: 5px;
+    --settings-row-min-height: 20px;
   }
 </style>
