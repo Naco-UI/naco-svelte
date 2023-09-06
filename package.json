@@ -6,11 +6,10 @@
     "directory": "./dist"
   },
   "scripts": {
-    "dev": "vite dev",
+    "dev": "storybook dev -p 6006",
     "hook": "simple-git-hooks",
-    "build": "vite build && npm run package",
-    "preview": "vite preview",
-    "package": "bash scripts/clean-build.sh",
+    "build": "bash scripts/clean-build.sh",
+    "build-storybook": "storybook build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "test": "vitest --run",
@@ -21,9 +20,7 @@
     "lint:styles": "stylelint 'src/**/*.{svelte,css,scss}'",
     "lint-fix": "pnpm run '/^lint-fix:.*/'",
     "lint-fix:scripts": "prettier --plugin-search-dir . --write . && eslint --fix .",
-    "lint-fix:styles": "stylelint --fix 'src/**/*.{svelte,css,scss}'",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "lint-fix:styles": "stylelint --fix 'src/**/*.{svelte,css,scss}'"
   },
   "exports": {
     ".": {
@@ -37,7 +34,8 @@
     "!dist/**/*.spec.*"
   ],
   "peerDependencies": {
-    "svelte": "^4.0.0"
+    "svelte": "^4.0.0",
+    "sass": "^1.66.0"
   },
   "devDependencies": {
     "@storybook/addon-docs": "^7.4.0",
