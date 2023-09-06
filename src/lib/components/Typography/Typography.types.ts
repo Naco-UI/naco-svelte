@@ -10,4 +10,5 @@ export interface TypographyProps {
   variant: TypographyVariants
   color: TypographyColor
   as: keyof HTMLElementTagNameMap
+  align: 'left' | 'right' | 'center'
 }
