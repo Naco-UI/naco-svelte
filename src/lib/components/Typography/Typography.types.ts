@@ -10,5 +10,6 @@ export interface TypographyProps {
   variant: TypographyVariants
   color: TypographyColor
   as: keyof HTMLElementTagNameMap
+  fullWidth?: boolean
   align: 'left' | 'right' | 'center'
 }
