@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+
+<Meta title="Documentation/Development/Start development" />
+
+# Start development
+
+Before you can start developing, you need to install dependencies. Naco uses the [pnpm](https://pnpm.io/) package manager.
+
+<Source language="bash" code="pnpm install --frozen-lockfile" />
+
+To start Storybook in development mode, run the command:
+
+<Source language="bash" code="pnpm dev" />
+
+Build the library package:
+
+<Source language="bash" code="pnpm build" />
+
+Build the Storybook stand statics:
+
+<Source language="bash" code="pnpm build-storybook" />

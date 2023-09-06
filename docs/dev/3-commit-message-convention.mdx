@@ -1,0 +1,58 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Documentation/Development/Commit message convention" />
+
+# Commit Message Convention
+
+The [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification is a lightweight convention on top of commit messages. It provides an easy set of rules for creating an explicit commit history; which makes it easier to write automated tools on top of. This convention dovetails with [SemVer](https://semver.org/), by describing the features, fixes, and breaking changes made in commit messages.
+
+The commit message should be structured as follows:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+## Commit type
+
+The commit contains the following structural elements, to communicate intent to the consumers of Naco UI:
+
+- **feat**: new functionality, increases minor in the package version if BREAKING CHANGE is not specified;
+- **fix**: bug fixes, raises patch for package version if BREAKING CHANGE is not specified;
+- **refactor**: code changes without fixing bugs or adding functionality.
+- **docs**: documentation changes;
+- **test**: adding or editing tests;
+- **style**: changes in code appearance, formatting (tabs, indents, periods, commas, etc.);
+- **chore**: adding, updating or customizing tools and libraries;
+- **build**: project building or external dependencies change;
+- **perf**: performance improvement;
+- **revert**: undoing of changes.
+
+## Scope
+
+Allows you to specify in which area of the repository the change occurred (optional). In a component library, scopes are component names: Button, Stack, etc.
+
+## Subject
+
+Allows you to briefly specify the action done in this commit. Start the description with a verb in the imperative mood.
+
+## Body
+
+Allows you to specify a description that cannot fit in the title (optional).
+
+## Footer
+
+The footer should be used to indicate external links, commit context or other meta information (optional). The footer should be separated from the body by a blank line.
+
+## BREAKING CHANGE
+
+Description of changes that break backward compatibility. Breaking change can occur in commits of any type. `BREAKING CHANGE` is specified in the message body.
+
+## Example
+
+```
+feat(Button): Add `warning` color
+```

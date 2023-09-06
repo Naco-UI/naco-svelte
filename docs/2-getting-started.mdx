@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+
+<Meta title="Documentation/Getting Started" />
+
+# Getting Started
+
+Navigate in the terminal to the folder where the package.json of your application's frontend is located.
+
+> For Wails it's `./frontend` relating to the root of your project
+
+To install Naco UI, run the command:
+
+<Source code="npm install --save @naco-ui/svelte" />
+
+## Usage
+
+To use Naco UI in your application, open the `src/App.svelte` and wrap your application code with `ThemeProvider`.
+
+<Source code={`
+<script>
+  import { ThemeProvider, Typography } from '@naco-ui/svelte'
+</script>
+
+<ThemeProvider os="mac" scheme="light">
+  <main>
+    <Typography>Hello, World!</Typography>
+  </main>
+</ThemeProvider>
+`} />

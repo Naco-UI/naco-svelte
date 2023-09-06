@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/sveltekit'
 import { mergeConfig } from 'vite'
 
 const config: StorybookConfig = {
-  stories: ['../docs/*.mdx', '../src/**/*.mdx', '../src/**/*.stories.svelte'],
+  stories: ['../docs/**/*.mdx', '../src/**/*.mdx', '../src/**/*.stories.svelte'],
   staticDirs: [{ from: '../images', to: '/images' }],
   addons: [
     '@storybook/addon-links',
