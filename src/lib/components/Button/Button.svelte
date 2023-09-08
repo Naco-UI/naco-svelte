@@ -134,7 +134,7 @@
     button {
       --button-padding: 2px 13px;
 
-      box-shadow: 0 0.5px 1.5px rgb(0 0 0 / 15%);
+      box-shadow: var(--box-shadow-m);
 
       &:active::after {
         opacity: 0.05;
