@@ -1,0 +1,41 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import Select from './Select.svelte'
+import * as Stories from './Select.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Select"
+  description="Component with which the user selects a value from a set of suggested options."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Use Select when users are selecting only a single item from a set;
+- And set is too long to show all available options at once.
+
+## Borderless
+
+The Linux and macOS settings interface uses a special variant of the component that has no background or stroke. If you are using Select inside a SettingsGroup, then add the `variant="borderless"` property.
+
+<Canvas>
+  <Story of={Stories.Borderless} />
+</Canvas>
+
+## Disabled
+
+To disable interaction with a component use the `disabled` property.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
