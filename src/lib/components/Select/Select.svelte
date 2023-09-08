@@ -43,7 +43,7 @@
 
 <style lang="scss">
   .select {
-    --select-font-size: var(--typography-text-m);
+    --select-font: var(--typography-text-m);
     --select-border-radius: var(--border-radius-l);
     --select-border-color: var(--color-border-main);
     --select-background-color: var(--color-background-elevated);
@@ -79,8 +79,7 @@
     width: 100%;
     height: 100%;
 
-    font-family: var(--typography-font-family);
-    font-size: var(--select-font-size);
+    font: var(--select-font);
 
     appearance: none;
     opacity: 0;
