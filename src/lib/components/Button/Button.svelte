@@ -1,13 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte'
-
   import type { ButtonProps } from './Button.types.js'
-
-  const dispatch = createEventDispatcher()
-
-  function handleClick(): void {
-    dispatch('click')
-  }
 
   export let variant: ButtonProps['variant'] = 'default'
   export let color: ButtonProps['color'] = 'default'
@@ -19,7 +11,12 @@
   {disabled}
   class="Button variant-{variant} color-{color} {$$restProps.class ?? ''}"
   class:full-width={fullWidth}
-  on:click={handleClick}
+  on:click
+  on:dblclick
+  on:mousedown
+  on:mouseenter
+  on:mouseleave
+  on:contextmenu
 >
   <slot />
 </button>
