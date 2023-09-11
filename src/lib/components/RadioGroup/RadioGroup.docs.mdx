@@ -1,0 +1,49 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import RadioGroup from './RadioGroup.svelte'
+import * as Stories from './RadioGroup.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="RadioGroup"
+  description="Component to choose from a small set of mutually exclusive options."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## When to use
+
+- When you want the user to select only one option;
+- When you need to switch tabs (macOS).
+
+## Direction
+
+A group of radio buttons can be arranged both vertically and horizontally. To control this, set the `direction` property.
+
+<Canvas>
+  <Story of={Stories.Direction} />
+</Canvas>
+
+## Value
+
+To control the state of radio buttons (or to set default values), the `value` property is used. To bind it to a local variable, use `bind:value`.
+
+<Canvas>
+  <Story of={Stories.Value} />
+</Canvas>
+
+## Disabled
+
+To lock individual items, set `disabled: true` in the options. To block the entire group, set the `disabled` property on it.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
