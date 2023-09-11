@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './Portal.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Portal"
+  description="A portal is a way to visualize an element in a DOM node that exists outside of the parent component's DOM hierarchy."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Use the portal if you need to display something outside the structure of the current component. For example, a modal window;
+- Portals can be nested within each other. This way they are rendered outside the component structure, it won't cause any problems.
+
+## Theme
+
+By default, content within Portal is wrapped in <a href="/?path=/docs/components-themeprovider--docs">ThemeProvider</a>. If the `target` of the portal is set inside an existing ThemeProvider, add the `unwrapTheme` property to avoid unnecessary wrapping.
