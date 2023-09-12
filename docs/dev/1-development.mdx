@@ -3,20 +3,20 @@ import { Source } from '@storybook/blocks'
 
 <Meta title="Documentation/Development/Start development" />
 
-# Start development
+# Start Development
 
 Before you can start developing, you need to install dependencies. Naco uses the [pnpm](https://pnpm.io/) package manager.
 
 <Source language="bash" code="pnpm install --frozen-lockfile" />
 
+It is highly recommended to install git hooks in the project repository. They make it easier to follow [Code Style](/?path=/docs/documentation-development-code-style--docs). To install them, run the command:
+
+<Source language="bash" code="pnpm hook" />
+
 To start Storybook in development mode, run the command:
 
 <Source language="bash" code="pnpm dev" />
 
-Build the library package:
+To start server with production Storybook build, run:
 
-<Source language="bash" code="pnpm build" />
-
-Build the Storybook stand statics:
-
-<Source language="bash" code="pnpm build-storybook" />
+<Source language="bash" code="pnpm preview" />

@@ -1,0 +1,82 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Documentation/Development/Writing documentation" />
+
+# Writing Documentation
+
+Use the following formats for your documentation:
+
+- `*.stories.svelte` — description of stories of interaction with the component;
+- `*.docs.mdx` — component documentation based on stories.
+
+## Style
+
+- Stay calm, be polite, and show respect;
+- Avoid using complicated words or inside jokes;
+- Make statements instead of saying what not to do;
+- The imperative mood (do something, run a command, etc.).
+
+## Text in documentation and examples
+
+- Make your text and examples easy to understand;
+- Divide the text into smaller parts that are easy to digest;
+- If you want to be funny, use jokes only in the examples, not in the main text. Make sure the jokes don't confuse the reader.
+
+## Formatting
+
+- Use bold or special text for important words;
+- Make lists for information with lots of items;
+- If you talk about something else, tell where to find it;
+- Use headings no higher than level 3 (`#`, `##` and `###`).
+
+## Component documentation template
+
+To simplify writing component documentation, use the following template:
+
+{/* prettier-ignore-start */}
+
+```markdown
+import { Meta } from '@storybook/addon-docs'
+import { Intro, Props } from '../../../../.storybook/components'
+import * as Stories from './Component.stories';
+
+<Meta of={Stories} />
+
+<Intro
+  name="Component name"
+  description="Component brief description."
+/>
+
+<!-- Basic story -->
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+## Example 1
+
+<Canvas>
+  <Story of={Stories.Example1} />
+</Canvas>
+
+## Example 2
+
+<Canvas>
+  <Story of={Stories.Example2} />
+</Canvas>
+
+## Example 3
+
+<Canvas>
+  <Story of={Stories.Example3} />
+</Canvas>
+
+<!-- And so on -->
+```
+
+{/* prettier-ignore-end */}

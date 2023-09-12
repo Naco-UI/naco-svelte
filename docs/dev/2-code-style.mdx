@@ -1,0 +1,71 @@
+import { Meta } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+
+<Meta title="Documentation/Development/Code style" />
+
+# Code Style
+
+## Types
+
+Naco makes heavy use of TypeScript. Types are stored in separate files with the suffix `types`. For example:
+
+- `Button.svelte` - file with code
+- `Button.types.ts` - file with types
+
+The same applies to auxiliary `.ts` files:
+
+- `portal-action.ts` - code file
+- `portal-action.types.ts` - types file
+
+We do NOT use [Hungarian notation](https://en.wikipedia.org/wiki/Hungarian_notation) in the names (even types):
+
+<table>
+  <tr>
+    <th>Good ✅</th>
+    <th>Bad ❌</th>
+  </tr>
+  <tr>
+    <td>ButtonProps</td>
+    <td>IButtonProps</td>
+  </tr>
+  <tr>
+    <td>BasicController</td>
+    <td>AController</td>
+  </tr>
+</table>
+
+## Common
+
+2 spaces indents with final newline. Except `md` and `mdx`, it uses 4 spaces. All supported files are formatted with prettier. Scripts for working with code formatting are configured in the project:
+
+### Format all files
+
+<Source language="bash" code="pnpm format" />
+
+### Lint all files
+
+<Source language="bash" code="pnpm lint" />
+
+## Scripts
+
+Scripts are checked against the [custom configuration](https://github.com/Naco-UI/svelte-naco/blob/main/.eslintrc.cjs) based on [`eslint-config-standard-with-typescript`](https://github.com/standard/eslint-config-standard-with-typescript) with [`plugin:svelte/recommended`](https://github.com/sveltejs/eslint-plugin-svelte).
+
+### Key points
+
+- Without semicolons (`;`)
+- Without space before brackets in functions (`function()`)
+- With trailing comma in multiline
+
+To check scripts code style, run the command:
+
+<Source language="bash" code="pnpm lint:scripts" />
+
+## Styles
+
+Scripts are checked against the [`stylelint-config-standard-scss`](https://github.com/stylelint-scss/stylelint-config-standard-scss) with [`stylelint-config-clean-order`](https://github.com/kutsan/stylelint-config-clean-order).
+
+[CSS custom properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) should be used for variables. Common values are placed in the theme's [global styles](https://github.com/Naco-UI/svelte-naco/tree/main/src/lib/components/ThemeProvider/themes).
+
+To check (s)css code style, run the command:
+
+<Source language="bash" code="pnpm lint:styles" />
