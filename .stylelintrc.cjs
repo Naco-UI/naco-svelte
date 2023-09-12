@@ -1,7 +1,6 @@
 module.exports = {
   extends: [
-    'stylelint-config-standard',
-    'stylelint-config-recommended-scss',
+    'stylelint-config-standard-scss',
     'stylelint-config-clean-order',
   ],
   rules: {

@@ -131,12 +131,9 @@ devDependencies:
   stylelint-config-clean-order:
     specifier: ^5.2.0
     version: 5.2.0(stylelint@15.10.3)
-  stylelint-config-recommended-scss:
-    specifier: ^13.0.0
-    version: 13.0.0(postcss@8.4.29)(stylelint@15.10.3)
-  stylelint-config-standard:
-    specifier: ^34.0.0
-    version: 34.0.0(stylelint@15.10.3)
+  stylelint-config-standard-scss:
+    specifier: ^11.0.0
+    version: 11.0.0(postcss@8.4.29)(stylelint@15.10.3)
   stylelint-scss:
     specifier: ^5.1.0
     version: 5.1.0(stylelint@15.10.3)
@@ -9834,6 +9831,21 @@ packages:
       stylelint: ^15.10.0
     dependencies:
       stylelint: 15.10.3(typescript@5.2.2)
+    dev: true
+
+  /stylelint-config-standard-scss@11.0.0(postcss@8.4.29)(stylelint@15.10.3):
+    resolution: {integrity: sha512-fGE79NBOLg09a9afqGH/guJulRULCaQWWv4cv1v2bMX92B+fGb0y56WqIguwvFcliPmmUXiAhKrrnXilIeXoHA==}
+    peerDependencies:
+      postcss: ^8.3.3
+      stylelint: ^15.10.0
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+    dependencies:
+      postcss: 8.4.29
+      stylelint: 15.10.3(typescript@5.2.2)
+      stylelint-config-recommended-scss: 13.0.0(postcss@8.4.29)(stylelint@15.10.3)
+      stylelint-config-standard: 34.0.0(stylelint@15.10.3)
     dev: true
 
   /stylelint-config-standard@34.0.0(stylelint@15.10.3):
