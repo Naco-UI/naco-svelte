@@ -1,0 +1,32 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './Spinner.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Spinner"
+  description="Spinner indicates that information is being downloaded or processed."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Use Spinner when the progress status cannot be determined or processing takes less than 5 seconds. If it takes longer, use ProgressBar;
+- Do not use many spinners on one screen. It is better to combine several operations into one spinner.
+
+## Size
+
+The spinner can be presented in different sizes. The `size` property is responsible for that.
+
+<Canvas>
+  <Story of={Stories.Size} />
+</Canvas>
