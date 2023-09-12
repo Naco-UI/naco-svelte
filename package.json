@@ -1,6 +1,6 @@
 {
   "name": "@naco-ui/svelte",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "publishConfig": {
     "access": "public",
     "directory": "./dist"
@@ -10,6 +10,7 @@
     "hook": "simple-git-hooks",
     "build": "bash scripts/clean-build.sh",
     "build-storybook": "storybook build",
+    "release:bump": "standard-version --infile CHANGELOG.md --same-file --skip.commit --skip.tag",
     "preview": "pnpm build-storybook && pnpm preview:serve",
     "preview:serve": "browser-sync start --port 6006 --server --ss ./storybook-static",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -81,6 +82,7 @@
     "react-dom": "^18.2.0",
     "sass": "^1.66.1",
     "simple-git-hooks": "^2.9.0",
+    "standard-version": "^9.5.0",
     "storybook": "^7.4.0",
     "stylelint": "^15.10.3",
     "stylelint-config-clean-order": "^5.2.0",
