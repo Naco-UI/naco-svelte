@@ -23,6 +23,13 @@
   border: none;
 }
 
+.sbdocs.sbdocs-content :where(h3:not(.sb-anchor, .sb-unstyled, .sb-unstyled h3)) {
+  font-size: 1.05rem;
+  line-height: 1.1666666667;
+  font-weight: 600;
+  letter-spacing: 0.009em;
+}
+
 .sbdocs.sbdocs-content :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)),
 .sbdocs.sbdocs-content :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)) {
   font-size: 17px;
