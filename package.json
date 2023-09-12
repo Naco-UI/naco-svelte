@@ -19,9 +19,9 @@
     "lint:format-check": "prettier --plugin-search-dir . --check .",
     "lint:scripts": "eslint .",
     "lint:styles": "stylelint 'src/**/*.{svelte,css,scss}'",
-    "format": "pnpm run '/^lint-fix:.*/'",
-    "lint-fix:scripts": "prettier --plugin-search-dir . --write . && eslint --fix .",
-    "lint-fix:styles": "stylelint --fix 'src/**/*.{svelte,css,scss}'"
+    "format": "pnpm run '/^format:.*/'",
+    "format:scripts": "prettier --plugin-search-dir . --write . && eslint --fix .",
+    "format:styles": "stylelint --fix 'src/**/*.{svelte,css,scss}'"
   },
   "exports": {
     ".": {
