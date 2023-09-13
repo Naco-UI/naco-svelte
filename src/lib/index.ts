@@ -1,4 +1,5 @@
 // Components
+export * from './components/Backdrop/index.js'
 export * from './components/Button/index.js'
 export * from './components/Portal/index.js'
 export * from './components/RadioGroup/index.js'

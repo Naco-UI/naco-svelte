@@ -1,0 +1,19 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './Backdrop.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Backdrop"
+  description="Helper component that adds a darkened layer on top of the application."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
