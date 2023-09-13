@@ -1,0 +1,33 @@
+name: Create release
+
+env:
+  PNPM_VERSION: '8.6.2'
+
+on: workflow_dispatch
+
+jobs:
+  release:
+    name: Publish release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+          ssh-key: ${{ secrets.RELEASER_PRIVATE_KEY }}
+          persist-credentials: true
+
+      - name: Setup standard-version
+        run: npm install -g standard-version
+
+      - name: Generate release
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          standard-version --infile CHANGELOG.md --same-file
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          ssh: true
+          tags: true
