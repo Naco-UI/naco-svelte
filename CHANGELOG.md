@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.4 (2023-09-13)
+
+
+### Features
+
+* Add release workflow ([efce142](https://github.com/Naco-UI/svelte-naco/commit/efce142df39f76ecc90086ed9d59417798a8ab79))
+
 ### [0.0.3](https://github.com/Naco-UI/svelte-naco/compare/v0.0.2...v0.0.3) (2023-09-12)
 
 ### Features
