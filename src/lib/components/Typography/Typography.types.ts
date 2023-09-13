@@ -12,5 +12,5 @@ export interface TypographyProps {
   as: keyof HTMLElementTagNameMap
   fullWidth?: boolean
   align: 'left' | 'right' | 'center'
-  selectable?: boolean
+  select?: boolean
 }

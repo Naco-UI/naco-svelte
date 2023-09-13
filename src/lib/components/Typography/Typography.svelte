@@ -5,14 +5,14 @@
   export let color: TypographyProps['color'] = 'primary'
   export let fullWidth: TypographyProps['fullWidth'] = false
   export let align: TypographyProps['align'] = 'left'
-  export let selectable: TypographyProps['selectable'] = false
+  export let select: TypographyProps['select'] = false
 </script>
 
 <svelte:element
   this={as}
   class="typography"
   class:full-width={fullWidth}
-  class:selectable
+  class:select
   style:font="var(--typography-{variant})"
   style:color="var(--color-content-{color})"
   style:text-align={align}
@@ -27,7 +27,7 @@
     margin: 0;
     letter-spacing: var(--typography-letter-spacing);
 
-    &.selectable {
+    &.select {
       user-select: text;
     }
 
