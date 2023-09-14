@@ -29,10 +29,12 @@
     }
 
     &.align-end {
+      align-items: end;
       justify-content: flex-end;
     }
 
     &.align-center {
+      align-items: center;
       justify-content: center;
     }
   }
