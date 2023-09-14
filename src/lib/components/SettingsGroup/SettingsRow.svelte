@@ -9,7 +9,7 @@
 
 <div class="settings-row" class:with-postfix={hasPostfix}>
   <Typography variant="text-m">{title}</Typography>
-  <Stack direction="horizontal" align="end">
+  <Stack direction="horizontal" justify="end" align="center">
     <slot />
   </Stack>
   <div class="postfix">
