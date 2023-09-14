@@ -1,4 +1,4 @@
-# Svelte Naco UI [![npm version](https://badge.fury.io/js/@naco-ui%2Fsvelte.svg)](https://www.npmjs.com/package/@naco-ui/svelte)
+# Svelte Naco UI [![npm version](https://img.shields.io/npm/v/@naco-ui/svelte)](https://www.npmjs.com/package/@naco-ui/svelte)
 
 Svelte component library for creating interfaces with web technologies that feels native.
 
