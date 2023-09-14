@@ -2,8 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.0.7](https://github.com/Naco-UI/svelte-naco/compare/v0.0.6...v0.0.7) (2023-09-14)
-
+## [0.0.7](https://github.com/Naco-UI/svelte-naco/compare/v0.0.6...v0.0.7) (2023-09-14)
 
 ### Features
 
@@ -11,8 +10,7 @@ All notable changes to this project will be documented in this file. See [standa
 * **Segment:** Improve styles to better match macOS ([b406888](https://github.com/Naco-UI/svelte-naco/commit/b40688823973b16850a7c3bfcb91ca321df17929))
 * **ThemeProvider:** Tune macOS colors and fonts ([7640163](https://github.com/Naco-UI/svelte-naco/commit/7640163139311f9bed453795da996145dbfc3068))
 
-### [0.0.6](https://github.com/Naco-UI/svelte-naco/compare/v0.0.5...v0.0.6) (2023-09-14)
-
+## [0.0.6](https://github.com/Naco-UI/svelte-naco/compare/v0.0.5...v0.0.6) (2023-09-14)
 
 ### Features
 
@@ -22,21 +20,19 @@ All notable changes to this project will be documented in this file. See [standa
 * **Stack:** Align items on `align` ([ba95fc2](https://github.com/Naco-UI/svelte-naco/commit/ba95fc25e9e74678eb8b9530096e2a68d7cc0d82))
 * **Typography:** Introduce `text-s` variant ([d4c3b16](https://github.com/Naco-UI/svelte-naco/commit/d4c3b16206c75de68e5905a3f27f0b38ff0f3981))
 
-### 0.0.5 (2023-09-13)
-
+## 0.0.5 (2023-09-13)
 
 ### Features
 
 * Deploy npm package on tag ([6f186cc](https://github.com/Naco-UI/svelte-naco/commit/6f186cc51f8176935f1dedff2d84912138dfd0a9))
 
-### 0.0.4 (2023-09-13)
-
+## 0.0.4 (2023-09-13)
 
 ### Features
 
 * Add release workflow ([efce142](https://github.com/Naco-UI/svelte-naco/commit/efce142df39f76ecc90086ed9d59417798a8ab79))
 
-### [0.0.3](https://github.com/Naco-UI/svelte-naco/compare/v0.0.2...v0.0.3) (2023-09-12)
+## [0.0.3](https://github.com/Naco-UI/svelte-naco/compare/v0.0.2...v0.0.3) (2023-09-12)
 
 ### Features
 
