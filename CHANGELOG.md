@@ -2,7 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 0.0.6 (2023-09-14)
+### [0.0.6](https://github.com/Naco-UI/svelte-naco/compare/v0.0.5...v0.0.6) (2023-09-14)
+
+
+### Features
+
+* **Button:** Add `hotkey` property ([25c606c](https://github.com/Naco-UI/svelte-naco/commit/25c606c4776d185f6256e66f72aeba46b387813a))
+* Introduce `Backdrop` component ([4b26aff](https://github.com/Naco-UI/svelte-naco/commit/4b26aff849065701fe4eba9afd0782e6229760cd))
+* Introduce `hotkey` action ([5ce0817](https://github.com/Naco-UI/svelte-naco/commit/5ce08174636e85573668393ff78cb16053c01824))
+* **Stack:** Align items on `align` ([ba95fc2](https://github.com/Naco-UI/svelte-naco/commit/ba95fc25e9e74678eb8b9530096e2a68d7cc0d82))
+* **Typography:** Introduce `text-s` variant ([d4c3b16](https://github.com/Naco-UI/svelte-naco/commit/d4c3b16206c75de68e5905a3f27f0b38ff0f3981))
 
 ### 0.0.5 (2023-09-13)
 
