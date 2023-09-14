@@ -1,0 +1,44 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './hotkey.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Hotkey"
+  description="Useful functions for working with hotkeys."
+  imports={['hotkey', 'onHotkey']}
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Action
+
+Action allows you to attach a hotkey to any element that handles an `on:click` event.
+
+```svelte
+<button use:hotkey={'shift+f'} on:click={() => alert('Hello')}> Click me </button>
+```
+
+## Button
+
+[Button](/?path=/docs/components-button--docs) from the Naco UI has a `hotkey` property that works exactly the same way.
+
+<Canvas>
+  <Story of={Stories.NacoButton} />
+</Canvas>
+
+## Hook
+
+If something more complex than a button click is required, this can be solved with the `onHotkey` hook:
+
+```ts
+onHotkey('shift+alt+KeyR', (event) => {
+  // KeyboardEvent event is passed to the callback.
+  // preventDefault() is already called
+  alert(event.target.name)
+})
+```

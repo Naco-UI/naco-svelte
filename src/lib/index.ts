@@ -11,3 +11,5 @@ export * from './components/Stack/index.js'
 export * from './components/ThemeProvider/index.js'
 export * from './components/Toggle/index.js'
 export * from './components/Typography/index.js'
+// Actions
+export * from './actions/hotkey/index.js'
