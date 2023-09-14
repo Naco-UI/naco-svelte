@@ -11,9 +11,12 @@
   --color-background-secondary: #f6f6f6;
   --color-background-elevated: #fff;
   --color-background-tertiary: #e6e6e6;
+  --color-overlay-quinary: rgba(0, 0, 0, 0.01);
+  --color-background-translucent: rgba(246, 246, 246, 0.6);
   --color-background-quinary: rgba(0, 0, 0, 0.05);
-  --color-background-overlay: rgb(242 242 242 / 51%);
+  --color-background-overlay: rgb(203 203 203 / 51%);
   --color-border-main: rgb(0 0 0 / 6%);
-  --color-border-dimmed: rgb(0 0 0 / 3%);
+  --color-border-dimmed: rgb(0 0 0 / 5%);
   --color-border-secondary: rgb(0 0 0 / 10%);
+  --color-border-elevated: rgb(0 0 0 / 60%);
 }

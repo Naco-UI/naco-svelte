@@ -26,7 +26,7 @@
 </Story>
 
 <Story name="Multiple groups">
-  <Stack gap="m">
+  <Stack>
     <SettingsGroup title="Dock">
       <SettingsRow title="Position on screen" />
       <SettingsRow title="Minimize windows using" />

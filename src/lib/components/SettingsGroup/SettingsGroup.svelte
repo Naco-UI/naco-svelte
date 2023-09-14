@@ -20,7 +20,7 @@
 
 <style lang="scss">
   .rows {
-    background-color: var(--color-background-primary);
+    background-color: var(--color-overlay-quinary);
     border: 1px solid var(--color-border-main);
     border-radius: var(--settings-border-radius);
   }
