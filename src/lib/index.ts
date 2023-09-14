@@ -1,6 +1,7 @@
 // Components
 export * from './components/Backdrop/index.js'
 export * from './components/Button/index.js'
+export * from './components/Modal/index.js'
 export * from './components/Portal/index.js'
 export * from './components/RadioGroup/index.js'
 export * from './components/Segment/index.js'

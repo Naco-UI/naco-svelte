@@ -1,0 +1,27 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './Modal.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Modal"
+  description="Modal is a component that presents the content in a separate, focused mode."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Width
+
+The width of the modal window is set by the `width` property. Use absolute values.
+
+<Canvas>
+  <Story of={Stories.Width} />
+</Canvas>

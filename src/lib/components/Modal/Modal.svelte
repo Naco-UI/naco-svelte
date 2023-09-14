@@ -1,13 +1,33 @@
 <script lang="ts">
-  import { quadInOut } from 'svelte/easing'
-  import { slide } from 'svelte/transition'
+  import { quintOut } from 'svelte/easing'
+  import { crossfade } from 'svelte/transition'
+
+  import { scrollLock } from '$lib/actions/scrollLock/index.js'
 
   import { Backdrop } from '../Backdrop/index.js'
   import { Portal } from '../Portal/index.js'
   import type { ModalProps } from './Modal.types.js'
 
   export let open: ModalProps['open'] = false
+  export let translucent: ModalProps['translucent'] = false
   export let width: ModalProps['width'] = 240
+  export let scrollTarget: ModalProps['scrollTarget'] = undefined
+  const transitionDuration = 300
+
+  export const [send, receive] = crossfade({
+    duration: (d) => Math.sqrt(d * transitionDuration),
+
+    fallback(node, params) {
+      return {
+        duration: 600,
+        easing: quintOut,
+        css: (t) => `
+          transform: translateY(calc((1 - ${t}) * -50px));
+          opacity: ${t}
+        `,
+      }
+    },
+  })
 
   $: widthValue = (() => {
     if (width === 'full') {
@@ -23,9 +43,16 @@
 <Portal>
   <Backdrop {open}>
     <div
+      use:scrollLock={{
+        lock: open,
+        unlockDelay: transitionDuration,
+        target: scrollTarget ?? document.body,
+      }}
       class="modal"
+      class:translucent
       style:--modal-width={widthValue}
-      transition:slide={{ duration: 300, easing: quadInOut, axis: 'y' }}
+      in:receive={{ key: 'modal' }}
+      out:send={{ key: 'modal' }}
     >
       <slot />
     </div>
@@ -38,24 +65,32 @@
     --modal-border-color: var(--color-border-elevated);
     --modal-padding: 20px;
 
-    width: 270px;
+    width: var(--modal-width);
     padding: var(--modal-padding);
-
     background-color: var(--modal-background-color);
     border-radius: 10px;
-    box-shadow: 0 38px 90px 0 rgb(0 0 0 / 25%), 0 0 2px 0 rgb(0 0 0 / 5%),
-      0 0 1px 0 rgb(0 0 0 / 60%);
   }
 
   :global(.os-mac) .modal {
     --modal-padding: 16px;
+
+    box-shadow: 0 0 3px 0 var(--color-border-dimmed) inset,
+      0 0 1px 0 var(--color-border-elevated), var(--box-shadow-modal);
+
+    &.translucent {
+      --modal-background-color: var(--color-background-translucent);
+
+      backdrop-filter: blur(15px);
+    }
   }
 
   :global(.os-linux) .modal {
     --modal-padding: 32px;
+
+    border: 1px solid var(--color-border-main);
   }
 
-  :global(.naco.light) .modal {
+  :global(.naco.light) .modal:not(.translucent) {
     --modal-background-color: var(--color-background-elevated);
   }
 </style>
