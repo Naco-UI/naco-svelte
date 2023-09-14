@@ -47,7 +47,7 @@
   <SettingsGroup>
     <SettingsRow title="Settings">
       <Button>Open...</Button>
-      <Button variant="primary" color="error">Reset</Button>
+      <Button primary color="error">Reset</Button>
     </SettingsRow>
   </SettingsGroup>
 </Story>

@@ -4,7 +4,8 @@
   import type { ButtonProps } from './Button.types.js'
 
   export let variant: ButtonProps['variant'] = 'default'
-  export let color: ButtonProps['color'] = 'default'
+  export let primary: ButtonProps['primary'] = false
+  export let color: ButtonProps['color'] = primary ? 'accent' : 'default'
   export let hotkey: ButtonProps['hotkey'] = ''
   export let fullWidth: ButtonProps['fullWidth'] = false
   export let disabled: ButtonProps['disabled'] = false
@@ -23,6 +24,7 @@
   class="Button variant-{variant} color-{color} size-{sizeMac} {$$restProps.class ??
     ''}"
   class:full-width={fullWidth}
+  class:primary
   on:click
   on:dblclick
   on:mousedown
@@ -93,7 +95,7 @@
       opacity: 0.5;
     }
 
-    &.variant-primary {
+    &.primary {
       color: #fff;
       background: var(--button-color-primary);
     }
@@ -115,7 +117,7 @@
     }
   }
 
-  :global(.naco.dark) button.variant-primary.color-default {
+  :global(.naco.dark) button.primary.color-default {
     color: var(--color-background-primary);
   }
 
@@ -153,7 +155,7 @@
         opacity: 0.05;
       }
 
-      &.variant-primary::before {
+      &.primary::before {
         background: linear-gradient(
           180deg,
           rgb(255 255 255 / 17%) 0%,

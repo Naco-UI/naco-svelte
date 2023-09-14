@@ -6,7 +6,7 @@
   import Button from './Button.svelte'
   import type { ButtonProps } from './Button.types.js'
 
-  const buttonVariants: Array<ButtonProps['variant']> = ['default', 'primary']
+  const buttonVariants: Array<ButtonProps['variant']> = ['default', 'alert']
   const buttonColors: Array<ButtonProps['color']> = [
     'default',
     'accent',
@@ -39,10 +39,10 @@
 
 <Story template="basic" name="Basic" />
 
-<Story name="Variant">
+<Story name="Primary">
   <Stack direction="horizontal" gap="s">
-    <Button variant="default">Default</Button>
-    <Button color="accent" variant="primary">Primary</Button>
+    <Button>Secondary</Button>
+    <Button primary>Primary</Button>
   </Stack>
 </Story>
 
@@ -65,15 +65,15 @@
 
 <Story name="Disabled">
   <Stack direction="horizontal" gap="s">
-    <Button disabled variant="default">Default</Button>
-    <Button disabled color="accent" variant="primary">Primary</Button>
+    <Button disabled>Default</Button>
+    <Button disabled primary>Primary</Button>
   </Stack>
 </Story>
 
 <Story name="Size">
   <Stack direction="horizontal" gap="m">
-    <Button sizeMac="m" color="accent" variant="primary">Size M</Button>
-    <Button sizeMac="s" color="accent" variant="primary">Size S</Button>
+    <Button sizeMac="m" primary>Size M</Button>
+    <Button sizeMac="s" primary>Size S</Button>
   </Stack>
 </Story>
 
@@ -82,8 +82,7 @@
     <Button
       hotkey="alt+shift+KeyF"
       on:click={() => alert('Hello, %USERNAME')}
-      color="accent"
-      variant="primary">Click me</Button
+      primary>Click me</Button
     >
     <Typography variant="text-s">or press alt + shift + f</Typography>
   </Stack>

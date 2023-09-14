@@ -35,7 +35,7 @@
 >
   <Stack {...args}>
     <Button>Cancel</Button>
-    <Button variant="primary" color="accent">Apply</Button>
+    <Button primary>Apply</Button>
   </Stack>
 </Story>
 
@@ -43,11 +43,11 @@
   <Stack direction="vertical" gap="m">
     <Stack direction="horizontal" gap="s">
       <Button>Cancel</Button>
-      <Button variant="primary" color="accent">Apply</Button>
+      <Button primary>Apply</Button>
     </Stack>
     <Stack direction="horizontal" gap="s">
       <Button color="error">Reset</Button>
-      <Button variant="primary" color="error">Remove</Button>
+      <Button primary color="error">Remove</Button>
     </Stack>
   </Stack>
 </Story>
