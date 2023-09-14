@@ -8,6 +8,7 @@
   export let hotkey: ButtonProps['hotkey'] = ''
   export let fullWidth: ButtonProps['fullWidth'] = false
   export let disabled: ButtonProps['disabled'] = false
+  export let sizeMac: ButtonProps['sizeMac'] = 's'
 
   let buttonRef: HTMLButtonElement
 
@@ -19,7 +20,8 @@
 <button
   {disabled}
   bind:this={buttonRef}
-  class="Button variant-{variant} color-{color} {$$restProps.class ?? ''}"
+  class="Button variant-{variant} color-{color} size-{sizeMac} {$$restProps.class ??
+    ''}"
   class:full-width={fullWidth}
   on:click
   on:dblclick
@@ -142,6 +144,10 @@
       --button-padding: 3px 10px;
 
       box-shadow: var(--box-shadow-m);
+
+      &.size-m {
+        --button-padding: 6px 20px;
+      }
 
       &:active::after {
         opacity: 0.05;

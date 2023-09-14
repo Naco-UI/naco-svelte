@@ -48,6 +48,14 @@ The `disabled` property locks the button - it is no longer possible to press it.
   <Story of={Stories.Disabled} />
 </Canvas>
 
+## Size (macOS)
+
+The macOS System Settings uses a small version of Button, while GTK uses the standard version. That's why a small version of the Button is used for macOS. To make it large on macOS, set the `sizeMac="m"` parameter. This has no effect on the display for Linux.
+
+<Canvas>
+  <Story of={Stories.Size} />
+</Canvas>
+
 ## Hotkey
 
 The `click` event call can be optionally attached to hotkey. To do this, set the hotkey template to the `hotkey` property

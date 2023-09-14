@@ -8,4 +8,5 @@ export interface ButtonProps {
   fullWidth?: boolean
   disabled?: boolean
   hotkey: string
+  sizeMac: 's' | 'm'
 }

@@ -70,6 +70,13 @@
   </Stack>
 </Story>
 
+<Story name="Size">
+  <Stack direction="horizontal" gap="m">
+    <Button sizeMac="m" color="accent" variant="primary">Size M</Button>
+    <Button sizeMac="s" color="accent" variant="primary">Size S</Button>
+  </Stack>
+</Story>
+
 <Story name="Hotkey">
   <Stack direction="horizontal" gap="s">
     <Button
