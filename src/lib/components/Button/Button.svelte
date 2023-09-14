@@ -139,7 +139,7 @@
 
   :global(.os-mac) {
     button {
-      --button-padding: 2px 13px;
+      --button-padding: 3px 10px;
 
       box-shadow: var(--box-shadow-m);
 
@@ -150,8 +150,8 @@
       &.variant-primary::before {
         background: linear-gradient(
           180deg,
-          rgb(255 255 255 / 20%) 0%,
-          rgb(86 86 86 / 7%) 100%
+          rgb(255 255 255 / 17%) 0%,
+          rgb(255 255 255 / 0%) 100%
         );
       }
     }
