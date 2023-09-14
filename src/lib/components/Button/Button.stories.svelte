@@ -69,3 +69,15 @@
     <Button disabled color="accent" variant="primary">Primary</Button>
   </Stack>
 </Story>
+
+<Story name="Hotkey">
+  <Stack direction="horizontal" gap="s">
+    <Button
+      hotkey="alt+shift+KeyF"
+      on:click={() => alert('Hello, %USERNAME')}
+      color="accent"
+      variant="primary">Click me</Button
+    >
+    <Typography variant="text-s">or press alt + shift + f</Typography>
+  </Stack>
+</Story>

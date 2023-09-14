@@ -1,14 +1,24 @@
 <script lang="ts">
+  import { onHotkey } from '$lib/actions/hotkey/hotkey-hook.js'
+
   import type { ButtonProps } from './Button.types.js'
 
   export let variant: ButtonProps['variant'] = 'default'
   export let color: ButtonProps['color'] = 'default'
+  export let hotkey: ButtonProps['hotkey'] = ''
   export let fullWidth: ButtonProps['fullWidth'] = false
   export let disabled: ButtonProps['disabled'] = false
+
+  let buttonRef: HTMLButtonElement
+
+  onHotkey(hotkey, () => {
+    buttonRef.click()
+  })
 </script>
 
 <button
   {disabled}
+  bind:this={buttonRef}
   class="Button variant-{variant} color-{color} {$$restProps.class ?? ''}"
   class:full-width={fullWidth}
   on:click
