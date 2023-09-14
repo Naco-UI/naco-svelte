@@ -22,8 +22,7 @@
   <div style:width="300px">
     <Stack>
       <Button
-        color="accent"
-        variant="primary"
+        primary
         on:click={() => {
           opened = !opened
         }}
