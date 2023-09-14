@@ -12,6 +12,12 @@ export const parameters: Parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      order: ['Documentation', 'Documentation/Development', 'Components', 'Actions'],
+      includeName: true,
+    },
+  },
   docs: {
     theme,
   },
