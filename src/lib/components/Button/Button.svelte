@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onHotkey } from '$lib/actions/hotkey/hotkey-hook.js'
+  import { onHotkey } from '$lib/actions/hotkey/index.js'
 
   import type { ButtonProps } from './Button.types.js'
 
