@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/Naco-UI/svelte-naco/compare/v0.0.7...v0.1.0) (2023-09-14)
+
+### ⚠ BREAKING CHANGES
+
+* **Stack:** Use more controllable props
+
+### Features
+
+* Add `Window` with dummy story ([01c9d26](https://github.com/Naco-UI/svelte-naco/commit/01c9d2621bc86c79720de4513270f85b7262f48b))
+* Add dummy layout ([f3e74d9](https://github.com/Naco-UI/svelte-naco/commit/f3e74d91f83f3e711dbb5c17836fd4649c24bfa5))
+* **Button:** Add `alert` Button variant ([b92a9cf](https://github.com/Naco-UI/svelte-naco/commit/b92a9cf6b32e5ea3d1b640636339e8e123d5fd47))
+* **Button:** Add `macSize` property ([8b5ee10](https://github.com/Naco-UI/svelte-naco/commit/8b5ee10ce9faf2278e48fe2d12127d53ea0000fe))
+* **Button:** Move `primary` to property ([33db582](https://github.com/Naco-UI/svelte-naco/commit/33db582dc9ed5f035c2e200086bd2318340a0e47))
+* Introduce `scrollLock` action ([430e3af](https://github.com/Naco-UI/svelte-naco/commit/430e3afd9bc0a943eeb37fbae8f1ce1b26d2a516))
+* Introduce Modal component ([db6e6ab](https://github.com/Naco-UI/svelte-naco/commit/db6e6abfc40f946d3f03962003b2fdb524e9e752))
+* **SettingsGroup:** Tune colors ([739eedc](https://github.com/Naco-UI/svelte-naco/commit/739eedc0f2970ae4e15e9722f27b5db12e128566))
+* **Stack:** Add `maxWidth` property ([0f51168](https://github.com/Naco-UI/svelte-naco/commit/0f51168f1b03c5458935b5715f679b0d25eb0251))
+* **Stack:** Use more controllable props ([058a84d](https://github.com/Naco-UI/svelte-naco/commit/058a84dfbeb39eef98adb9aa1bf35a5bc599a3e9))
+
 ## [0.0.7](https://github.com/Naco-UI/svelte-naco/compare/v0.0.6...v0.0.7) (2023-09-14)
 
 ### Features
