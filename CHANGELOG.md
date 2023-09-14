@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/Naco-UI/svelte-naco/compare/v0.0.6...v0.0.7) (2023-09-14)
+
+
+### Features
+
+* **Button:** Tune macOS button styles ([42ab16b](https://github.com/Naco-UI/svelte-naco/commit/42ab16b12dba4a73c8b6c57ba0ede71b1530d12a))
+* **Segment:** Improve styles to better match macOS ([b406888](https://github.com/Naco-UI/svelte-naco/commit/b40688823973b16850a7c3bfcb91ca321df17929))
+* **ThemeProvider:** Tune macOS colors and fonts ([7640163](https://github.com/Naco-UI/svelte-naco/commit/7640163139311f9bed453795da996145dbfc3068))
+
 ### [0.0.6](https://github.com/Naco-UI/svelte-naco/compare/v0.0.5...v0.0.6) (2023-09-14)
 
 
