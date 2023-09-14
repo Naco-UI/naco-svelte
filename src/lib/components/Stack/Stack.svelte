@@ -5,12 +5,14 @@
   export let direction: StackProps['direction'] = 'vertical'
   export let justify: StackProps['justify'] = 'normal'
   export let gap: StackProps['gap'] = 'm'
+  export let maxWidth: StackProps['maxWidth'] = 0
 </script>
 
 <div
   class="stack align-{align} direction-{direction}"
   style:justify-content={justify}
   style:align-items={align}
+  style:max-width={maxWidth > 0 ? `${maxWidth}px` : ''}
   style:--stack-gap="var(--space-{gap})"
 >
   <slot />
@@ -22,6 +24,8 @@
     flex-direction: row;
     gap: var(--stack-gap);
     justify-content: flex-start;
+
+    width: 100%;
 
     &.direction-vertical {
       flex-direction: column;

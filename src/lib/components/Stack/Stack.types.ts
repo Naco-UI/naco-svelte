@@ -5,4 +5,5 @@ export interface StackProps {
   justify: 'space-between' | 'space-around' | StackAlign
   gap: 's' | 'm' | 'l'
   direction: 'vertical' | 'horizontal'
+  maxWidth: number
 }
