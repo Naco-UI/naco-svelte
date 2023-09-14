@@ -1,4 +1,4 @@
-type ButtonVariant = 'default'
+type ButtonVariant = 'default' | 'alert'
 
 type ButtonColor = 'default' | 'accent' | 'warning' | 'error' | 'success'
 
@@ -9,5 +9,4 @@ export interface ButtonProps {
   fullWidth?: boolean
   disabled?: boolean
   hotkey: string
-  sizeMac: 's' | 'm'
 }

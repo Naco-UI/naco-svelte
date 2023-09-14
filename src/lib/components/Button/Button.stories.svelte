@@ -46,16 +46,30 @@
   </Stack>
 </Story>
 
+<Story name="Variant">
+  <Stack gap="m">
+    {#each buttonVariants as variant}
+      <Stack direction="horizontal" gap="s">
+        <Button {variant}>{variant}</Button>
+        <Button {variant} primary>{variant} primary</Button>
+      </Stack>
+    {/each}
+  </Stack>
+</Story>
+
 <Story name="Color">
-  <Stack gap="l">
+  <Stack direction="horizontal" gap="l">
     {#each buttonVariants as variant}
       <Stack gap="s">
         <Typography variant="heading-s">
           {variant}
         </Typography>
-        <Stack direction="horizontal" gap="s">
+        <Stack gap="s">
           {#each buttonColors as color}
-            <Button {color} {variant}>{color}</Button>
+            <Stack direction="horizontal">
+              <Button {color} {variant}>{color}</Button>
+              <Button {color} {variant} primary>{color}</Button>
+            </Stack>
           {/each}
         </Stack>
       </Stack>
@@ -70,15 +84,8 @@
   </Stack>
 </Story>
 
-<Story name="Size">
-  <Stack direction="horizontal" gap="m">
-    <Button sizeMac="m" primary>Size M</Button>
-    <Button sizeMac="s" primary>Size S</Button>
-  </Stack>
-</Story>
-
 <Story name="Hotkey">
-  <Stack direction="horizontal" gap="s">
+  <Stack direction="horizontal" align="center" gap="s">
     <Button
       hotkey="alt+shift+KeyF"
       on:click={() => alert('Hello, %USERNAME')}

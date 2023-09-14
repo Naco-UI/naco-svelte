@@ -9,7 +9,6 @@
   export let hotkey: ButtonProps['hotkey'] = ''
   export let fullWidth: ButtonProps['fullWidth'] = false
   export let disabled: ButtonProps['disabled'] = false
-  export let sizeMac: ButtonProps['sizeMac'] = 's'
 
   let buttonRef: HTMLButtonElement
 
@@ -21,8 +20,7 @@
 <button
   {disabled}
   bind:this={buttonRef}
-  class="Button variant-{variant} color-{color} size-{sizeMac} {$$restProps.class ??
-    ''}"
+  class="Button variant-{variant} color-{color} {$$restProps.class ?? ''}"
   class:full-width={fullWidth}
   class:primary
   on:click
@@ -131,6 +129,14 @@
         transition: opacity var(--transition-default);
       }
 
+      &.variant-alert {
+        --button-padding: 5px 15px;
+        --button-color-background: var(--color-background-quinary);
+
+        border: none;
+        box-shadow: none;
+      }
+
       &:hover::after {
         opacity: 0.08;
       }
@@ -147,8 +153,11 @@
 
       box-shadow: var(--box-shadow-m);
 
-      &.size-m {
+      &.variant-alert {
         --button-padding: 6px 20px;
+        --button-color-background: var(--color-background-quinary);
+
+        box-shadow: none;
       }
 
       &:active::after {

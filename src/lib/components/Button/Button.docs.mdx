@@ -26,10 +26,21 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 ## Primary
 
-The button can be primary or secondary (default). To make the button primary, add the `primary` property.
+Button can be primary or secondary (default). To make the button primary, add the `primary` property.
 
 <Canvas>
   <Story of={Stories.Primary} />
+</Canvas>
+
+## Variant
+
+Button is available in two versions:
+
+- `alert` - for simple modal windows
+- `default` - for everything else.
+
+<Canvas>
+  <Story of={Stories.Variant} />
 </Canvas>
 
 ## Color
@@ -46,14 +57,6 @@ The `disabled` property locks the button - it is no longer possible to press it.
 
 <Canvas>
   <Story of={Stories.Disabled} />
-</Canvas>
-
-## Size (macOS)
-
-The macOS System Settings uses a small version of Button, while GTK uses the standard version. That's why a small version of the Button is used for macOS. To make it large on macOS, set the `sizeMac="m"` parameter. This has no effect on the display for Linux.
-
-<Canvas>
-  <Story of={Stories.Size} />
 </Canvas>
 
 ## Hotkey
