@@ -11,17 +11,13 @@ import { Intro, Props } from '../../../../.storybook/components'
   imports={['hotkey', 'onHotkey']}
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
-
 ## Action
 
 Action allows you to attach a hotkey to any element that handles an `on:click` event.
 
-```svelte
-<button use:hotkey={'shift+f'} on:click={() => alert('Hello')}> Click me </button>
-```
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
 
 ## Button
 
