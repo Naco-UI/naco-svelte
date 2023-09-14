@@ -1,4 +1,5 @@
 type TypographyVariants =
+  | 'text-s'
   | 'text-m'
   | 'text-l'
   | 'heading-s'
