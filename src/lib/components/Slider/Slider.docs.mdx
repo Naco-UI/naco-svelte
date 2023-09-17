@@ -1,0 +1,59 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './Slider.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Slider"
+  description="Component for selecting a numeric value within a specified range."
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Marks
+
+The slider can display additional value marks. When an array is received in the `marks` property, the Slider variant is automatically switched.
+
+Marks is an array of objects with:
+
+- `progress` – Mark position. A number between 0 and 1;
+- `title` — Mark title. String, optional.
+
+<Canvas>
+  <Story of={Stories.Marks} />
+</Canvas>
+
+## Mark Helpers
+
+To fill marks with values at equal intervals, use the `fillMarks` function. It takes the number of marks as its first argument. The second (optional) argument is the mapping of the mark index to the label.
+
+If the index in the mapping is missing in the generated array, the title will be ignored.
+
+```ts
+fillMarks(5, {
+  1: 'Off', // First mark
+  2: 'Dark', // Second mark
+  5: 'Light' // Last mark
+  6: 'Too light' // Will be ignored
+})
+```
+
+<Canvas>
+  <Story of={Stories.MarkHelpers} />
+</Canvas>
+
+## Disabled
+
+Use the `disabled` property to disable interaction with the component.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
