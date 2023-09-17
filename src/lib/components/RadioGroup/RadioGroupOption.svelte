@@ -23,7 +23,7 @@
 <label class="radio-group-option" class:disabled>
   <input {disabled} {checked} on:change={handleChange} type="radio" {name} {value} />
   <div class="radio-group-label">
-    <Typography variant="text-l">
+    <Typography variant="text-m">
       {title}
     </Typography>
   </div>
