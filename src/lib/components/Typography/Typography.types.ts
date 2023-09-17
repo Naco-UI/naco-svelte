@@ -1,4 +1,6 @@
 type TypographyVariants =
+  | 'caption-s'
+  | 'caption-m'
   | 'text-s'
   | 'text-m'
   | 'text-l'
