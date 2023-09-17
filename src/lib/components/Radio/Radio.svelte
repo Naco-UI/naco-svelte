@@ -1,36 +1,33 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
-  import Typography from '../Typography/Typography.svelte'
-  import type {
-    RadioGroupOptionChangeEvent,
-    RadioGroupOptionProps,
-  } from './RadioGroupOption.types.ts'
+  import { Typography } from '../Typography/index.js'
+  import type { RadioChangeEvent, RadioProps } from './Radio.types.ts'
 
   const dispatch = createEventDispatcher()
 
-  export let value: RadioGroupOptionProps['value']
-  export let name: RadioGroupOptionProps['name']
-  export let title: RadioGroupOptionProps['title'] = ''
-  export let disabled: RadioGroupOptionProps['disabled'] = false
-  export let checked: RadioGroupOptionProps['checked'] = false
+  export let value: RadioProps['value']
+  export let name: RadioProps['name']
+  export let label: RadioProps['label'] = ''
+  export let disabled: RadioProps['disabled'] = false
+  export let checked: RadioProps['checked'] = false
 
-  function handleChange(e: RadioGroupOptionChangeEvent): void {
+  function handleChange(e: RadioChangeEvent): void {
     dispatch('change', e.currentTarget.value)
   }
 </script>
 
-<label class="radio-group-option" class:disabled>
+<label class="radio" class:disabled>
   <input {disabled} {checked} on:change={handleChange} type="radio" {name} {value} />
-  <div class="radio-group-label">
+  <div class="radio-label">
     <Typography variant="text-m">
-      {title}
+      {label}
     </Typography>
   </div>
 </label>
 
 <style lang="scss">
-  .radio-group-option {
+  .radio {
     --radio-border-color: var(--color-border-main);
     --radio-inactive-background-color: var(--color-background-elevated);
 
@@ -92,12 +89,12 @@
     }
   }
 
-  .radio-group-label {
+  .radio-label {
     padding-left: var(--space-xs);
   }
 
   :global(.os-mac) {
-    .radio-group-option {
+    .radio {
       --radio-size: 14px;
       --radio-selected-center-size: 6px;
 
@@ -119,7 +116,7 @@
   }
 
   :global(.os-linux) {
-    .radio-group-option {
+    .radio {
       --radio-size: 16px;
       --radio-selected-center-size: 4px;
 

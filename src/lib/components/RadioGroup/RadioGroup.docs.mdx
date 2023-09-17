@@ -8,7 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 <Intro
   name="RadioGroup"
-  description="Component to choose from a small set of mutually exclusive options."
+  description="Component for arranging radio buttons into a group for easier use."
 />
 
 <Canvas>
@@ -19,10 +19,10 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 <Props />
 
-## When to use
+## Usage recommendations
 
-- When you want the user to select only one option;
-- When you need to switch tabs (macOS).
+- RadioGroup controls the checked state of the radio button group independently;
+- If necessary, use the disabled state for specific radio buttons in the group.
 
 ## Direction
 
@@ -42,7 +42,7 @@ To control the state of radio buttons (or to set default values), the `value` pr
 
 ## Disabled
 
-To lock individual items, set `disabled: true` in the options. To block the entire group, set the `disabled` property on it.
+To lock individual items, set `disabled: true` to the options. To block the entire group, set the `disabled` property on it.
 
 <Canvas>
   <Story of={Stories.Disabled} />

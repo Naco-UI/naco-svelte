@@ -1,0 +1,47 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './Radio.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Radio"
+  description="Component to choose from a small set of mutually exclusive options."
+/>
+
+Radio buttons are similar to checkboxes, but with one important difference - radio buttons are intended for selecting one value from the offered ones, while checkboxes allow selecting several values.
+
+Clicking on the name or on the radio button itself causes it to be selected. Clicking again does not deselect it.
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- One of the radio group values must be selected by default. Radio button does not suppose an empty state;
+- Radio button is only used in a group and cannot consist of 1 item;
+- If there are two options, you can arrange them in a row;
+- If there are more than two options, you must arrange them in a column;
+- If there are more than 5 or 6 options, use drop-down lists. They will save a lot of space in your interface.
+
+## Disabled
+
+The radio button can be locked via the `disabled` property.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
+
+## Group
+
+The [RadioGroup](/?path=/docs/components-radiogroup--docs) component is used to group radio buttons. The `options` property accepts the same parameters as Radio
+
+<Canvas>
+  <Story of={Stories.Group} />
+</Canvas>

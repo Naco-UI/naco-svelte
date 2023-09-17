@@ -1,7 +1,7 @@
+import type { RadioProps } from '../Radio/Radio.types.js'
 import type { StackProps } from '../Stack/index.js'
-import type { RadioGroupOptionProps } from './RadioGroupOption.types.js'
 
-export type RadioGroupOption = Omit<RadioGroupOptionProps, 'name'>
+export type RadioGroupOption = Omit<RadioProps, 'name'>
 
 export interface RadioGroupProps {
   name: string

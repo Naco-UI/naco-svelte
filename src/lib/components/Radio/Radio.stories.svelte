@@ -1,38 +1,44 @@
 <script context="module">
-  import RadioGroup from './RadioGroup.svelte'
+  import Radio from './Radio.svelte'
 
   export const meta = {
-    title: 'Components/RadioGroup',
-    component: RadioGroup,
+    title: 'Components/Radio',
+    component: Radio,
   }
 </script>
 
 <script lang="ts">
   import { Story } from '@storybook/addon-svelte-csf'
 
-  import { Stack } from '../Stack/index.js'
-  import { Typography } from '../Typography/index.js'
-  // import Stack from '../Stack/Stack.svelte.js'
-
-  const options = [
-    { value: 'first', label: 'First' },
-    { value: 'second', label: 'Second' },
-    { value: 'third', label: 'Third' },
-  ]
-  let value = 'third'
+  import { RadioGroup } from '../RadioGroup/index.js'
 </script>
 
 <Story
   name="Basic"
-  args={{
-    options,
-    name: 'basic',
-  }}
   let:args
+  args={{
+    label: 'Label',
+    checked: true,
+  }}
 >
-  <RadioGroup {...args} />
+  <Radio {...args} />
 </Story>
 
+<Story name="Disabled">
+  <Radio name="disabled" value="disabled" label="Disabled item" disabled checked />
+</Story>
+
+<Story name="Group">
+  <RadioGroup
+    name="disabled-item"
+    options={[
+      { value: 'first', label: 'First' },
+      { value: 'second', label: 'Second (disabled)', disabled: true },
+      { value: 'third', label: 'Third' },
+    ]}
+  />
+</Story>
+<!--
 <Story name="Direction">
   <Stack gap="l">
     <Stack>
@@ -55,9 +61,9 @@
       name="controlled-state"
       bind:value
       options={[
-        { value: 'first', label: 'First' },
-        { value: 'second', label: 'Second' },
-        { value: 'third', label: 'Third (selected by default)' },
+        { value: 'first', title: 'First' },
+        { value: 'second', title: 'Second' },
+        { value: 'third', title: 'Third (selected by default)' },
       ]}
     />
   </Stack>
@@ -70,9 +76,9 @@
       <RadioGroup
         name="disabled-item"
         options={[
-          { value: 'first', label: 'First' },
-          { value: 'second', label: 'Second (disabled)', disabled: true },
-          { value: 'third', label: 'Third' },
+          { value: 'first', title: 'First' },
+          { value: 'second', title: 'Second (disabled)', disabled: true },
+          { value: 'third', title: 'Third' },
         ]}
       />
     </Stack>
@@ -81,4 +87,4 @@
       <RadioGroup disabled name="disabled-group" {options} />
     </Stack>
   </Stack>
-</Story>
+</Story> -->

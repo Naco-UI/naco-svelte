@@ -1,11 +1,11 @@
-export interface RadioGroupOptionProps {
+export interface RadioProps {
   value: string
-  title?: string
+  label?: string
   disabled?: boolean
   checked?: boolean
   name: string
 }
 
-export type RadioGroupOptionChangeEvent = Event & {
+export type RadioChangeEvent = Event & {
   currentTarget: EventTarget & HTMLInputElement
 }
