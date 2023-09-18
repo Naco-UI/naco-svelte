@@ -28,8 +28,20 @@
 
 <style lang="scss">
   .radio {
-    --radio-border-color: var(--color-border-main);
-    --radio-inactive-background-color: var(--color-background-elevated);
+    --radio-border-color: var(
+      --radio-custom-border-color,
+      var(--color-border-secondary)
+    );
+    --radio-checked-border-color: var(--radio-custom-border-color, transparent);
+    --radio-background: var(
+      --radio-custom-background,
+      var(--color-background-elevated)
+    );
+    --radio-checked-background: var(
+      --radio-custom-background,
+      var(--color-content-accent)
+    );
+    --radio-size: var(--radio-custom-size, var(--radio-inner-size));
 
     position: relative;
     display: flex;
@@ -52,9 +64,9 @@
       margin: 0;
 
       appearance: none;
-      background-color: var(--radio-inactive-background-color);
+      background: var(--radio-background);
       border-radius: 50%;
-      outline: 1px solid var(--radio-border-color);
+      box-shadow: 0 0 0 1px var(--radio-border-color) inset;
 
       &::after,
       &::before {
@@ -78,12 +90,11 @@
       }
 
       &:checked {
-        --radio-border-color: transparent;
-
-        background-color: var(--color-content-accent);
+        --radio-border-color: var(--radio-checked-border-color);
+        --radio-background: var(--radio-checked-background);
 
         &::after {
-          background-color: white;
+          background: white;
         }
       }
     }
@@ -95,19 +106,15 @@
 
   :global(.os-mac) {
     .radio {
-      --radio-size: 14px;
+      --radio-inner-size: 14px;
       --radio-selected-center-size: 6px;
 
       input {
         &::before {
-          box-shadow: 1;
-        }
-
-        &:checked::before {
           background: linear-gradient(
             180deg,
-            rgb(255 255 255 / 20%) 0%,
-            rgb(86 86 86 / 7%) 100%
+            rgb(255 255 255 / 17%) 0%,
+            rgb(255 255 255 / 0%) 100%
           );
           box-shadow: none;
         }
@@ -117,12 +124,8 @@
 
   :global(.os-linux) {
     .radio {
-      --radio-size: 16px;
+      --radio-inner-size: 16px;
       --radio-selected-center-size: 4px;
-
-      input:checked {
-        --radio-border-color: var(--color-content-accent);
-      }
     }
   }
 </style>

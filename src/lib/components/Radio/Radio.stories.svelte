@@ -11,6 +11,7 @@
   import { Story } from '@storybook/addon-svelte-csf'
 
   import { RadioGroup } from '../RadioGroup/index.js'
+  import { Stack } from '../Stack/index.js'
 </script>
 
 <Story
@@ -38,53 +39,27 @@
     ]}
   />
 </Story>
-<!--
-<Story name="Direction">
-  <Stack gap="l">
-    <Stack>
-      <Typography variant="heading-s">Vertical</Typography>
-      <RadioGroup name="direction-vertical" direction="vertical" {options} />
-    </Stack>
-    <Stack>
-      <Typography variant="heading-s">Horizontal</Typography>
-      <RadioGroup name="direction-horizontal" direction="horizontal" {options} />
-    </Stack>
-  </Stack>
-</Story>
 
-<Story name="Value">
-  <Stack>
-    <Typography variant="heading-s">
-      Current value: {value}
-    </Typography>
-    <RadioGroup
-      name="controlled-state"
-      bind:value
-      options={[
-        { value: 'first', title: 'First' },
-        { value: 'second', title: 'Second' },
-        { value: 'third', title: 'Third (selected by default)' },
-      ]}
+<Story name="Customization">
+  <Stack --radio-custom-border-color="#888" --radio-custom-size="24px">
+    <Radio
+      --radio-custom-background="#FF453A"
+      name="custom"
+      value="red"
+      label="Red"
+      checked
+    />
+    <Radio
+      --radio-custom-background="#28CD41"
+      name="custom"
+      value="green"
+      label="Green"
+    />
+    <Radio
+      --radio-custom-background="#007AFF"
+      name="custom"
+      value="blue"
+      label="Blue"
     />
   </Stack>
 </Story>
-
-<Story name="Disabled">
-  <Stack gap="l">
-    <Stack>
-      <Typography variant="heading-s">Disabled item</Typography>
-      <RadioGroup
-        name="disabled-item"
-        options={[
-          { value: 'first', title: 'First' },
-          { value: 'second', title: 'Second (disabled)', disabled: true },
-          { value: 'third', title: 'Third' },
-        ]}
-      />
-    </Stack>
-    <Stack>
-      <Typography variant="heading-s">Disabled group</Typography>
-      <RadioGroup disabled name="disabled-group" {options} />
-    </Stack>
-  </Stack>
-</Story> -->
