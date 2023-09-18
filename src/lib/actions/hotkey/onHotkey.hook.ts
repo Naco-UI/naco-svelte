@@ -1,6 +1,6 @@
 import { onMount } from 'svelte'
 
-import { isHotkey } from './is-hotkey.js'
+import { isHotkey } from './isHotkey.js'
 import { parseTemplate } from './parse.js'
 
 export function onHotkey(

@@ -8,7 +8,7 @@ export interface Hotkey {
   meta: boolean
 }
 
-export interface PortalHooks {
+export interface HotkeyHooks {
   update: (template: string) => Promise<void>
   destroy: () => void
 }

@@ -1,8 +1,8 @@
-import { isHotkey } from './is-hotkey.js'
+import { isHotkey } from './isHotkey.js'
 import { parseTemplate } from './parse.js'
-import type { Hotkey, PortalHooks } from './types.js'
+import type { Hotkey, HotkeyHooks } from './types.js'
 
-export function hotkey(el: HTMLElement, template: string): PortalHooks {
+export function hotkey(el: HTMLElement, template: string): HotkeyHooks {
   let hotkey: Hotkey = parseTemplate(template)
 
   function handleKey(e: KeyboardEvent): void {
