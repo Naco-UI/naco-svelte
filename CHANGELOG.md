@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.1](https://github.com/Naco-UI/svelte-naco/compare/v0.1.0...v0.1.1) (2023-09-18)
+
+### Features
+
+* Introduce ColorSelector component ([1464489](https://github.com/Naco-UI/svelte-naco/commit/146448920e05926c028e2462f3f736c7c057d9ba))
+* Introduce Slider component ([8fd708f](https://github.com/Naco-UI/svelte-naco/commit/8fd708f424195e51a23bde6cc76bae425f7c45dd))
+* Move Radio to separate component ([2cbf5af](https://github.com/Naco-UI/svelte-naco/commit/2cbf5af314547dc17cd364f79de317490c142f1f))
+* **Radio:** Add color and size customization ([424cc86](https://github.com/Naco-UI/svelte-naco/commit/424cc865c9c4cc31de353380f013e836c5b39025))
+* **Stack:** Add missing xs spacing ([2b67058](https://github.com/Naco-UI/svelte-naco/commit/2b670583298e849da58e5b160ef535abc8e7f2ae))
+* **ThemeProvider:** Tune linux xs space ([4a8916c](https://github.com/Naco-UI/svelte-naco/commit/4a8916c328056ac3afa888495691a8bbd9891d41))
+* **Typography:** Add `caption-s` and `caption-m` variants ([dcbfc4c](https://github.com/Naco-UI/svelte-naco/commit/dcbfc4c984a17750849471ce016379d8f0683db4))
+
+
+### Bug Fixes
+
+* **RadioGroupOption:** Use smaller text size ([5e4f512](https://github.com/Naco-UI/svelte-naco/commit/5e4f512e128af16315abaf06fe1ddbab64552dff))
+
 ## [0.1.0](https://github.com/Naco-UI/svelte-naco/compare/v0.0.7...v0.1.0) (2023-09-14)
 
 ### ⚠ BREAKING CHANGES
