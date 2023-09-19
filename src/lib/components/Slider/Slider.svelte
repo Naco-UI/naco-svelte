@@ -184,7 +184,7 @@
     left: var(--mark-pos-left);
   }
 
-  :global(.os-mac) .slider {
+  @include mac('.slider') {
     --slider-knob-border: 0.5px solid rgb(0 0 0 / 2%);
     --slider-mark-color: var(--color-background-heavy);
     --slider-mark-top: 0;
@@ -192,7 +192,7 @@
     --slider-mark-height: 8px;
   }
 
-  :global(.os-linux) .slider {
+  @include linux('.slider') {
     --slider-mark-color: var(--color-content-tertiary);
     --slider-mark-top: 10px;
     --slider-mark-width: 1px;
@@ -218,22 +218,22 @@
     }
   }
 
-  :global(.os-linux.light) .slider {
+  @include linux-light('.slider') {
     --slider-knob-box-shadow: 0px 0px 0px 1px var(--color-border-heavy) inset,
       0px 0.5px 2px 0px rgb(0 0 0 / 10%);
     --slider-track-box-shadow: 0px 0px 0px 1px var(--color-border-main) inset;
   }
 
-  :global(.os-linux.dark) .slider {
+  @include linux-dark('.slider') {
     --slider-knob-background-color: var(--color-border-heavy);
   }
 
-  :global(.os-mac.dark) .slider {
+  @include mac-dark('.slider') {
     --slider-track-background-color: var(--color-background-tertiary);
     --slider-knob-background-color: var(--color-content-heavy);
   }
 
-  :global(.os-mac.light) .slider {
+  @include mac-light('.slider') {
     --slider-track-box-shadow: 0px 0px 2px 0px rgb(0 0 0 / 4%) inset,
       0px 0px 2px 0px rgb(0 0 0 / 3%) inset, 0px 1px 2px 0px rgb(0 0 0 / 2%) inset;
     --slider-knob-box-shadow: 0px 1px 0.75px 0px rgb(0 0 0 / 10%),

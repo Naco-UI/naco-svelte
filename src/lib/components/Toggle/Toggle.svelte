@@ -90,7 +90,7 @@
     }
   }
 
-  :global(.naco.os-mac) label {
+  @include mac('label') {
     --switch-width: 40px;
     --switch-height: 22px;
 
@@ -122,11 +122,13 @@
     }
   }
 
-  :global(.naco.os-mac.dark) label.mac-size-s::after {
-    opacity: 0.85;
+  @include mac-dark('label') {
+    &.mac-size-s::after {
+      opacity: 0.85;
+    }
   }
 
-  :global(.naco.os-linux) label {
+  @include linux('label') {
     --switch-width: 38px;
     --switch-height: 22px;
   }

@@ -115,62 +115,60 @@
     }
   }
 
-  :global(.naco.dark) button.primary.color-default {
-    color: var(--color-background-primary);
-  }
-
-  :global(.os-linux) {
-    button {
-      --button-padding: 6px 20px;
-
-      border: 1px solid var(--color-border-main);
-
-      &::after {
-        transition: opacity var(--transition-default);
-      }
-
-      &.variant-alert {
-        --button-padding: 5px 15px;
-        --button-color-background: var(--color-background-quinary);
-
-        border: none;
-        box-shadow: none;
-      }
-
-      &:hover::after {
-        opacity: 0.08;
-      }
-
-      &:active::after {
-        opacity: 0.2;
-      }
+  @include dark('button') {
+    &.primary.color-default {
+      color: var(--color-background-primary);
     }
   }
 
-  :global(.os-mac) {
-    button {
-      --button-padding: 3px 10px;
+  @include linux('button') {
+    --button-padding: 6px 20px;
 
-      box-shadow: var(--box-shadow-m);
+    border: 1px solid var(--color-border-main);
 
-      &.variant-alert {
-        --button-padding: 6px 20px;
-        --button-color-background: var(--color-background-quinary);
+    &::after {
+      transition: opacity var(--transition-default);
+    }
 
-        box-shadow: none;
-      }
+    &.variant-alert {
+      --button-padding: 5px 15px;
+      --button-color-background: var(--color-background-quinary);
 
-      &:active::after {
-        opacity: 0.05;
-      }
+      border: none;
+      box-shadow: none;
+    }
 
-      &.primary::before {
-        background: linear-gradient(
-          180deg,
-          rgb(255 255 255 / 17%) 0%,
-          rgb(255 255 255 / 0%) 100%
-        );
-      }
+    &:hover::after {
+      opacity: 0.08;
+    }
+
+    &:active::after {
+      opacity: 0.2;
+    }
+  }
+
+  @include mac('button') {
+    --button-padding: 3px 10px;
+
+    box-shadow: var(--box-shadow-m);
+
+    &.variant-alert {
+      --button-padding: 6px 20px;
+      --button-color-background: var(--color-background-quinary);
+
+      box-shadow: none;
+    }
+
+    &:active::after {
+      opacity: 0.05;
+    }
+
+    &.primary::before {
+      background: linear-gradient(
+        180deg,
+        rgb(255 255 255 / 17%) 0%,
+        rgb(255 255 255 / 0%) 100%
+      );
     }
   }
 </style>
