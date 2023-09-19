@@ -1,4 +1,4 @@
-import type { PortalTarget } from './portal-action.types.js'
+import type { PortalTarget } from '../../actions/portal/index.js'
 
 export interface PortalProps {
   target: PortalTarget

@@ -16,4 +16,5 @@ export * from './components/Toggle/index.js'
 export * from './components/Typography/index.js'
 // Actions
 export * from './actions/hotkey/index.js'
+export * from './actions/portal/index.js'
 export * from './actions/scrollLock/index.js'

@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { portal } from '../../actions/portal/index.js'
   import { ThemeProvider, useTheme } from '../ThemeProvider/index.js'
-  import { portal } from './portal-action.js'
 
   export let target = 'body'
   export let unwrapTheme = false

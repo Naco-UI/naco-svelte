@@ -1,10 +1,11 @@
 import { tick } from 'svelte'
 
-import type { PortalHooks, PortalTarget } from './portal-action.types.js'
+import type { PortalHooks, PortalTarget } from './portal.types.js'
 
-function formatError(target: any): string {
+function formatTypeError(target: any): string {
   const targetType = target === null ? 'null' : typeof target
-  return `Unknown portal target type: ${targetType}. Allowed types: string (CSS selector) or HTMLElement.`
+  return `Unknown portal target type: ${targetType}.
+Allowed types: string (CSS selector) or HTMLElement.`
 }
 
 /**
@@ -27,7 +28,7 @@ export function portal(el: HTMLElement, target: PortalTarget = 'body'): PortalHo
     } else if (target instanceof HTMLElement) {
       targetEl = target
     } else {
-      throw new TypeError(formatError(target))
+      throw new TypeError(formatTypeError(target))
     }
     targetEl.appendChild(el)
     el.hidden = false

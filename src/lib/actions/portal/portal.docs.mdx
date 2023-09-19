@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './portal.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Portal Action"
+  description="Action that allows you to render elements outside the DOM hierarchy."
+  imports={['portal']}
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Parameters
+
+Portal accepts a single argument, which can be an HTMLElement or a string (CSS selector).
+
+## Component
+
+In most cases, you should not use `use:portal` directly. It is better to use the [Portal](/?path=/docs/components-portal--docs) component. It will allow you to save the theme in the created portal.
