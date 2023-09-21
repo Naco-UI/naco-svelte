@@ -13,3 +13,127 @@ import * as Stories from './ThemeProvider.stories.svelte'
 <Canvas>
   <Story of={Stories.Basic} />
 </Canvas>
+
+## Theme mixins
+
+Naco defines mixins that includes prerequisite classes for specific operating system or theme.
+
+They help to avoid using non-semantic classes and add the `:global(...)` modifier.
+
+The mixin `mac($selector = null)` applies styles specific to macOS.
+
+```scss
+@include mac { ... }
+@include mac('button') { ... }
+
+// CSS Output
+:global(.naco.os-mac) { ... }
+:global(.naco.os-mac) button { ... }
+```
+
+The mixin `linux($selector = null)` applies styles specific to Linux.
+
+```scss
+@include linux { ... }
+@include linux('button') { ... }
+
+// CSS Output
+:global(.naco.os-linux) { ... }
+:global(.naco.os-linux) button { ... }
+```
+
+The mixin `light($selector = null)` applies styles specific in a light theme.
+
+```scss
+@include light { ... }
+@include light('button') { ... }
+
+// CSS Output
+:global(.naco.light) { ... }
+:global(.naco.light) button { ... }
+```
+
+The mixin `dark($selector = null)` applies styles specific in a dark theme.
+
+```scss
+@include dark { ... }
+@include dark('button') { ... }
+
+// CSS Output
+:global(.naco.dark) { ... }
+:global(.naco.dark) button { ... }
+```
+
+You can also combine operating system and theme mixins to have more precise control over styles.
+Naco provides `mac-light`, `mac-dark`, `linux-light` and `linux-dark` mixins for this.
+
+```scss
+@include mac-light { ... }
+@include mac-light('button') { ... }
+
+// CSS Output
+:global(.naco.os-mac.dark) { ... }
+:global(.naco.os-mac.dark) button { ... }
+```
+
+### Attributes
+
+`$selector` _(optional)_
+
+This parameter allows you to set a CSS selector for the component or element to
+which styles will be applied. It is useful for avoiding deep nesting of styles
+and simplifying the structure of SCSS.
+
+```scss
+// Example usage mixin with a selector
+@include dark('button') { ... }
+
+// Example usage mixin without a selector
+@include dark {
+  button { ... }
+}
+```
+
+### Example
+
+Here's an example of using mixins to attach a content that will be
+based on the operating system and theme.
+
+```scss
+// common styles
+.theme-mixins-example {
+  color: var(--color-content-primary);
+}
+
+// macOS styles with a selector
+@include mac('.theme-mixins-example') {
+  &::before {
+    content: 'macOS';
+  }
+}
+
+// linux styles without selector
+@include linux {
+  .theme-mixins-example::before {
+    content: 'Linux';
+  }
+}
+
+// dark theme styles without a selector
+@include dark {
+  .theme-mixins-example {
+    &::after {
+      content: 'Dark';
+    }
+  }
+}
+
+// dark theme styles with a selector and a pseudo-element
+@include light('.theme-mixins-example::after') {
+  content: 'Light';
+}
+```
+
+<Canvas>
+  <Story of={Stories.Mixins} />
+</Canvas>
