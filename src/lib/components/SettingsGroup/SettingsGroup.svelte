@@ -34,14 +34,14 @@
     margin-top: var(--space-l);
   }
 
-  :global(.naco.os-linux) .settings-layout {
+  @include linux('.settings-layout') {
     --settings-row-padding-v: 12px;
     --settings-row-padding-h: 14px;
     --settings-border-radius: 0;
     --settings-row-min-height: 34px;
   }
 
-  :global(.naco.os-mac) .settings-layout {
+  @include mac('.settings-layout') {
     --settings-row-padding-v: 9px;
     --settings-row-padding-h: 9px;
     --settings-border-radius: 5px;

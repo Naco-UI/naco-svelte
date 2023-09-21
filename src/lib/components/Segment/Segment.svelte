@@ -42,11 +42,11 @@
     border-radius: var(--border-radius-l);
   }
 
-  :global(.naco.os-mac) .segment {
+  @include mac('.segment') {
     background-color: var(--color-background-tertiary);
   }
 
-  :global(.naco.os-linux) .segment {
+  @include linux('.segment') {
     background-color: var(--color-background-secondary);
   }
 </style>

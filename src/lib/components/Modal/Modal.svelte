@@ -71,7 +71,7 @@
     border-radius: 10px;
   }
 
-  :global(.os-mac) .modal {
+  @include mac('.modal') {
     --modal-padding: 16px;
 
     box-shadow: 0 0 3px 0 var(--color-border-dimmed) inset,
@@ -84,13 +84,15 @@
     }
   }
 
-  :global(.os-linux) .modal {
+  @include linux('.modal') {
     --modal-padding: 32px;
 
     border: 1px solid var(--color-border-main);
   }
 
-  :global(.naco.light) .modal:not(.translucent) {
-    --modal-background-color: var(--color-background-elevated);
+  @include light('.modal') {
+    &:not(.translucent) {
+      --modal-background-color: var(--color-background-elevated);
+    }
   }
 </style>

@@ -1,0 +1,83 @@
+@use 'sass:list';
+@use 'theme.types.scss' as *;
+
+@function _os-class($os) {
+  @if ($os == null) {
+    @return '';
+  }
+
+  @if not list.index($os-variant, $os) {
+    @error 'Invalid os property: #{$os}. Choose one of: #{$os-variant}';
+  }
+
+  @return '.os-#{$os}';
+}
+
+@function _theme-class($theme) {
+  @if ($theme == null) {
+    @return '';
+  }
+
+  @if not list.index($theme-variant, $theme) {
+    @error 'Invalid theme property: #{$theme}. Choose one of: #{$theme-variant}';
+  }
+
+  @return '.#{$theme}';
+}
+
+@mixin _theme($os: null, $theme: null, $selector: null) {
+  $os-class: _os-class($os);
+  $theme-class: _theme-class($theme);
+
+  :global(.naco#{$os-class}#{$theme-class}) #{$selector} {
+    @content;
+  }
+}
+
+@mixin light($selector: null) {
+  @include _theme($theme: 'light', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin dark($selector: null) {
+  @include _theme($theme: 'dark', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin mac($selector: null) {
+  @include _theme($os: 'mac', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin mac-light($selector: null) {
+  @include _theme($os: 'mac', $theme: 'light', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin mac-dark($selector: null) {
+  @include _theme($os: 'mac', $theme: 'dark', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin linux($selector: null) {
+  @include _theme($os: 'linux', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin linux-light($selector: null) {
+  @include _theme($os: 'linux', $theme: 'light', $selector: $selector) {
+    @content;
+  }
+}
+
+@mixin linux-dark($selector: null) {
+  @include _theme($os: 'linux', $theme: 'dark', $selector: $selector) {
+    @content;
+  }
+}

@@ -104,28 +104,24 @@
     padding-left: var(--space-xs);
   }
 
-  :global(.os-mac) {
-    .radio {
-      --radio-inner-size: 14px;
-      --radio-selected-center-size: 6px;
+  @include mac('.radio') {
+    --radio-inner-size: 14px;
+    --radio-selected-center-size: 6px;
 
-      input {
-        &::before {
-          background: linear-gradient(
-            180deg,
-            rgb(255 255 255 / 17%) 0%,
-            rgb(255 255 255 / 0%) 100%
-          );
-          box-shadow: none;
-        }
+    input {
+      &::before {
+        background: linear-gradient(
+          180deg,
+          rgb(255 255 255 / 17%) 0%,
+          rgb(255 255 255 / 0%) 100%
+        );
+        box-shadow: none;
       }
     }
   }
 
-  :global(.os-linux) {
-    .radio {
-      --radio-inner-size: 16px;
-      --radio-selected-center-size: 4px;
-    }
+  @include linux('.radio') {
+    --radio-inner-size: 16px;
+    --radio-selected-center-size: 4px;
   }
 </style>

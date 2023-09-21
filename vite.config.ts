@@ -6,4 +6,13 @@ export default defineConfig({
   test: {
     include: ['src/**/*.{test,spec}.{js,ts}'],
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use '$lib/components/ThemeProvider/themes/mixins/theme.mixins' as *;
+        `,
+      },
+    },
+  },
 })

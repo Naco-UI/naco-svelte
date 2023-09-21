@@ -64,7 +64,7 @@
     gap: 8px;
   }
 
-  :global(.naco.os-linux) .window {
+  @include linux('.window') {
     --window-border-radius: 12px;
     --window-title-bar-height: 34px;
     --window-control-size: 15px;

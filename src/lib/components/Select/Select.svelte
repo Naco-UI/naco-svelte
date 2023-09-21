@@ -97,7 +97,7 @@
     padding: var(--select-padding);
   }
 
-  :global(.os-mac) .select {
+  @include mac('.select') {
     --select-padding: 2px 2px 2px 13px;
     --select-stepper-background-color: var(--color-content-accent);
     --select-stepper-foreground-color: var(--color-content-inverted);
@@ -119,7 +119,7 @@
     }
   }
 
-  :global(.os-linux) .select {
+  @include linux('.select') {
     --select-padding: 6px 6px 6px 20px;
     --select-stepper-background-color: transparent;
     --select-stepper-foreground-color: var(--color-content-primary);
