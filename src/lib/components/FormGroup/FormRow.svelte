@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+
   import Stack from '../Stack/Stack.svelte'
   import Typography from '../Typography/Typography.svelte'
   import type { FormRowProps } from './FormRow.types.js'
@@ -8,6 +10,12 @@
   export let align: FormRowProps['align'] = 'center'
 
   $: controlLayout = title !== undefined
+
+  onMount(() => {
+    if (!title && subtitle) {
+      throw new Error("Subtitled can't be used without title")
+    }
+  })
 </script>
 
 <div class="form-row" style:align-items={align} class:control-layout={controlLayout}>
