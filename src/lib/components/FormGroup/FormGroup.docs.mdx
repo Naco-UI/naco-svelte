@@ -1,0 +1,66 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './FormGroup.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="FormGroup"
+  description="A FormGroup allows you to build native-like forms."
+  imports={['FormGroup', 'FormRow']}
+/>
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Use simple actions and clear titles;
+- One heading can refer to 2-3 groups;
+- Group related items together. This will make it easier for the user to understand.
+
+## Raw layout
+
+If you don't set the `title` property, the row will be displayed in "raw mode". You will be able to set its layout yourself.
+
+<Canvas>
+  <Story of={Stories.Raw} />
+</Canvas>
+
+## Multiple groups
+
+When using more than one group, wrap them in `<Stack gap="m">`. A margin will be set correctly, given the presence of a titles.
+
+<Canvas>
+  <Story of={Stories.MultipleGroups} />
+</Canvas>
+
+## Multiple actions
+
+One row can have multiple actions. To do this, simply pass multiple components to FormRow. But do not use too many, limit yourself to two.
+
+<Canvas>
+  <Story of={Stories.MultipleActions} />
+</Canvas>
+
+## Subtitle
+
+By passing string into the `subtitle` property you can set the content to be displayed under the header.
+
+<Canvas>
+  <Story of={Stories.Subtitle} />
+</Canvas>
+
+## Align
+
+If the subtitle is too long, it can ruin the look of the row by having the control creep off to an unexpected place. To fix this, set the `align="top"` property.
+
+<Canvas>
+  <Story of={Stories.Align} />
+</Canvas>
