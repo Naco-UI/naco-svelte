@@ -1,16 +1,5 @@
-interface FormControlRowProps {
-  title: string
+export interface FormRowProps {
+  title?: string
   subtitle?: string
+  align?: 'top' | 'center' | 'bottom'
 }
-
-interface RawFormRowProps {
-  title: undefined
-  subtitle: never
-}
-
-interface CommonFormRowProps {
-  align: 'top' | 'center' | 'bottom'
-}
-
-export type FormRowProps = (FormControlRowProps | RawFormRowProps) &
-CommonFormRowProps
