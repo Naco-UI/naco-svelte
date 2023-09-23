@@ -8,5 +8,5 @@ export interface ButtonProps {
   color?: ButtonColor
   fullWidth?: boolean
   disabled?: boolean
-  hotkey: string
+  hotkey?: string
 }

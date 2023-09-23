@@ -4,8 +4,8 @@
   import { createThemeContext } from './context.js'
   import type { ThemeProviderProps } from './ThemeProvider.types.js'
 
-  export let os: ThemeProviderProps['os'] = 'mac'
-  export let scheme: ThemeProviderProps['scheme'] = 'light'
+  export let os: ThemeProviderProps['os']
+  export let scheme: ThemeProviderProps['scheme']
 
   const context = createThemeContext({ os, scheme })
 

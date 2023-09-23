@@ -6,7 +6,7 @@
   import type { BackdropProps } from './Backdrop.types.js'
 
   export let open: BackdropProps['open']
-  export let as: BackdropProps['as'] = 'div'
+  export let as: BackdropProps['as'] = undefined
   export let transparent: BackdropProps['transparent'] = false
 
   const dispatch = createEventDispatcher()
@@ -19,7 +19,7 @@
 
 {#if open}
   <svelte:element
-    this={as}
+    this={as ?? 'div'}
     class="backdrop"
     class:transparent
     aria-hidden="true"

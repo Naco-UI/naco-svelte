@@ -2,7 +2,7 @@ import type { ScrollLockTarget } from '$lib/actions/scrollLock/scrollLock.types.
 
 export interface ModalProps {
   open: boolean
-  width: number | string | 'full'
+  width?: number | string | 'full'
   translucent?: boolean
   scrollTarget?: ScrollLockTarget
 }

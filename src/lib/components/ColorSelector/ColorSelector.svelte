@@ -9,12 +9,14 @@
   import { radioSize, randomGradient } from './ColorSelector.constants.js'
   import type { ColorSelectorProps } from './ColorSelector.types.js'
 
-  export let name: ColorSelectorProps['name'] = getUniqueId('color-selector-')
-  export let value: ColorSelectorProps['value'] = ''
+  export let name: ColorSelectorProps['name'] = undefined
+  export let value: ColorSelectorProps['value'] = undefined
   export let options: ColorSelectorProps['options']
   export let primaryProp: ColorSelectorProps['primaryProp'] = 'value'
   export let disabled: ColorSelectorProps['disabled'] = false
-  export let index: ColorSelectorProps['index'] = 0
+  export let index: ColorSelectorProps['index'] = undefined
+
+  const finalName: string = name ?? getUniqueId('color-selector-')
 
   const dispatch = createEventDispatcher()
 
@@ -30,8 +32,8 @@
   }
 
   onMount(() => {
-    if (value.length === 0) {
-      value = options[index]
+    if (!value) {
+      value = options[index ?? 0]
     }
   })
 </script>
@@ -48,7 +50,7 @@
       on:change={(e) => handleChange(e, i)}
       checked={primaryProp === 'value' ? option === value : index === i}
       value={option}
-      {name}
+      name={finalName}
       {disabled}
     />
   {/each}

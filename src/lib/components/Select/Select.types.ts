@@ -5,7 +5,7 @@ export interface SelectOption {
 }
 
 export interface SelectProps {
-  value: string
+  value?: string
   options: SelectOption[]
   disabled?: boolean
   transparent?: boolean

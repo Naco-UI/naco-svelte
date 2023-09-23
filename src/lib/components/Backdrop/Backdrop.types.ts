@@ -1,5 +1,5 @@
 export interface BackdropProps {
   open: boolean
-  as: keyof HTMLElementTagNameMap
+  as?: keyof HTMLElementTagNameMap
   transparent?: boolean
 }
