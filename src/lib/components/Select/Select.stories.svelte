@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Meta, Story } from '@storybook/addon-svelte-csf'
 
-  import { SettingsGroup, SettingsRow } from '../SettingsGroup/index.js'
+  import { FormGroup, FormRow } from '../FormGroup/index.js'
   import Select from './Select.svelte'
   import type { SelectOption } from './Select.types.js'
 
@@ -21,11 +21,11 @@
 </Story>
 
 <Story name="Borderless">
-  <SettingsGroup>
-    <SettingsRow title="Number">
+  <FormGroup>
+    <FormRow title="Number">
       <Select variant="borderless" {options} />
-    </SettingsRow>
-  </SettingsGroup>
+    </FormRow>
+  </FormGroup>
 </Story>
 
 <Story name="Disabled">

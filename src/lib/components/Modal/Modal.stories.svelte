@@ -2,7 +2,7 @@
   import { Meta, Story } from '@storybook/addon-svelte-csf'
 
   import { Button } from '../Button/index.js'
-  import { SettingsGroup, SettingsRow } from '../SettingsGroup/index.js'
+  import { FormGroup, FormRow } from '../FormGroup/index.js'
   import { Stack } from '../Stack/index.js'
   import { Toggle } from '../Toggle/index.js'
   import { Typography } from '../Typography/index.js'
@@ -84,19 +84,19 @@
   </Button>
   <Modal width={400} open={showModal}>
     <Stack>
-      <SettingsGroup>
-        <SettingsRow title="Recent application">
+      <FormGroup>
+        <FormRow title="Recent application">
           <Toggle />
-        </SettingsRow>
-        <SettingsRow title="Desktop items">
+        </FormRow>
+        <FormRow title="Desktop items">
           <Toggle />
-        </SettingsRow>
-      </SettingsGroup>
-      <SettingsGroup>
-        <SettingsRow title="Show windows from an application">
+        </FormRow>
+      </FormGroup>
+      <FormGroup>
+        <FormRow title="Show windows from an application">
           <Toggle />
-        </SettingsRow>
-      </SettingsGroup>
+        </FormRow>
+      </FormGroup>
     </Stack>
     <ModalActions>
       <Button
