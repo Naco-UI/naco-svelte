@@ -5,7 +5,7 @@
   import type { SelectProps } from './Select.types.js'
   import SelectStepper from './SelectStepper.svelte'
 
-  export let value: SelectProps['value'] = ''
+  export let value: SelectProps['value'] = undefined
   export let variant: SelectProps['variant'] = 'standard'
   export let options: SelectProps['options']
   export let disabled: SelectProps['disabled'] = false
@@ -18,7 +18,7 @@
   }
 
   onMount(() => {
-    if (value.length !== 0) {
+    if (!value) {
       return
     }
     value = options[0].value

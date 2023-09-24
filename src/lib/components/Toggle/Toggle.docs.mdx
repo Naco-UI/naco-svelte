@@ -24,12 +24,12 @@ import * as Stories from './Toggle.stories.svelte'
 - Use a toggle when the action does not require confirmation;
 - Do not place too many toggles in a row. No more than 2-3, then a divider is required.
 
-## Size
+## Form (macOS)
 
-The macOS System Settings uses a small version of toggle, while GTK uses the standard version. That's why a small version of the switch is used for macOS. To make it large on macOS, set the `sizeMac="m"` parameter. This has no effect on the display for Linux.
+The macOS forms use a special smaller version of the component. It is enabled automatically when the component is placed inside a [FormGroup](/?path=/docs/components-formgroup--docs).
 
 <Canvas>
-  <Story of={Stories.Size} />
+  <Story of={Stories.Form} />
 </Canvas>
 
 ## Disabled

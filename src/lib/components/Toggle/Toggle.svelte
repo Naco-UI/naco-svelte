@@ -1,11 +1,13 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
-  import type { ToggleProps } from './Toggle.types.js'
+  import { isForm } from '../FormGroup/index.js'
+  import type { ToggleProps, ToggleSizeMac } from './Toggle.types.js'
 
   export let checked: ToggleProps['checked'] = false
-  export let sizeMac: ToggleProps['sizeMac'] = 's'
   export let disabled: ToggleProps['disabled'] = false
+
+  const sizeMac: ToggleSizeMac = isForm() ? 's' : 'm'
 
   const dispatch = createEventDispatcher()
 

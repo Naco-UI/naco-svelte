@@ -6,13 +6,13 @@
   import type { SegmentChangeEvent } from './SegmentOption.types.js'
 
   export let options: SegmentProps['options']
-  export let value: SegmentProps['value'] = ''
+  export let value: SegmentProps['value'] = undefined
   export let disabled: SegmentProps['disabled'] = false
 
   const dispatch = createEventDispatcher()
 
   onMount(() => {
-    if (value.length !== 0) {
+    if (!value) {
       return
     }
     value = options[0].value

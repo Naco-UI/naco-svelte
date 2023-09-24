@@ -1,8 +1,16 @@
 <script lang="ts">
   import Typography from '../Typography/Typography.svelte'
+  import { createFormContext } from './context.js'
   import type { FormGroupProps } from './FormGroup.types.js'
 
   export let title: FormGroupProps['title'] = undefined
+  const context = createFormContext({ title })
+
+  const titleChanged = (): void => {
+    context.title.set(title)
+  }
+
+  $: title && titleChanged()
 </script>
 
 <div class="form-group">

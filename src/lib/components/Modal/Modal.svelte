@@ -10,7 +10,7 @@
 
   export let open: ModalProps['open'] = false
   export let translucent: ModalProps['translucent'] = false
-  export let width: ModalProps['width'] = 240
+  export let width: ModalProps['width'] = undefined
   export let scrollTarget: ModalProps['scrollTarget'] = undefined
   const transitionDuration = 300
 
@@ -36,7 +36,7 @@
     if (typeof width === 'number') {
       return `${width}px`
     }
-    return width
+    return 240
   })()
 </script>
 

@@ -1,3 +1,5 @@
+export type SpinnerSize = 's' | 'm' | 'l'
+
 export interface SpinnerProps {
-  size: 's' | 'm' | 'l'
+  size?: SpinnerSize
 }

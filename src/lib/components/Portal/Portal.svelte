@@ -1,14 +1,17 @@
 <script lang="ts">
   import { portal } from '../../actions/portal/index.js'
   import { ThemeProvider, useTheme } from '../ThemeProvider/index.js'
+  import type { PortalProps } from './Portal.types.js'
 
-  export let target = 'body'
-  export let unwrapTheme = false
+  export let target: PortalProps['target'] = undefined
+  export let unwrapTheme: PortalProps['unwrapTheme'] = false
 
   const { os, scheme } = useTheme()
+
+  $: finalTarget = target ?? 'body'
 </script>
 
-<div use:portal={target}>
+<div use:portal={finalTarget}>
   {#if unwrapTheme}
     <slot />
   {:else}

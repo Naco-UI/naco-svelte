@@ -12,7 +12,7 @@
   export let min: SliderProps['min']
   export let max: SliderProps['max']
   export let step: SliderProps['step']
-  export let marks: SliderProps['marks'] = []
+  export let marks: SliderProps['marks'] = undefined
   export let disabled: SliderProps['disabled'] = false
 
   let markItems: SliderMark[] = []
@@ -39,7 +39,7 @@
   onMount(() => {
     if (typeof marks === 'function') {
       markItems = marks(min, max)
-    } else if (marks.length > 0) {
+    } else if (Array.isArray(marks)) {
       markItems = marks
     }
   })

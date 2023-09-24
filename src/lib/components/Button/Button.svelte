@@ -6,13 +6,13 @@
   export let variant: ButtonProps['variant'] = 'default'
   export let primary: ButtonProps['primary'] = false
   export let color: ButtonProps['color'] = primary ? 'accent' : 'default'
-  export let hotkey: ButtonProps['hotkey'] = ''
+  export let hotkey: ButtonProps['hotkey'] = undefined
   export let fullWidth: ButtonProps['fullWidth'] = false
   export let disabled: ButtonProps['disabled'] = false
 
   let buttonRef: HTMLButtonElement
 
-  onHotkey(hotkey, () => {
+  onHotkey(hotkey ?? '', () => {
     buttonRef.click()
   })
 </script>

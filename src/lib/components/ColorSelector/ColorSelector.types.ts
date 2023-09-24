@@ -1,7 +1,7 @@
 export interface ColorSelectorProps {
-  name: string
-  index: number
-  value: string
+  name?: string
+  index?: number
+  value?: string
   disabled?: boolean
   primaryProp: 'index' | 'value'
   options: string[]

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { Meta, Story } from '@storybook/addon-svelte-csf'
 
+  import { FormGroup, FormRow } from '../FormGroup/index.js'
   import Stack from '../Stack/Stack.svelte'
   import Typography from '../Typography/Typography.svelte'
   import Toggle from './Toggle.svelte'
@@ -24,34 +25,26 @@
   }}
 />
 
-<Story
-  name="Basic"
-  args={{
-    sizeMac: 'm',
-  }}
-  let:args
->
+<Story name="Basic" let:args>
   <Stack direction="horizontal">
     <Toggle on:change={handleCheck} {...args} />
     <Typography variant="heading-s">Enable option</Typography>
   </Stack>
 </Story>
 
-<Story
-  name="Size"
-  args={{
-    sizeMac: 's',
-  }}
->
-  <Stack gap="m">
-    <Stack direction="horizontal" gap="l">
-      <Toggle bind:checked sizeMac="m" />
-      <Typography variant="heading-s">Size M</Typography>
-    </Stack>
-    <Stack direction="horizontal" gap="l">
-      <Toggle bind:checked sizeMac="s" />
-      <Typography variant="heading-s">Size S</Typography>
-    </Stack>
+<Story name="Form">
+  <Stack gap="m" maxWidth={250}>
+    <div class="form-basic">
+      <Stack justify="space-between" align="center" direction="horizontal">
+        <Typography>Basic toggle</Typography>
+        <Toggle />
+      </Stack>
+    </div>
+    <FormGroup>
+      <FormRow title="Form toggle">
+        <Toggle bind:checked />
+      </FormRow>
+    </FormGroup>
   </Stack>
 </Story>
 
@@ -60,3 +53,9 @@
     <Toggle sizeMac="m" checked disabled />
   </Stack>
 </Story>
+
+<style lang="scss">
+  .form-basic {
+    padding: var(--space-m);
+  }
+</style>

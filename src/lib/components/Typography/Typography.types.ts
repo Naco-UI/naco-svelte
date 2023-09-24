@@ -8,12 +8,13 @@ type TypographyVariants =
   | 'heading-m'
   | 'caption-m'
 type TypographyColor = 'primary' | 'tertiary'
+type TypographyAlign = 'left' | 'right' | 'center'
 
 export interface TypographyProps {
-  variant: TypographyVariants
-  color: TypographyColor
-  as: keyof HTMLElementTagNameMap
+  variant?: TypographyVariants
+  color?: TypographyColor
+  as?: keyof HTMLElementTagNameMap
   fullWidth?: boolean
-  align: 'left' | 'right' | 'center'
+  align?: TypographyAlign
   select?: boolean
 }

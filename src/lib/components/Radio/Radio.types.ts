@@ -1,9 +1,9 @@
 export interface RadioProps {
   value: string
+  name: string
   label?: string
   disabled?: boolean
   checked?: boolean
-  name: string
 }
 
 export type RadioChangeEvent = Event & {
