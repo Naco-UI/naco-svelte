@@ -33,11 +33,13 @@
 </Story>
 
 <Story name="Form">
-  <Stack gap="l" maxWidth={200}>
-    <Stack justify="space-between" align="center" direction="horizontal">
-      <Typography>Basic toggle</Typography>
-      <Toggle />
-    </Stack>
+  <Stack gap="m" maxWidth={250}>
+    <div class="form-basic">
+      <Stack justify="space-between" align="center" direction="horizontal">
+        <Typography>Basic toggle</Typography>
+        <Toggle />
+      </Stack>
+    </div>
     <FormGroup>
       <FormRow title="Form toggle">
         <Toggle bind:checked />
@@ -51,3 +53,9 @@
     <Toggle sizeMac="m" checked disabled />
   </Stack>
 </Story>
+
+<style lang="scss">
+  .form-basic {
+    padding: var(--space-m);
+  }
+</style>
