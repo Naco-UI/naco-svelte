@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.2](https://github.com/Naco-UI/svelte-naco/compare/v0.1.1...v0.1.2) (2023-09-26)
+
+### Features
+
+* **FormRow:** Throw error on subtitle without title ([00549b7](https://github.com/Naco-UI/svelte-naco/commit/00549b7fc9bc3ac9f992bcf3222a3041b3569570))
+* Rework `SettingsGroup` to `FormGroup` ([f986cab](https://github.com/Naco-UI/svelte-naco/commit/f986cab9025c5608efbe993671a0f45f3d3e14cc))
+* **Toggle:** automatically adjust size in forms on macOS ([8713d8f](https://github.com/Naco-UI/svelte-naco/commit/8713d8f83ef10f321dc28120a9e438967ddfa887))
+
+
+### Bug Fixes
+
+* **FormGroup:** fix import ([6827242](https://github.com/Naco-UI/svelte-naco/commit/68272428f9d6bd47128b6b2983dcd36d2d32e878))
+* Improve typing ([ba71ba1](https://github.com/Naco-UI/svelte-naco/commit/ba71ba15b0bf6ab1816ec8c2da98e62ac18c7b52))
+
 ## [0.1.1](https://github.com/Naco-UI/svelte-naco/compare/v0.1.0...v0.1.1) (2023-09-18)
 
 ### Features
