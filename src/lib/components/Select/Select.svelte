@@ -18,7 +18,7 @@
   }
 
   onMount(() => {
-    if (!value) {
+    if (value) {
       return
     }
     value = options[0].value
