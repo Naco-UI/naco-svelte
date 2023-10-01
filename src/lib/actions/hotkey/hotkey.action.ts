@@ -1,12 +1,12 @@
-import { isHotkey } from './isHotkey.js'
-import { parseTemplate } from './parse.js'
-import type { Hotkey, HotkeyHooks } from './types.js'
+import { assertHotkey } from './assert.js'
+import type { Hotkey, HotkeyHooks } from './hotkey.types.js'
+import { parseTemplate } from './parse/index.js'
 
 export function hotkey(el: HTMLElement, template: string): HotkeyHooks {
   let hotkey: Hotkey = parseTemplate(template)
 
   function handleKey(e: KeyboardEvent): void {
-    if (isHotkey(e, hotkey)) {
+    if (assertHotkey(e, hotkey)) {
       e.preventDefault()
       el.click()
     }

@@ -1,7 +1,7 @@
 import { onMount } from 'svelte'
 
-import { isHotkey } from './isHotkey.js'
-import { parseTemplate } from './parse.js'
+import { assertHotkey } from './assert.js'
+import { parseTemplate } from './parse/index.js'
 
 export function onHotkey(
   template: string,
@@ -14,7 +14,7 @@ export function onHotkey(
   const hotkey = parseTemplate(template)
 
   function handleKey(e: KeyboardEvent): void {
-    if (isHotkey(e, hotkey)) {
+    if (assertHotkey(e, hotkey)) {
       e.preventDefault()
       callback(e)
     }

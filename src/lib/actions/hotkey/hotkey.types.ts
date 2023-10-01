@@ -1,11 +1,12 @@
 export interface Hotkey {
   key: string
-  alt: boolean
-  shift: boolean
+  ctrl: boolean
   /**
    * CTRL on Linux and Windows, CMD on macOS
    */
-  meta: boolean
+  cmd: boolean
+  alt: boolean
+  shift: boolean
 }
 
 export interface HotkeyHooks {
