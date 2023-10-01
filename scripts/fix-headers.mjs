@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { readFile, writeFile } from 'fs/promises'
 
 const CHANGELOG_PATH = 'CHANGELOG.md'
