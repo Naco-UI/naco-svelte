@@ -1,0 +1,35 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './getUniqueId.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro
+  name="getUniqueId"
+  description="Function for generating unique identifiers."
+/>
+
+You can use this function to set id's where they are not very important, but are required for html.
+
+**Do not use these id's to store values in databases**.
+
+## Signature
+
+```ts
+function getUniqueId(prefix = ''): string
+```
+
+## Example
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Prefix
+
+To add a prefix to the generated id, you need to pass the optional `prefix` parameter.
+
+<Canvas>
+  <Story of={Stories.Prefix} />
+</Canvas>
