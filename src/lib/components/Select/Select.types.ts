@@ -9,5 +9,4 @@ export interface SelectProps {
   options: SelectOption[]
   disabled?: boolean
   transparent?: boolean
-  variant?: 'standard' | 'borderless'
 }

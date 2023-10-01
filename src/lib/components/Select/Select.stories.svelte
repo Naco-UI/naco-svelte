@@ -20,10 +20,10 @@
   <Select {...args} />
 </Story>
 
-<Story name="Borderless">
+<Story name="Form">
   <FormGroup>
     <FormRow title="Number">
-      <Select variant="borderless" {options} />
+      <Select {options} />
     </FormRow>
   </FormGroup>
 </Story>

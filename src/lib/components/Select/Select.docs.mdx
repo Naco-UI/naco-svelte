@@ -24,12 +24,12 @@ import { Intro, Props } from '../../../../.storybook/components'
 - Use Select when users are selecting only a single item from a set;
 - And set is too long to show all available options at once.
 
-## Borderless
+## Form
 
-The Linux and macOS settings interface uses a special variant of the component that has no background or stroke. If you are using Select inside a FormGroup, then add the `variant="borderless"` property.
+Select automatically changes the style if it is inside a [FormGroup](/?path=/docs/components-formgroup--docs) component.
 
 <Canvas>
-  <Story of={Stories.Borderless} />
+  <Story of={Stories.Form} />
 </Canvas>
 
 ## Disabled

@@ -1,16 +1,17 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte'
 
+  import { isForm } from '../FormGroup/index.js'
   import { Typography } from '../Typography/index.js'
   import type { SelectProps } from './Select.types.js'
   import SelectStepper from './SelectStepper.svelte'
 
   export let value: SelectProps['value'] = undefined
-  export let variant: SelectProps['variant'] = 'standard'
   export let options: SelectProps['options']
   export let disabled: SelectProps['disabled'] = false
 
   const dispatch = createEventDispatcher()
+  const borderless = isForm()
 
   function handleChange(event: { currentTarget: HTMLSelectElement }): void {
     value = event.currentTarget.value
@@ -27,7 +28,7 @@
   $: selected = options.find((o) => o.value === value)
 </script>
 
-<div class="select variant-{variant}" class:disabled>
+<div class="select" class:borderless class:disabled>
   <select on:change={handleChange} {value}>
     {#each options as option}
       <option disabled={option.disabled} value={option.value}
@@ -65,7 +66,7 @@
       opacity: 0.5;
     }
 
-    &.variant-borderless {
+    &.borderless {
       --select-background-color: transparent;
       --select-border-color: transparent;
     }
@@ -104,7 +105,7 @@
 
     box-shadow: var(--box-shadow-s);
 
-    &.variant-borderless {
+    &.borderless {
       --select-stepper-background-color: var(--color-background-tertiary);
       --select-stepper-foreground-color: var(--color-content-primary);
 
