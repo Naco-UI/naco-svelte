@@ -72,9 +72,9 @@
 
 <Story name="Align">
   <Stack direction="horizontal" gap="s">
-    <Typography align="left">Left</Typography>
-    <Typography align="center">Center</Typography>
-    <Typography align="right">Right</Typography>
+    <Typography fullWidth align="left">Left</Typography>
+    <Typography fullWidth align="center">Center</Typography>
+    <Typography fullWidth align="right">Right</Typography>
   </Stack>
 </Story>
 

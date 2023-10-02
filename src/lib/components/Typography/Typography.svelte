@@ -28,12 +28,8 @@
 <style lang="scss">
   .typography {
     user-select: none;
-
     display: inline-block;
-    flex: 1;
-
     margin: 0;
-
     letter-spacing: var(--typography-letter-spacing);
 
     &.selection {
@@ -41,6 +37,7 @@
     }
 
     &.full-width {
+      flex: 1;
       width: 100%;
     }
   }
