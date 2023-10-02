@@ -14,7 +14,14 @@ export const parameters: Parameters = {
   },
   options: {
     storySort: {
-      order: ['Documentation', 'Documentation/Development', 'Components', 'Actions'],
+      order: [
+        'Documentation',
+        'Documentation/Development',
+        'Components',
+        'Layouts',
+        'Actions',
+        'Utilities',
+      ],
       includeName: true,
     },
   },
