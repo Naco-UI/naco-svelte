@@ -7,7 +7,7 @@ type TypographyVariants =
   | 'text-l'
   | 'heading-s'
   | 'heading-m'
-type TypographyColor = 'primary' | 'tertiary'
+type TypographyColor = 'primary' | 'tertiary' | 'white'
 type TypographyAlign = 'left' | 'right' | 'center'
 
 export interface TypographyProps {

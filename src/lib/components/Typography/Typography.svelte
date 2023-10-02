@@ -14,7 +14,7 @@
   class:full-width={fullWidth}
   class:select
   style:font="var(--typography-{variant})"
-  style:color="var(--color-content-{color})"
+  style:color={color === 'white' ? 'white' : `var(--color-content-${color})`}
   style:text-align={align}
 >
   <slot />
