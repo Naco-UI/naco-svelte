@@ -10,6 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '$storybook/docs': `${resolve(__dirname, '.storybook/components/docs')}`,
+      '$storybook/stories': `${resolve(__dirname, '.storybook/components/stories')}`,
     },
   },
 })

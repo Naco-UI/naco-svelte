@@ -13,7 +13,10 @@
     "moduleResolution": "nodenext",
     "outDir": "dist",
     "paths": {
-      "$storybook/docs": ["./.storybook/components/docs/index.ts"]
+      "$storybook/docs": ["./.storybook/components/docs/index.ts"],
+      "$storybook/stories": ["./.storybook/components/stories/index.ts"],
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"]
     }
   },
   "include": [
