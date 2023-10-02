@@ -28,7 +28,8 @@
     <SidebarItem
       on:click={() => handleChange(item.value)}
       selected={value === item.value}
-      {...item}
+      disabled={item.disabled}
+      icon={item.icon}
     >
       {item.title ?? item.value}
     </SidebarItem>
