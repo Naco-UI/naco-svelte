@@ -39,8 +39,7 @@ async function getEntries() {
     onlyDirectories: true,
     deep: 0,
   })
-  const entriesGlob = categories
-    .map(path => join(path, '*'))
+  const entriesGlob = categories.map((path) => join(path, '*'))
   const entries = await fg(entriesGlob, {
     onlyDirectories: true,
     deep: 0,
