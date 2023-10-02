@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './FormGroup.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -11,9 +9,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   imports={['FormGroup', 'FormRow']}
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -29,38 +25,28 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 If you don't set the `title` property, the row will be displayed in "raw mode". You will be able to set its layout yourself.
 
-<Canvas>
-  <Story of={Stories.Raw} />
-</Canvas>
+<Story of={Stories.Raw} />
 
 ## Multiple groups
 
 When using more than one group, wrap them in `<Stack gap="m">`. A margin will be set correctly, given the presence of a titles.
 
-<Canvas>
-  <Story of={Stories.MultipleGroups} />
-</Canvas>
+<Story of={Stories.MultipleGroups} />
 
 ## Multiple actions
 
 One row can have multiple actions. To do this, simply pass multiple components to FormRow. But do not use too many, limit yourself to two.
 
-<Canvas>
-  <Story of={Stories.MultipleActions} />
-</Canvas>
+<Story of={Stories.MultipleActions} />
 
 ## Subtitle
 
 By passing string into the `subtitle` property you can set the content to be displayed under the header.
 
-<Canvas>
-  <Story of={Stories.Subtitle} />
-</Canvas>
+<Story of={Stories.Subtitle} />
 
 ## Align
 
 If the subtitle is too long, it can ruin the look of the row by having the control creep off to an unexpected place. To fix this, set the `align="top"` property.
 
-<Canvas>
-  <Story of={Stories.Align} />
-</Canvas>
+<Story of={Stories.Align} />

@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Modal.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -10,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="Modal is a component that presents the content in a separate, focused mode."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -22,6 +18,4 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 The width of the modal window is set by the `width` property. Use absolute values.
 
-<Canvas>
-  <Story of={Stories.Width} />
-</Canvas>
+<Story of={Stories.Width} />

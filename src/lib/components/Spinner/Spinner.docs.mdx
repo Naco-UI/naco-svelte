@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Spinner.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -10,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="Spinner indicates that information is being downloaded or processed."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -27,6 +23,4 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 The spinner can be presented in different sizes. The `size` property is responsible for that.
 
-<Canvas>
-  <Story of={Stories.Size} />
-</Canvas>
+<Story of={Stories.Size} />

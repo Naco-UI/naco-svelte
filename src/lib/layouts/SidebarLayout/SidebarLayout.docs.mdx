@@ -1,15 +1,11 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './SidebarLayout.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
 <Intro name="SidebarLayout" description="A surface for apps with sidebar." />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -19,14 +15,10 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 Sometimes in an app with a sidebar, it needs to be hidden. To do this, set the `hideSidebar` property. A short time after hiding, the sidebar components will be unloaded from the DOM, to optimize performance. If this behavior is not suitable for you, set the `keepDOM` property and the components will always remain.
 
-<Canvas>
-  <Story of={Stories.HideSidebar} />
-</Canvas>
+<Story of={Stories.HideSidebar} />
 
 ## Transparent
 
 On macOS, it supports transparent mode. In this mode, the background behind the sidebar becomes completely transparent. Use this mode with the right background. See [WindowIsTranslucent](https://wails.io/docs/reference/options#windowistranslucent-1) in Wails.
 
-<Canvas>
-  <Story of={Stories.Transparent} />
-</Canvas>
+<Story of={Stories.Transparent} />

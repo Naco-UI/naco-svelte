@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Typography.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -12,9 +10,7 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 A typographic system is a set of typographic tokens applied to various components of the library.
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -33,30 +29,22 @@ For typography, variants conventionally grouped by prefix are available:
 - **text-\*** — headings, paragraphs, captions;
 - **caption-\*** — captions, explanations.
 
-<Canvas>
-  <Story of={Stories.Variant} />
-</Canvas>
+<Story of={Stories.Variant} />
 
 ## Color
 
 The `color` property sets the color of the text. To set a special color, set `color="inherit"` and control the color through the parent component.
 
-<Canvas>
-  <Story of={Stories.Color} />
-</Canvas>
+<Story of={Stories.Color} />
 
 ## Align
 
 The `align` property specifies the alignment of the text in the container.
 
-<Canvas>
-  <Story of={Stories.Align} />
-</Canvas>
+<Story of={Stories.Align} />
 
 ## Selection
 
 By default, you cannot select text in system interfaces. If you need to allow the user to copy text, add the `select` property.
 
-<Canvas>
-  <Story of={Stories.Selection} />
-</Canvas>
+<Story of={Stories.Selection} />

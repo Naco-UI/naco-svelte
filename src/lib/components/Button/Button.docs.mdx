@@ -1,16 +1,11 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
-import Button from './Button.svelte'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Button.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
 <Intro name="Button" description="A button initiates an instantaneous action." />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -28,9 +23,7 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 Button can be primary or secondary (default). To make the button primary, add the `primary` property.
 
-<Canvas>
-  <Story of={Stories.Primary} />
-</Canvas>
+<Story of={Stories.Primary} />
 
 ## Variant
 
@@ -39,30 +32,22 @@ Button is available in two versions:
 - `alert` - for simple modal windows
 - `default` - for everything else.
 
-<Canvas>
-  <Story of={Stories.Variant} />
-</Canvas>
+<Story of={Stories.Variant} />
 
 ## Color
 
 Use the `color` property to change the color of the button.
 
-<Canvas>
-  <Story of={Stories.Color} />
-</Canvas>
+<Story of={Stories.Color} />
 
 ## Disabled state
 
 The `disabled` property locks the button - it is no longer possible to press it. In addition, such a button cannot get focus by pressing the <kbd>Tab</kbd> key, by mouse or in any other way.
 
-<Canvas>
-  <Story of={Stories.Disabled} />
-</Canvas>
+<Story of={Stories.Disabled} />
 
 ## Hotkey
 
 The `click` event call can be optionally attached to hotkey. To do this, set the hotkey template to the `hotkey` property
 
-<Canvas>
-  <Story of={Stories.Hotkey} />
-</Canvas>
+<Story of={Stories.Hotkey} />

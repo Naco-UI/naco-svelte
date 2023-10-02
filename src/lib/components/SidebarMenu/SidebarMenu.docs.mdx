@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './SidebarMenu.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -10,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="A sidebar can help people navigate your app, providing quick access to top-level collections of content."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 Use a SidebarMenu to help people quickly navigate to key areas of your app or top-level collections of content, like folders and playlists. A SidebarMenu can help you flatten your information hierarchy, giving people access to several peer information categories or modes at the same time.
 

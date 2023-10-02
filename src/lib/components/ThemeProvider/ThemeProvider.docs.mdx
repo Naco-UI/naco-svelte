@@ -1,6 +1,4 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
-import { Intro } from '../../../../.storybook/components'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './ThemeProvider.stories.svelte'
 
 <Meta of={Stories} />
@@ -10,6 +8,4 @@ import * as Stories from './ThemeProvider.stories.svelte'
   description="The ThemeProvider is the core of the design system that defines how your application's interfaces will look like."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />

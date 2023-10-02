@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Stack.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -10,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="Basic component for the correct arrangement of elements."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -22,6 +18,4 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 By combining horizontal and vertical Stacks you will get a properly aligned interface.
 
-<Canvas>
-  <Story of={Stories.Combining} />
-</Canvas>
+<Story of={Stories.Combining} />

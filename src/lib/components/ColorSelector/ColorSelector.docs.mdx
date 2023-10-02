@@ -1,5 +1,4 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Intro, Props } from '../../../../.storybook/components'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './ColorSelector.stories.svelte'
 
 <Meta of={Stories} />
@@ -11,9 +10,7 @@ import * as Stories from './ColorSelector.stories.svelte'
 
 ColorSelector is a special variant of RadioGroup that is designed specifically for color selection.
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -28,22 +25,16 @@ ColorSelector is a special variant of RadioGroup that is designed specifically f
 
 In addition to the usual colors, the component can accept the string `random`. The component will display a color gradient with different colors.
 
-<Canvas>
-  <Story of={Stories.Random} />
-</Canvas>
+<Story of={Stories.Random} />
 
 ## Value
 
 The component returns the `index` and `value` of the selected color.
 
-<Canvas>
-  <Story of={Stories.Value} />
-</Canvas>
+<Story of={Stories.Value} />
 
 ## Primary property
 
 Sometimes it may be the case that the contents of an array of colors will not be unique (for example, if the user can edit them). To keep the ability to correctly specify colors externally, set `primaryProp="index"` and then changing the `index` property will change the selected color
 
-<Canvas>
-  <Story of={Stories.PrimaryProp} />
-</Canvas>
+<Story of={Stories.PrimaryProp} />

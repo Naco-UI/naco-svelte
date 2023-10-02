@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Story } from '$storybook/docs'
 import * as Stories from './hotkey.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -15,17 +13,13 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 Action allows you to attach a hotkey to any element that handles an `on:click` event.
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Button
 
 [Button](/?path=/docs/components-button--docs) from the Naco UI has a `hotkey` property that works exactly the same way.
 
-<Canvas>
-  <Story of={Stories.NacoButton} />
-</Canvas>
+<Story of={Stories.NacoButton} />
 
 ## Hook
 

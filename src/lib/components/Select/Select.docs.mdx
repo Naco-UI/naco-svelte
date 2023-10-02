@@ -1,8 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
-import Select from './Select.svelte'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Select.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -11,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="Component with which the user selects a value from a set of suggested options."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -28,14 +23,10 @@ import { Intro, Props } from '../../../../.storybook/components'
 
 Select automatically changes the style if it is inside a [FormGroup](/?path=/docs/components-formgroup--docs) component.
 
-<Canvas>
-  <Story of={Stories.Form} />
-</Canvas>
+<Story of={Stories.Form} />
 
 ## Disabled
 
 To disable interaction with a component use the `disabled` property.
 
-<Canvas>
-  <Story of={Stories.Disabled} />
-</Canvas>
+<Story of={Stories.Disabled} />

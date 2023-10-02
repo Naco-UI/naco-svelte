@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Radio.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -14,9 +12,7 @@ Radio buttons are similar to checkboxes, but with one important difference - rad
 
 Clicking on the name or on the radio button itself causes it to be selected. Clicking again does not deselect it.
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -34,17 +30,13 @@ Clicking on the name or on the radio button itself causes it to be selected. Cli
 
 The radio button can be locked via the `disabled` property.
 
-<Canvas>
-  <Story of={Stories.Disabled} />
-</Canvas>
+<Story of={Stories.Disabled} />
 
 ## Group
 
 The [RadioGroup](/?path=/docs/components-radiogroup--docs) component is used to group radio buttons. The `options` property accepts the same parameters as Radio
 
-<Canvas>
-  <Story of={Stories.Group} />
-</Canvas>
+<Story of={Stories.Group} />
 
 ## Customization
 
@@ -54,6 +46,4 @@ The colors of the radio button can be overridden by setting CSS custom propertie
 - `--radio-custom-background` – Color, `url()` or gradient that will be the background of the radio button;
 - `--radio-custom-border-color` – Radio button border color.
 
-<Canvas>
-  <Story of={Stories.Customization} />
-</Canvas>
+<Story of={Stories.Customization} />
