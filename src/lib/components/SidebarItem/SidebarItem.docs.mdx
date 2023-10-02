@@ -1,0 +1,45 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import { Source } from '@storybook/blocks'
+import * as Stories from './SidebarItem.stories.svelte'
+import { Intro, Props } from '../../../../.storybook/components'
+
+<Meta of={Stories} />
+
+<Intro name="SidebarItem" description="Sidebar menu item." />
+
+<Canvas>
+  <Story of={Stories.Basic} />
+</Canvas>
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- When possible, let people customize the contents of a sidebar items;
+- Use short titles. 3 words maximum.
+
+## Icon
+
+To add an icon to a component, pass it to the `icon` property. Inside the icon, use the `currentColor` color to style it correctly.
+
+<Canvas>
+  <Story of={Stories.Icon} />
+</Canvas>
+
+## Disabled
+
+To add an icon to a component, pass it to the `icon` property. Inside the icon, use the `currentColor` color to style it correctly.
+
+<Canvas>
+  <Story of={Stories.Disabled} />
+</Canvas>
+
+## Menu
+
+For easy use of the sidebar menu, use the [SidebarMenu](#asdasd) component. It is designed specifically for building navigation.
+
+<Canvas>
+  <Story of={Stories.Menu} />
+</Canvas>
