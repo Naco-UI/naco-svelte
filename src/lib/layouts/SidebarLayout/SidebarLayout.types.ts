@@ -3,5 +3,6 @@ export interface SidebarLayoutProps {
   transparent?: boolean
   keepDOM?: boolean
   inset?: boolean
+  root?: boolean
   insetTitle?: string
 }
