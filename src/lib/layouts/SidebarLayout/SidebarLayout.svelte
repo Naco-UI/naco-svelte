@@ -64,7 +64,10 @@
             <Typography variant="heading-s">{insetTitle}</Typography>
           </div>
         {/if}
-        <div class="title" style:--title-width="{titleWidth}px">
+        <div
+          class="title"
+          style:--title-width={titleWidth ? `${titleWidth}px` : 'initial'}
+        >
           <div class="title-limiter">
             <Typography fullWidth align="center" variant="heading-s"
               >{insetTitle}</Typography
