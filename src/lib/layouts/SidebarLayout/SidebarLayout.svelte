@@ -43,7 +43,7 @@
     })()
   onMount(() => {
     if (isInset && titleNode) {
-      titleWidth = titleNode.offsetWidth
+      titleWidth = titleNode.offsetWidth + 1
     }
   })
 </script>
