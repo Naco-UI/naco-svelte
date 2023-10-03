@@ -58,10 +58,12 @@
   {#if isInset}
     <div class="inset-titlebar">
       {#if insetTitle}
-        <!-- Render hidden title to calculate size -->
-        <div aria-hidden bind:this={titleNode} class="title-prerender">
-          <Typography variant="heading-s">{insetTitle}</Typography>
-        </div>
+        {#if titleWidth === 0}
+          <!-- Render hidden title to calculate size -->
+          <div aria-hidden bind:this={titleNode} class="title-prerender">
+            <Typography variant="heading-s">{insetTitle}</Typography>
+          </div>
+        {/if}
         <div class="title" style:--title-width="{titleWidth}px">
           <div class="title-limiter">
             <Typography fullWidth align="center" variant="heading-s"
