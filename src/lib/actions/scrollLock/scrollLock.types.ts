@@ -7,6 +7,6 @@ export interface ScrollLockParams {
 }
 
 export interface ScrollLockHooks {
-  update: (params: ScrollLockParams) => Promise<void>
+  update: (params: ScrollLockParams) => void
   destroy: () => void
 }

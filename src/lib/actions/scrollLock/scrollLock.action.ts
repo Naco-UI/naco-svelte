@@ -1,5 +1,3 @@
-import { sleep } from '$lib/utils/sleep.js'
-
 import { getScrollbarSize } from './getScrollBarSize.js'
 import type {
   ScrollLockHooks,
@@ -37,15 +35,18 @@ export function scrollLock(
   let targetEl = getTarget(target)
   setScrollLock(lock, targetEl)
 
-  async function update(params: ScrollLockParams): Promise<void> {
+  function update(params: ScrollLockParams): void {
     if (params.target) {
       targetEl = getTarget(params.target)
     }
     if (!params.lock) {
       if (params.unlockDelay) {
-        await sleep(params.unlockDelay)
+        setTimeout(() => {
+          setScrollLock(false, targetEl)
+        }, params.unlockDelay)
+      } else {
+        setScrollLock(false, targetEl)
       }
-      setScrollLock(false, targetEl)
     } else {
       setScrollLock(true, targetEl)
     }
