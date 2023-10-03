@@ -1,3 +1,3 @@
-import Sheet from './Sheet.svelte'
+import Window from './Window.svelte'
 
-export { Sheet }
+export { Window }
