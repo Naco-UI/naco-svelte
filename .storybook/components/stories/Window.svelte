@@ -52,7 +52,7 @@
 
     &.background {
       background-image: url('/images/wallpaper.jpg');
-      background-position: center;
+      background-position: top;
       background-size: cover;
     }
   }
