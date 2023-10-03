@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Story } from '$storybook/docs'
 import * as Stories from './portal.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -11,9 +9,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   imports={['portal']}
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Parameters
 

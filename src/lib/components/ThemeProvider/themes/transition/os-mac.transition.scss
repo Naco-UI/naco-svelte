@@ -1,4 +1,6 @@
 .os-mac {
-  --transition-default: 0.2s ease-in-out;
-  --transition-slow: 0.3s ease-out;
+  --transition-time-default: 0.2s;
+  --transition-time-slow: 0.3s;
+  --transition-default: var(--transition-time-default) ease-in-out;
+  --transition-slow: var(--transition-time-slow) ease-out;
 }

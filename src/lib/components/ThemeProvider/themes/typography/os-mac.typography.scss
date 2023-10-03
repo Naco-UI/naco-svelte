@@ -1,6 +1,6 @@
 .os-mac {
   --typography-font-family: 'SF Pro Display', system-ui, -apple-system,
-    BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    BlinkMacSystemFont, 'Helvetica Neue', 'Helvetica', 'Inter', 'Arial', sans-serif;
   --typography-letter-spacing: 3%;
   --typography-caption-s: 400 10px/13px var(--typography-font-family);
   --typography-caption-m: 510 10px/13px var(--typography-font-family);
@@ -8,7 +8,8 @@
   --typography-text-s: 400 11px/14px var(--typography-font-family);
   --typography-text-m: 400 13px/16px var(--typography-font-family);
   --typography-text-l: 400 15px/20px var(--typography-font-family);
-  --typography-heading-s: 700 13px/16px var(--typography-font-family);
+  --typography-heading-s: 590 13px/16px var(--typography-font-family);
+  --typography-heading-s_1: 700 13px/16px var(--typography-font-family);
   --typography-heading-m: 590 15px/15px var(--typography-font-family);
   --typography-caption-m: 400 12px/14px var(--typography-font-family);
 }

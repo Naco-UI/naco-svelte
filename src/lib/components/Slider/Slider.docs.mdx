@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Slider.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -10,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="Component for selecting a numeric value within a specified range."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -27,9 +23,7 @@ Marks is an array of objects with:
 - `progress` – Mark position. A number between 0 and 1;
 - `title` — Mark title. String, optional.
 
-<Canvas>
-  <Story of={Stories.Marks} />
-</Canvas>
+<Story of={Stories.Marks} />
 
 ## Mark Helpers
 
@@ -46,14 +40,10 @@ fillMarks(5, {
 })
 ```
 
-<Canvas>
-  <Story of={Stories.MarkHelpers} />
-</Canvas>
+<Story of={Stories.MarkHelpers} />
 
 ## Disabled
 
 Use the `disabled` property to disable interaction with the component.
 
-<Canvas>
-  <Story of={Stories.Disabled} />
-</Canvas>
+<Story of={Stories.Disabled} />

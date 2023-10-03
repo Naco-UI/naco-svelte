@@ -1,6 +1,4 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
-import { Intro, Props } from '../../../../.storybook/components'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Toggle.stories.svelte'
 
 <Meta of={Stories} />
@@ -10,9 +8,7 @@ import * as Stories from './Toggle.stories.svelte'
   description="A toggle lets people choose between a pair of opposing states, like on and off, using a different appearance to indicate each state."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -28,14 +24,10 @@ import * as Stories from './Toggle.stories.svelte'
 
 The macOS forms use a special smaller version of the component. It is enabled automatically when the component is placed inside a [FormGroup](/?path=/docs/components-formgroup--docs).
 
-<Canvas>
-  <Story of={Stories.Form} />
-</Canvas>
+<Story of={Stories.Form} />
 
 ## Disabled
 
 The `disabled` property locks the toggle - it is no longer possible to press it. In addition, such a toggle cannot get focus by pressing the Tab key, by mouse or in any other way.
 
-<Canvas>
-  <Story of={Stories.Disabled} />
-</Canvas>
+<Story of={Stories.Disabled} />

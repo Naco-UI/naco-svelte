@@ -13,7 +13,7 @@
   style:justify-content={justify}
   style:align-items={align}
   style:max-width={maxWidth ? `${maxWidth}px` : ''}
-  style:--stack-gap="var(--space-{gap})"
+  style:--stack-gap={gap === 'none' ? '0' : `var(--space-${gap})`}
 >
   <slot />
 </div>

@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Props, Story } from '$storybook/docs'
 import * as Stories from './Portal.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -10,9 +8,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   description="A portal is a way to visualize an element in a DOM node that exists outside of the parent component's DOM hierarchy."
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 

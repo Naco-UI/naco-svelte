@@ -1,0 +1,50 @@
+import { Intro, Meta, Props, Story } from '$storybook/docs'
+import * as Stories from './Typography.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Typography"
+  description="Typography is the basis of the interface and a set of rules for text layout."
+/>
+
+A typographic system is a set of typographic tokens applied to various components of the library.
+
+<Story of={Stories.Basic} />
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- When possible, let people customize the contents of a sidebar items;
+- Use short titles. 3 words maximum.
+
+## Variant
+
+For typography, variants conventionally grouped by prefix are available:
+
+- **heading-\*** — headlines;
+- **text-\*** — headings, paragraphs, captions;
+- **caption-\*** — captions, explanations.
+
+<Story of={Stories.Variant} />
+
+## Color
+
+The `color` property sets the color of the text. To set a special color, set `color="inherit"` and control the color through the parent component.
+
+<Story of={Stories.Color} />
+
+## Align
+
+The `align` property specifies the alignment of the text in the container.
+
+<Story of={Stories.Align} />
+
+## Selection
+
+By default, you cannot select text in system interfaces. If you need to allow the user to copy text, add the `select` property.
+
+<Story of={Stories.Selection} />

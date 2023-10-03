@@ -1,7 +1,5 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
-import { Source } from '@storybook/blocks'
+import { Intro, Meta, Story } from '$storybook/docs'
 import * as Stories from './scrollLock.stories.svelte'
-import { Intro, Props } from '../../../../.storybook/components'
 
 <Meta of={Stories} />
 
@@ -11,9 +9,7 @@ import { Intro, Props } from '../../../../.storybook/components'
   imports={['scrollLock']}
 />
 
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Parameters
 
@@ -27,6 +23,4 @@ Action accepts an object with parameters. The only required one is `lock`.
 
 Using the `target` property, you can lock scrolling in a particular container.
 
-<Canvas>
-  <Story of={Stories.Target} />
-</Canvas>
+<Story of={Stories.Target} />

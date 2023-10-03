@@ -36,21 +36,18 @@ To simplify writing component documentation, use the following template:
 {/* prettier-ignore-start */}
 
 ```markdown
-import { Meta } from '@storybook/addon-docs'
-import { Intro, Props } from '../../../../.storybook/components'
-import * as Stories from './Component.stories';
+import { Intro, Meta, Props, Story } from '$storybook/docs'
+import * as Stories from './ComponentName.stories.svelte'
 
 <Meta of={Stories} />
 
 <Intro
-  name="Component name"
+  name="ComponentName"
   description="Component brief description."
 />
 
 <!-- Basic story -->
-<Canvas>
-  <Story of={Stories.Basic} />
-</Canvas>
+<Story of={Stories.Basic} />
 
 ## Properties
 
@@ -60,21 +57,15 @@ import * as Stories from './Component.stories';
 
 ## Example 1
 
-<Canvas>
-  <Story of={Stories.Example1} />
-</Canvas>
+<Story of={Stories.Example1} />
 
 ## Example 2
 
-<Canvas>
-  <Story of={Stories.Example2} />
-</Canvas>
+<Story of={Stories.Example2} />
 
 ## Example 3
 
-<Canvas>
-  <Story of={Stories.Example3} />
-</Canvas>
+<Story of={Stories.Example3} />
 
 <!-- And so on -->
 ```
