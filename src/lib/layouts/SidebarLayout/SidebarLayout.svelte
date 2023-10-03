@@ -99,7 +99,7 @@
 
     width: 100%;
 
-    background-color: var(--sidebar-background-color);
+    background: var(--sidebar-background-color);
 
     transition: var(--transition-default);
     transition-delay: 0s;
@@ -169,23 +169,19 @@
   }
 
   :global(.os-linux) {
-    .sidebar-layout {
-      --sidebar-background-color: var(--color-background-secondary);
-
-      .sidebar {
-        padding: 0;
-        border-right: 1px solid var(--color-border-main);
-      }
+    .sidebar {
+      padding: 0;
+      border-right: 1px solid var(--color-border-main);
     }
   }
 
   :global(.os-mac) {
-    .sidebar-layout {
-      .sidebar {
-        padding: var(--space-sl) var(--space-m);
-        border-right: 1px solid var(--color-border-secondary);
-      }
+    .sidebar {
+      padding: var(--space-sl) var(--space-m);
+      border-right: 1px solid var(--color-border-secondary);
+    }
 
+    .sidebar-layout {
       &.inset {
         .sidebar {
           padding-top: var(--space-inset-titlebar);
@@ -195,6 +191,18 @@
       &.transparent {
         --sidebar-background-color: transparent;
       }
+    }
+  }
+
+  :global(.os-linux.dark) {
+    .sidebar-layout {
+      --sidebar-background-color: var(--color-background-primary);
+    }
+  }
+
+  :global(.os-linux.light) {
+    .sidebar-layout {
+      --sidebar-background-color: var(--color-background-secondary);
     }
   }
 </style>

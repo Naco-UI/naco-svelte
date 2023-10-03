@@ -43,9 +43,9 @@
   }
 
   :global(.naco.os-linux) .form-group {
-    --form-row-padding-v: 12px;
+    --form-row-padding-v: 16px;
     --form-row-padding-h: 14px;
-    --form-border-radius: 0;
+    --form-border-radius: 8px;
     --form-row-min-height: 34px;
   }
 

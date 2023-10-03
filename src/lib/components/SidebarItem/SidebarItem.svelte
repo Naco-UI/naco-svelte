@@ -110,7 +110,7 @@
     transition: var(--transition-default);
 
     &:not(.selected):hover {
-      background-color: var(--color-border-main);
+      background-color: var(--color-background-overlay);
     }
   }
 </style>
