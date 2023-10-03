@@ -16,3 +16,9 @@ import * as Stories from './PlainLayout.stories.svelte'
 On macOS, it supports transparent mode. In this mode, the background behind the component becomes completely transparent. Use this mode with the right background. See [WindowIsTranslucent](https://wails.io/docs/reference/options#windowistranslucent-1) in Wails.
 
 <Story of={Stories.Transparent} />
+
+## Inset
+
+Wails supports customizing of the [title bar](https://wails.io/docs/reference/options/#titlebar) on macOS. To display the form correctly with `mac.TitleBarHiddenInset()` enabled, set the `inset` parameter to layout. In this mode, the header is displayed on the Layout side (`insetTitle` propeprty), not the window side. Also the css parameter `--wails-draggable` is set in place of the header to make the window move correctly
+
+<Story of={Stories.Inset} />

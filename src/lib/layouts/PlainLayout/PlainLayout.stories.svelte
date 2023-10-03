@@ -12,13 +12,14 @@
 
   import FormRow from '$lib/components/FormGroup/FormRow.svelte'
   import { Button, FormGroup, Toggle, Typography } from '$lib/index.js'
-  import { Sheet } from '$storybook/stories'
+  import { Window } from '$storybook/stories'
 
   let transparent = true
+  let inset = true
 </script>
 
 <Story name="Basic" let:args>
-  <Sheet translucent>
+  <Window titlebar translucent>
     <PlainLayout {...args}>
       <FormGroup>
         <FormRow>
@@ -36,11 +37,11 @@
         </FormRow>
       </FormGroup>
     </PlainLayout>
-  </Sheet>
+  </Window>
 </Story>
 
 <Story name="Transparent">
-  <Sheet translucent>
+  <Window translucent>
     <PlainLayout {transparent}>
       <FormGroup>
         <FormRow title="Transparent">
@@ -58,5 +59,17 @@
         </FormRow>
       </FormGroup>
     </PlainLayout>
-  </Sheet>
+  </Window>
+</Story>
+
+<Story name="Inset">
+  <Window translucent titlebar {inset}>
+    <PlainLayout {inset} insetTitle="Naco UI">
+      <FormGroup>
+        <FormRow title="Inset">
+          <Toggle bind:checked={inset} />
+        </FormRow>
+      </FormGroup>
+    </PlainLayout>
+  </Window>
 </Story>
