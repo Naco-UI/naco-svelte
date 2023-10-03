@@ -15,6 +15,7 @@
     'text-m',
     'text-l',
     'heading-s',
+    'heading-s_1',
     'heading-m',
   ]
 </script>

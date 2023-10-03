@@ -6,6 +6,7 @@ export type TypographyVariants =
   | 'text-m'
   | 'text-l'
   | 'heading-s'
+  | 'heading-s_1'
   | 'heading-m'
 export type TypographyColor = 'primary' | 'tertiary' | 'white' | 'inherit'
 export type TypographyAlign = 'left' | 'right' | 'center'
