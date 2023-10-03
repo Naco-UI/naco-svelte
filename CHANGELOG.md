@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.3](https://github.com/Naco-UI/svelte-naco/compare/v0.1.2...v0.1.3) (2023-10-03)
+
+### Features
+
+* add required lib files check ([7cc38e1](https://github.com/Naco-UI/svelte-naco/commit/7cc38e1e0bdeb9b6a28997c794099194254db03e))
+* **hotkey:** improve cmd/ctrl handling ([d5b3a03](https://github.com/Naco-UI/svelte-naco/commit/d5b3a036b8a8d4315675d8ba266376f5c76b9b6c))
+* improve Ubuntu form styles ([1697b57](https://github.com/Naco-UI/svelte-naco/commit/1697b570512460385b26eb2d42b0c73f8c90cc49))
+* introduce layouts ([8fb8b0c](https://github.com/Naco-UI/svelte-naco/commit/8fb8b0c86c2651ee305f53d21118f01c04aef1d7))
+* introduce SidebarItem component ([a47da1f](https://github.com/Naco-UI/svelte-naco/commit/a47da1fb4fb77a30171abda61882fe71af435b23))
+* introduce SidebarMenu ([17ccab8](https://github.com/Naco-UI/svelte-naco/commit/17ccab8151d7b76f0106e159ee5d698552d9f77d))
+* **PlainLayout:** Add `disableDrag` property for nesting ([6a41cbd](https://github.com/Naco-UI/svelte-naco/commit/6a41cbd807e5d789ad3e75f4d5598498c4f82c35))
+* **PlainLayout:** add inset support ([0558577](https://github.com/Naco-UI/svelte-naco/commit/0558577c27012f6b73a1a1c3c8b6484228608f56))
+* reintroduce Typography component ([1392670](https://github.com/Naco-UI/svelte-naco/commit/13926706d5fdec053280c08b5fb0e36d2104b546))
+* **SidebarLayout,SidebarItem:** improve Ubuntu sidebar styles ([825a542](https://github.com/Naco-UI/svelte-naco/commit/825a542732c42c434d33b6c86ced8f3a2cf1c7e1))
+* **SidebarLayout:** add inset support ([016e084](https://github.com/Naco-UI/svelte-naco/commit/016e0840b020f701500675afcc749d18541c4993))
+* **Stack:** add `none` gap variant ([e3532da](https://github.com/Naco-UI/svelte-naco/commit/e3532dac71762316443982d1351f743b2fec4bda))
+* **Stack:** add `xxs` gap ([cac7cb7](https://github.com/Naco-UI/svelte-naco/commit/cac7cb7fd7b3d79c250b2bf37ea6c517755bbb4c))
+* **ThemeProvider:** add `caption-l` ([2145761](https://github.com/Naco-UI/svelte-naco/commit/2145761e7231deae6630cf4ddda033483ace88c3))
+* **ThemeProvider:** Add `color-content-quaternary` ([dd8a455](https://github.com/Naco-UI/svelte-naco/commit/dd8a455e34591fc5f37d9fd141ed50d6ceb9bd7a))
+* **Typography:** add `heading-s_1` variant ([b25c4f5](https://github.com/Naco-UI/svelte-naco/commit/b25c4f556393e07414035d16a636ef113c0a1752))
+* **Typography:** add `white` color option support ([e03442e](https://github.com/Naco-UI/svelte-naco/commit/e03442ed983953fcfbcfb711f8f8e168228883d9))
+* **Typography:** introduce missing `caption-l` ([50e35eb](https://github.com/Naco-UI/svelte-naco/commit/50e35eb62b4d3b671c0ca65aea4d56f4a37720de))
+* **Typography:** use Inter as fallback font for macOS ([5e3b983](https://github.com/Naco-UI/svelte-naco/commit/5e3b9831538c9871c4c01a0cd8ff6dc3caba1938))
+
+
+### Bug Fixes
+
+* **Radio:** add global exports ([7ce80cb](https://github.com/Naco-UI/svelte-naco/commit/7ce80cbce0275667dffc20e9afc9ab0af6717a16))
+* **Select:** Use correct check condition ([c6684e2](https://github.com/Naco-UI/svelte-naco/commit/c6684e26abe2e6db3b9440df2bb2dbc119f8bcb5))
+* **SidebarMenu:** pass only needed props ([21ef25a](https://github.com/Naco-UI/svelte-naco/commit/21ef25abc75f17ffe5d0fe4442d125a499c738a6))
+* **Typography:** unset `flex: 1` by default and enable it for `fullWidth` ([cf02aea](https://github.com/Naco-UI/svelte-naco/commit/cf02aea60db7d7001e636c922903cc0529c2c09b))
+
 ## [0.1.2](https://github.com/Naco-UI/svelte-naco/compare/v0.1.1...v0.1.2) (2023-09-26)
 
 ### Features
