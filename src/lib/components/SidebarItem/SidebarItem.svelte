@@ -21,28 +21,40 @@
       <svelte:component this={icon} />
     </div>
   {/if}
-  <Typography>
-    <slot />
-  </Typography>
+  <div class="label">
+    <Typography color="inherit">
+      <slot />
+    </Typography>
+  </div>
 </button>
 
 <style lang="scss">
   .sidebar-item {
+    --sidebar-item-height: 28px;
+    --sidebar-item-border-radius: var(--border-radius-m);
+    --sidebar-item-padding: 0 4px;
+    --sidebar-item-color: var(--color-content-primary);
+    --sidebar-item-active-color: var(--color-content-primary);
+    --sidebar-item-active-background: var(--color-border-main);
+    --sidebar-item-icon-gap: var(--space-xxs);
+    --sidebar-item-icon-color: var(--color-content-accent);
+    --sidebar-item-active-icon-color: var(--color-content-accent);
+
     display: inline-flex;
-    gap: var(--space-xxs);
+    gap: var(--sidebar-item-icon-gap);
     align-items: center;
 
     width: 100%;
-    height: 28px;
-    padding: 0 4px;
+    height: var(--sidebar-item-height);
+    padding: var(--sidebar-item-padding);
 
     appearance: none;
     background-color: transparent;
     border: none;
-    border-radius: var(--border-radius-m);
+    border-radius: var(--sidebar-item-border-radius);
 
     &.selected {
-      background-color: var(--color-border-main);
+      background-color: var(--sidebar-item-active-background);
     }
 
     &:not(.with-icon) {
@@ -53,6 +65,15 @@
       pointer-events: none;
       opacity: 0.5;
     }
+  }
+
+  .label {
+    display: contents;
+    color: var(--sidebar-item-color);
+  }
+
+  .selected .label {
+    color: var(--sidebar-item-active-color);
   }
 
   .icon {
@@ -66,8 +87,30 @@
     height: 20px;
 
     font-size: 14px;
-    color: var(--color-content-accent);
+    color: var(--sidebar-item-icon-color);
 
-    fill: var(--color-content-accent);
+    fill: var(--sidebar-item-icon-color);
+  }
+
+  .selected .icon {
+    color: var(--sidebar-item-active-icon-color);
+    fill: var(--sidebar-item-active-icon-color);
+  }
+
+  :global(.os-linux) .sidebar-item {
+    --sidebar-item-height: 42px;
+    --sidebar-item-border-radius: 0;
+    --sidebar-item-padding: 0 12px;
+    --sidebar-icon-gap: var(--space-xs);
+    --sidebar-item-active-background: var(--color-content-accent);
+    --sidebar-item-active-color: white;
+    --sidebar-item-icon-color: var(--color-content-primary);
+    --sidebar-item-active-icon-color: white;
+
+    transition: var(--transition-default);
+
+    &:not(.selected):hover {
+      background-color: var(--color-border-main);
+    }
   }
 </style>

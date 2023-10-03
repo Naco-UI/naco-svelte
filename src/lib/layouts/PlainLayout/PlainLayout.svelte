@@ -37,13 +37,15 @@
 
 <style lang="scss">
   .plain-layout {
+    --plain-layout-background-color: var(--color-background-secondary);
+
     position: relative;
 
     flex: 1;
 
     padding: var(--space-sl);
 
-    background-color: var(--color-background-secondary);
+    background-color: var(--plain-layout-background-color);
 
     transition: var(--transition-default);
   }
@@ -61,6 +63,12 @@
 
     &.drag {
       --wails-draggable: drag;
+    }
+  }
+
+  :global(.os-linux) {
+    .plain-layout {
+      --plain-layout-background-color: var(--color-background-primary);
     }
   }
 
