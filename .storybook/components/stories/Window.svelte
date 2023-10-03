@@ -132,6 +132,7 @@
 
     &.translucent {
       background-color: var(--color-background-translucent);
+      -webkit-backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
     }
   }
