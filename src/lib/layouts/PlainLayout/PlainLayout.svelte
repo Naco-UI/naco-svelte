@@ -7,6 +7,7 @@
   export let transparent: PlainLayoutProps['transparent'] = false
   export let inset: PlainLayoutProps['inset'] = false
   export let insetTitle: PlainLayoutProps['insetTitle'] = undefined
+  export let disableDrag: PlainLayoutProps['disableDrag'] = false
 
   const { os } = useTheme()
 
@@ -16,7 +17,7 @@
 
 <div class="plain-layout" class:inset class:transparent>
   {#if isInset}
-    <div class="inset-titlebar">
+    <div class="inset-titlebar" class:drag={!disableDrag}>
       {#if insetTitle}
         <div class="title">
           <Typography variant="heading-s" align="center" fullWidth
@@ -48,8 +49,6 @@
   }
 
   .inset-titlebar {
-    --wails-draggable: drag;
-
     position: absolute;
     top: 0;
     left: 0;
@@ -59,6 +58,10 @@
 
     width: 100%;
     height: var(--space-inset-titlebar);
+
+    &.drag {
+      --wails-draggable: drag;
+    }
   }
 
   :global(.os-mac) {
