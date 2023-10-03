@@ -9,8 +9,8 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "outDir": "dist",
     "paths": {
       "$storybook/docs": ["./.storybook/components/docs/index.ts"],

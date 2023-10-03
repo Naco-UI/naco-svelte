@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "hook": "simple-git-hooks",
-    "build": "bash scripts/clean-build.sh",
+    "build": "node scripts/build.mjs",
     "build-storybook": "storybook build",
     "release:bump": "standard-version --infile CHANGELOG.md --same-file --skip.commit --skip.tag",
     "preview": "pnpm build-storybook && pnpm preview:serve",
@@ -35,8 +35,9 @@
   },
   "files": [
     "dist",
-    "!dist/**/*.test.*",
-    "!dist/**/*.spec.*"
+    "package.json",
+    "LICENSE",
+    "README.md"
   ],
   "peerDependencies": {
     "sass": "^1.66.0",
@@ -93,6 +94,7 @@
     "stylelint-scss": "^5.1.0",
     "svelte": "^4.0.5",
     "svelte-check": "^3.4.3",
+    "terser": "^5.21.0",
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
     "vite": "^4.4.2",
