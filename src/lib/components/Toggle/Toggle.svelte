@@ -2,12 +2,14 @@
   import { createEventDispatcher } from 'svelte'
 
   import { isForm } from '../FormGroup/index.js'
-  import type { ToggleProps, ToggleSizeMac } from './Toggle.types.js'
+  import { NacoTheme } from '../ThemeProvider/index.js'
+  import { manifest } from './Toggle.theme.js'
+  import type { ToggleProps } from './Toggle.types.js'
 
   export let checked: ToggleProps['checked'] = false
   export let disabled: ToggleProps['disabled'] = false
 
-  const sizeMac: ToggleSizeMac = isForm() ? 's' : 'm'
+  const isInForm = isForm()
 
   const dispatch = createEventDispatcher()
 
@@ -17,24 +19,29 @@
   }
 </script>
 
-<label
-  class="{$$restProps.class ?? ''} mac-size-{sizeMac}"
-  class:checked
-  class:disabled
->
-  <input {disabled} type="checkbox" {checked} on:click={handleClick} />
-</label>
+<NacoTheme {manifest} let:os>
+  <label
+    class={$$restProps.class ?? ''}
+    class:checked
+    class:disabled
+    class:mac-form={os === 'mac' && isInForm}
+  >
+    <input {disabled} type="checkbox" {checked} on:click={handleClick} />
+  </label>
+</NacoTheme>
 
 <style lang="scss">
   label {
-    --switch-knob-color: #fff;
-    --switch-background-color: var(--color-background-tertiary);
-    --switch-background-selected-color: var(--color-content-accent);
-
     position: relative;
+
     display: inline-block;
-    width: var(--switch-width);
-    height: calc(var(--switch-height) - 1px);
+
+    width: var(--toggle-size-width);
+    height: calc(var(--toggle-size-height) - 1px);
+
+    opacity: var(--toggle-effect-opacity);
+
+    transition: var(--transition-default);
 
     &::before,
     &::after {
@@ -46,90 +53,59 @@
 
       display: block;
 
-      width: var(--switch-width);
-      height: var(--switch-height);
+      width: var(--toggle-size-width);
+      height: var(--toggle-size-height);
 
-      background-color: var(--switch-background-color);
-      border-radius: 99px;
+      background-color: var(--toggle-color-track);
+      border-radius: var(--toggle-size-height);
 
       transition: var(--transition-default);
     }
 
     &::before {
-      outline: 1px solid var(--color-border-secondary);
+      outline: 1px solid var(--toggle-color-track-border);
+      box-shadow: var(--toggle-effect-shadow-track);
     }
 
     &::after {
       top: 1px;
       left: 1px;
 
-      width: calc(var(--switch-height) - 2px);
-      height: calc(var(--switch-height) - 2px);
+      width: calc(var(--toggle-size-height) - 2px);
+      height: calc(var(--toggle-size-height) - 2px);
 
-      background-color: var(--switch-knob-color);
+      background-color: var(--toggle-color-knob);
+      box-shadow: var(--toggle-effect-shadow-knob);
     }
 
     &.disabled {
       pointer-events: none;
       opacity: 0.5;
     }
+
+    &.mac-form {
+      --toggle-size-width: var(--toggle-size-form-width);
+      --toggle-size-height: var(--toggle-size-form-height);
+      --toggle-effect-shadow-knob: var(--toggle-effect-shadow-form-knob);
+    }
   }
 
   input {
-    width: var(--switch-width);
-    height: 1px;
+    width: var(--toggle-size-width);
+    height: var(--toggle-size-height);
     appearance: none;
   }
 
   label.checked {
     &::before {
-      background-color: var(--switch-background-selected-color);
-      outline: 1px solid var(--switch-background-selected-color);
+      background-color: var(--toggle-color-track-selected);
+      outline: 1px solid var(--toggle-color-track-selected);
     }
 
     &::after {
-      transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+      transform: translateX(
+        calc(var(--toggle-size-width) - var(--toggle-size-height))
+      );
     }
-  }
-
-  :global(.naco.os-mac) label {
-    --switch-width: 40px;
-    --switch-height: 22px;
-
-    &::before {
-      box-shadow: 0 4px 4px 0 rgb(0 0 0 / 5%) inset;
-    }
-
-    &::after {
-      top: 0;
-      left: 0;
-
-      width: var(--switch-height);
-      height: var(--switch-height);
-
-      box-shadow: 0 0.5px 4px rgb(0 0 0 / 20%);
-    }
-
-    &.mac-size-s {
-      --switch-width: 26px;
-      --switch-height: 15px;
-
-      &::before {
-        box-shadow: 0 2px 2px 0 rgb(0 0 0 / 5%) inset;
-      }
-
-      &::after {
-        box-shadow: 0 0.5px 1px rgb(0 0 0 / 20%);
-      }
-    }
-  }
-
-  :global(.naco.os-mac.dark) label.mac-size-s::after {
-    opacity: 0.85;
-  }
-
-  :global(.naco.os-linux) label {
-    --switch-width: 38px;
-    --switch-height: 22px;
   }
 </style>
