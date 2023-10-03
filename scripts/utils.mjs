@@ -9,7 +9,7 @@ export const exec = promisify(cp.exec)
  * @param  {...string} paths
  * @returns {Promise<void>}
  */
-export const rm = async(...paths) => {
+export const rm = async (...paths) => {
   await exec(`rm ${paths.join(' ')}`)
 }
 
@@ -17,7 +17,7 @@ export const rm = async(...paths) => {
  * @param  {...string} paths
  * @returns {Promise<void>}
  */
-export const rmrf = async(...paths) => {
+export const rmrf = async (...paths) => {
   await exec(`rm -rf ${paths.join(' ')}`)
 }
 
@@ -59,12 +59,10 @@ export async function mapFile(path, transform) {
 }
 
 /**
-* @param {string[]} paths
-* @param {(t: string) => string} transform
-* @returns {Promise<void>}
-*/
+ * @param {string[]} paths
+ * @param {(t: string) => string} transform
+ * @returns {Promise<void>}
+ */
 export async function mapFiles(paths, transform) {
-  await Promise.all(
-    paths.map((path) => mapFile(path, transform)),
-  )
+  await Promise.all(paths.map((path) => mapFile(path, transform)))
 }

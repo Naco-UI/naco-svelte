@@ -36,8 +36,15 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     'space-before-function-paren': 'off',
-    '@typescript-eslint/space-before-function-paren': ['error', 'never'],
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
+    '@typescript-eslint/space-before-function-paren': [
+      'error',
+      {
+        anonymous: 'never',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
     'no-console': 'error',
   },
 }

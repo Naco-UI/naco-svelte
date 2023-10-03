@@ -1,5 +1,6 @@
 import fg from 'fast-glob'
 import { writeFile } from 'fs/promises'
+import { basename, dirname, join } from 'path'
 import { minify } from 'terser'
 
 import { exec, mapFiles, readTextFile, rm, rmrf, startAction } from './utils.mjs'
@@ -30,12 +31,12 @@ async function removeJunk() {
 async function clearTypes(jsFiles, tsFiles) {
   const done = startAction('Clear types', 'get rid of .types.js')
   // Replace '.types.js' with '.types.d.ts' in TypeScript files
-  await mapFiles(tsFiles, content => {
+  await mapFiles(tsFiles, (content) => {
     content = content.replaceAll('.types.js', '.types.d.ts')
     return content
   })
   // Remove '.types.js' exports from JavaScript files
-  await mapFiles(jsFiles, content => {
+  await mapFiles(jsFiles, (content) => {
     content = content.replace(/export (.*)\.types\.js';/gm, '\r')
     return content
   })
@@ -52,8 +53,10 @@ async function clearTypes(jsFiles, tsFiles) {
 async function minifyJS(path) {
   const content = await readTextFile(path)
   const { code, map } = await minify(content, { sourceMap: true })
-  if (code) {
+  if (code && map) {
+    const mapPath = join(dirname(path), `${basename(path)}.map`)
     await writeFile(path, code)
+    await writeFile(mapPath, String(map))
   }
 }
 
@@ -62,9 +65,7 @@ async function minifyJS(path) {
  */
 async function minifyFiles(jsFiles) {
   const done = startAction('Minify package', 'terser')
-  await Promise.all(
-    jsFiles.map(minifyJS),
-  )
+  await Promise.all(jsFiles.map(minifyJS))
   done()
 }
 
