@@ -34,6 +34,7 @@ function parseCategory(
     if (!value && value) continue
     const targetKey = `${prefix}-${camelToSnakeCase(key)}`
     if (value === null) {
+      result[targetKey] = ''
       continue
     }
     result[targetKey] = stringify(value)

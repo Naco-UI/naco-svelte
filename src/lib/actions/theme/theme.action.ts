@@ -1,34 +1,11 @@
-import type { ColorScheme, OS } from '$lib/index.js'
-
-import { parseProps } from './parse.js'
 import type {
-  ThemeDescription,
   ThemeHooks,
   ThemeManifest,
   ThemeProperties,
   ThemeProps,
 } from './theme.types.js'
-import { mergeProps } from './utils.js'
-
-function getTheme(
-  manifest: ThemeManifest,
-  os: OS,
-  scheme: ColorScheme,
-): ThemeProperties {
-  const themeProps: ThemeProperties = {}
-
-  function addSchemeProps(description: ThemeDescription): void {
-    mergeProps(themeProps, parseProps(description, scheme))
-  }
-
-  if (manifest.common) {
-    addSchemeProps(manifest.common)
-  }
-  if (manifest[os]) {
-    addSchemeProps(manifest[os] as ThemeDescription)
-  }
-  return themeProps
-}
+import { getTheme } from './utils.js'
+import { validateManifest } from './validate.js'
 
 function applyProps(
   el: HTMLElement,
@@ -54,10 +31,15 @@ export function theme(el: HTMLElement, initial: ThemeProps): ThemeHooks {
   let latestManifest: ThemeManifest = initial.manifest
   let os = initial.os
   let scheme = initial.scheme
+  const debug = initial.debug
+
+  if (debug) {
+    validateManifest(latestManifest)
+  }
 
   function applyTheme(): void {
     const props = getTheme(latestManifest, os, scheme)
-    applyProps(el, props, latestManifest.prefix, initial.debug)
+    applyProps(el, props, latestManifest.prefix, debug)
   }
 
   applyTheme()
