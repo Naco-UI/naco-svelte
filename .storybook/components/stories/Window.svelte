@@ -4,7 +4,7 @@
 
   export let height: number | 'auto' = 'auto'
   export let translucent = false
-  export let titlebar = false
+  export let titlebar = true
   export let title = 'Naco UI'
   export let inset = false
 
