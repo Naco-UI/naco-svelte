@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.4](https://github.com/Naco-UI/svelte-naco/compare/v0.1.3...v0.1.4) (2023-10-03)
+
+### Bug Fixes
+
+* remove sleep usage ([362acef](https://github.com/Naco-UI/svelte-naco/commit/362aceff9ecc8831670cbbdff3f4d42e96cddc63))
+
 ## [0.1.3](https://github.com/Naco-UI/svelte-naco/compare/v0.1.2...v0.1.3) (2023-10-03)
 
 ### Features
