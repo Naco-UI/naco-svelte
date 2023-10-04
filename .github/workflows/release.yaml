@@ -3,7 +3,17 @@ name: Create release
 env:
   PNPM_VERSION: '8.6.2'
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      release_type:
+        type: choice
+        description: Release type
+        options:
+          - public
+          - rc
+          - beta
+          - alpha
 
 jobs:
   release:
@@ -21,11 +31,20 @@ jobs:
       - name: Setup standard-version
         run: npm install -g standard-version
 
-      - name: Generate release
+      - name: Setup GitHub Actions bot
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          standard-version --infile CHANGELOG.md --same-file
+
+      - name: Create public release
+        if: inputs.release_type == 'public'
+        run: standard-version --infile CHANGELOG.md --same-file
+
+      - name: Create test release
+        if: inputs.release_type != 'public'
+        env:
+          RELEASE_SUFFIX: ${{ inputs.release_type }}
+        run: standard-version --infile CHANGELOG.md -p "$RELEASE_SUFFIX" --same-file
 
       - name: Push changes
         uses: ad-m/github-push-action@master
