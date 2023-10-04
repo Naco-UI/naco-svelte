@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/Naco-UI/svelte-naco/compare/v0.1.7-beta.0...v1.1.0) (2023-10-04)
+
+### Features
+
+* remove `root` prop from layouts ([55b54d8](https://github.com/Naco-UI/svelte-naco/commit/55b54d8ccb934b55db14b16ae98c732aeaf49b7c))
+
 ## [0.1.7-beta.0](https://github.com/Naco-UI/svelte-naco/compare/v0.1.6...v0.1.7-beta.0) (2023-10-04)
 
 ### Features
