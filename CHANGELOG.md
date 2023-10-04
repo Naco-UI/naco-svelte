@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.7-beta.0](https://github.com/Naco-UI/svelte-naco/compare/v0.1.6...v0.1.7-beta.0) (2023-10-04)
+
+### Features
+
+* **SidebarLayout:** remove pre-render from DOM ([d7856ae](https://github.com/Naco-UI/svelte-naco/commit/d7856ae94fc99276eb010e6c248c87813d35bcd9))
+
+
+### Bug Fixes
+
+* **SidebarLayout:** avoid initial content skip ([0521414](https://github.com/Naco-UI/svelte-naco/commit/0521414303c251ee9cd8c02b0f69d14da8b9a5e0))
+* **SidebarLayout:** fix inset title on webkit ([2a9a174](https://github.com/Naco-UI/svelte-naco/commit/2a9a174051c7728dd023c463781742aa4e26b09d))
+
 ## [0.1.6](https://github.com/Naco-UI/svelte-naco/compare/v0.1.5...v0.1.6) (2023-10-03)
 
 ### Features
