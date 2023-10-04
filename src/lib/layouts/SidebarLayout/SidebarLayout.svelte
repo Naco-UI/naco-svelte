@@ -10,7 +10,6 @@
   export let transparent: SidebarLayoutProps['transparent'] = false
   export let keepDOM: SidebarLayoutProps['keepDOM'] = false
   export let inset: SidebarLayoutProps['inset'] = false
-  export let root: SidebarLayoutProps['root'] = false
   export let insetTitle: SidebarLayoutProps['insetTitle'] = undefined
 
   const { os } = useTheme()
@@ -48,13 +47,7 @@
   })
 </script>
 
-<div
-  class="sidebar-layout"
-  class:root
-  class:inset
-  class:transparent
-  class:hide={hideSidebar}
->
+<div class="sidebar-layout" class:inset class:transparent class:hide={hideSidebar}>
   {#if isInset}
     <div class="inset-titlebar">
       {#if insetTitle}
@@ -108,6 +101,7 @@
 
     display: grid;
     grid-template-columns: var(--sidebar-width) 1fr;
+    flex: 1;
 
     width: 100%;
 
@@ -123,10 +117,6 @@
       .sidebar-content {
         opacity: 0;
       }
-    }
-
-    &.root {
-      height: 100vh;
     }
   }
 

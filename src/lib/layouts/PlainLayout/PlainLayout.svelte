@@ -8,7 +8,6 @@
   export let inset: PlainLayoutProps['inset'] = false
   export let insetTitle: PlainLayoutProps['insetTitle'] = undefined
   export let disableDrag: PlainLayoutProps['disableDrag'] = false
-  export let root: PlainLayoutProps['root'] = false
 
   const { os } = useTheme()
 
@@ -16,7 +15,7 @@
   $: hasToolbar = Boolean($$slots.toolbar)
 </script>
 
-<div class="plain-layout" class:root class:inset class:transparent>
+<div class="plain-layout" class:inset class:transparent>
   {#if isInset}
     <div class="inset-titlebar" class:drag={!disableDrag}>
       {#if insetTitle}
@@ -49,10 +48,6 @@
     background-color: var(--plain-layout-background-color);
 
     transition: var(--transition-default);
-
-    &.root {
-      height: 100vh;
-    }
   }
 
   .inset-titlebar {
