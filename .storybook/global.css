@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
+span.version-badge {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #5e5e5e;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  margin-left: 18px;
+  height: 15px;
+}
+
 .text-large.text-large.text-large,
 .text-large.text-large.text-large p {
   font-size: 1.64rem;
@@ -15,6 +26,8 @@
   letter-spacing: -0.003em;
   font-weight: 700;
   margin-bottom: 32px;
+  display: flex;
+  align-items: center;
 }
 
 .sbdocs.sbdocs-content :where(h2:not(.sb-anchor, .sb-unstyled, .sb-unstyled h2)) {

@@ -35,6 +35,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
+      - name: Set envs
+        run: |
+          export RELEASE_VERSION=${GITHUB_REF#refs/*/}
+          echo "NACO_VERSION=`$RELEASE_VERSION`" >> $GITHUB_ENV
+
       - name: Build Storybook
         run: pnpm build-storybook
 

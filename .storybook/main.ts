@@ -1,6 +1,8 @@
 import type { StorybookConfig } from '@storybook/sveltekit'
 import { mergeConfig } from 'vite'
 
+const version = process.env.NACO_VERSION ?? ''
+
 const config: StorybookConfig = {
   stories: ['../docs/**/*.mdx', '../src/**/*.mdx', '../src/**/*.stories.svelte'],
   staticDirs: [{ from: '../images', to: '/images' }],
@@ -23,6 +25,9 @@ const config: StorybookConfig = {
   },
   async viteFinal(config) {
     return mergeConfig(config, {
+      define: {
+        NACO_VERSION: version,
+      },
       server: {
         fs: {
           allow: [`${process.cwd()}/docs`],

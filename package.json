@@ -6,12 +6,12 @@
     "directory": "./dist"
   },
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "dev": "NACO_VERSION='`dev`' storybook dev -p 6006",
     "hook": "simple-git-hooks",
     "build": "node scripts/build.mjs",
     "build-storybook": "storybook build",
     "release:bump": "standard-version --infile CHANGELOG.md --same-file --skip.commit --skip.tag",
-    "preview": "pnpm storybook build && pnpm preview:serve",
+    "preview": "NACO_VERSION='`preview`' pnpm storybook build && pnpm preview:serve",
     "preview:serve": "browser-sync start --port 6006 --server --ss ./storybook-static",
     "check": "pnpm run '/^check:.*/'",
     "check:files": "./scripts/check-files.mjs",
