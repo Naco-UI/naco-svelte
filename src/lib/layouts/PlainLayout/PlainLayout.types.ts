@@ -3,4 +3,5 @@ export interface PlainLayoutProps {
   inset?: boolean
   insetTitle?: string
   disableDrag?: boolean
+  insetSafeToolbar?: boolean
 }

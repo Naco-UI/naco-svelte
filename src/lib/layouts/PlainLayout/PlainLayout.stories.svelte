@@ -64,7 +64,10 @@
 
 <Story name="Inset">
   <Window translucent titlebar {inset}>
-    <PlainLayout {inset} insetTitle="Naco UI">
+    <PlainLayout insetSafeToolbar={false} {inset}>
+      <Typography slot="toolbar" fullWidth align="center" variant="heading-s"
+        >Naco UI</Typography
+      >
       <FormGroup>
         <FormRow title="Inset">
           <Toggle bind:checked={inset} />
@@ -73,3 +76,33 @@
     </PlainLayout>
   </Window>
 </Story>
+
+<Story name="Scroll">
+  <Window height={200} translucent titlebar {inset}>
+    <PlainLayout insetSafeToolbar={false} {inset}>
+      <Typography slot="toolbar" fullWidth align="center" variant="heading-s"
+        >Naco UI</Typography
+      >
+      <div class="scroll">
+        <FormGroup>
+          <FormRow>
+            <Typography fullWidth align="center">Scroll start</Typography>
+          </FormRow>
+        </FormGroup>
+        <FormGroup>
+          <FormRow>
+            <Typography fullWidth align="center">Scroll end</Typography>
+          </FormRow>
+        </FormGroup>
+      </div>
+    </PlainLayout>
+  </Window>
+</Story>
+
+<style lang="scss">
+  .scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 600px;
+  }
+</style>

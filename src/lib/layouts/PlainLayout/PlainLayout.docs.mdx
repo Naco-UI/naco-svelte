@@ -19,6 +19,12 @@ On macOS, it supports transparent mode. In this mode, the background behind the 
 
 ## Inset
 
-Wails supports customizing of the [title bar](https://wails.io/docs/reference/options/#titlebar) on macOS. To display the form correctly with `mac.TitleBarHiddenInset()` enabled, set the `inset` parameter to layout. In this mode, the header is displayed on the Layout side (`insetTitle` propeprty), not the window side. Also the css parameter `--wails-draggable` is set in place of the header to make the window move correctly
+Wails supports customizing of the [title bar](https://wails.io/docs/reference/options/#titlebar) on macOS. To display the form correctly with `mac.TitleBarHiddenInset()` enabled, set the `inset` parameter to layout. In this mode, the header is displayed on the Layout side (`insetTitle` propeprty), not the window side. Also the css parameter `--wails-draggable` is set in place of the header to make the window move correctly.
 
 <Story of={Stories.Inset} />
+
+## Scroll
+
+PlainLayout can handle long content and supports scrolling. The `inset` variant will additionally display a dynamic header.
+
+<Story of={Stories.Scroll} />
