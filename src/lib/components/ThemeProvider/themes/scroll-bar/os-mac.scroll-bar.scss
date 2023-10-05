@@ -1,0 +1,12 @@
+.os-mac {
+  --scroll-bar-track-width: 14px;
+  --scroll-bar-thumb-width: 8px;
+}
+
+.os-mac.light {
+  --scroll-bar-thumb-color: rgb(0 0 0 / 26%);
+}
+
+.os-mac.dark {
+  --scroll-bar-thumb-color: rgb(255 255 255 / 26%);
+}

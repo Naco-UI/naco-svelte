@@ -2,3 +2,19 @@
 .naco * {
   box-sizing: border-box;
 }
+
+.naco * {
+  &::-webkit-scrollbar {
+    width: var(--scroll-bar-track-width);
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-thumb-color);
+    border-radius: var(--scroll-bar-track-width);
+    border: calc((var(--scroll-bar-track-width) - var(--scroll-bar-thumb-width)) / 2)
+      solid transparent;
+    background-clip: padding-box;
+  }
+}

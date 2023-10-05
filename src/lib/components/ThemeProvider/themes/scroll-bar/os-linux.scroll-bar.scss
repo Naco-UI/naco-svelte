@@ -1,0 +1,12 @@
+.os-linux {
+  --scroll-bar-track-width: 14px;
+  --scroll-bar-thumb-width: 8px;
+}
+
+.os-linux.light {
+  --scroll-bar-thumb-color: rgb(0 0 0 / 26%);
+}
+
+.os-linux.dark {
+  --scroll-bar-thumb-color: rgb(255 255 255 / 26%);
+}
