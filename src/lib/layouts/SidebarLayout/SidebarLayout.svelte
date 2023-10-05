@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte'
 
-  import { Typography, useTheme } from '$lib/index.js'
+  import { getTheme, Typography } from '$lib/index.js'
 
   import { PlainLayout } from '../PlainLayout/index.js'
   import type { SidebarLayoutProps } from './SidebarLayout.types.js'
@@ -12,7 +12,7 @@
   export let inset: SidebarLayoutProps['inset'] = false
   export let insetTitle: SidebarLayoutProps['insetTitle'] = undefined
 
-  const { os } = useTheme()
+  const { os } = getTheme()
 
   // Variable is for internal use, but export it for debugging
   export let shouldRenderSidebar = keepDOM || !hideSidebar
