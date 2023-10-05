@@ -4,4 +4,5 @@ export type ColorScheme = 'light' | 'dark'
 export interface ThemeProviderProps {
   os: OS
   scheme: ColorScheme
+  container?: boolean
 }

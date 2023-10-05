@@ -55,6 +55,6 @@ export const withThemeProvider = (_, context) => {
 
   return {
     Component: ThemeProvider,
-    props: { os, scheme },
+    props: { os, scheme, container: true },
   }
 }
