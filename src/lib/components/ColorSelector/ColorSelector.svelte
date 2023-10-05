@@ -5,7 +5,7 @@
 
   import Radio from '../Radio/Radio.svelte'
   import { Stack } from '../Stack/index.js'
-  import { useTheme } from '../ThemeProvider/context.js'
+  import { getTheme } from '../ThemeProvider/context.js'
   import { radioSize, randomGradient } from './ColorSelector.constants.js'
   import type { ColorSelectorProps } from './ColorSelector.types.js'
 
@@ -20,7 +20,7 @@
 
   const dispatch = createEventDispatcher()
 
-  const { os } = useTheme()
+  const { os } = getTheme()
 
   function handleChange(e: CustomEvent<string>, i: number): void {
     value = e.detail

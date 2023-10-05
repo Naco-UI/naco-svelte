@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { useTheme } from '../ThemeProvider/index.js'
+  import { getTheme } from '../ThemeProvider/index.js'
 
-  const { os } = useTheme()
+  const { os } = getTheme()
 </script>
 
 <div class="stepper">

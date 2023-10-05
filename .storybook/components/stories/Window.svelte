@@ -1,6 +1,6 @@
 <script lang="ts">
   import Typography from '$lib/components/Typography/Typography.svelte'
-  import { useTheme } from '$lib/index.js'
+  import { getTheme } from '$lib/index.js'
 
   export let height: number | 'auto' = 'auto'
   export let translucent = false
@@ -8,7 +8,7 @@
   export let title = 'Naco UI'
   export let inset = false
 
-  const { os } = useTheme()
+  const { os } = getTheme()
 
   $: isInset = $os === 'mac' && inset
 
@@ -132,7 +132,7 @@
 
     &.translucent {
       background-color: var(--color-background-translucent);
-      -webkit-backdrop-filter: blur(30px);
+      backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
     }
   }

@@ -14,6 +14,6 @@ export function createThemeContext(initialState: ThemeProviderProps): ThemeConte
   return stores
 }
 
-export function useTheme(): ThemeContext {
+export function getTheme(): ThemeContext {
   return getContext('naco')
 }

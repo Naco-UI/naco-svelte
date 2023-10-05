@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useTheme } from '../ThemeProvider/index.js'
+  import { getTheme } from '../ThemeProvider/index.js'
   import LinuxSpinner from './LinuxSpinner.svelte'
   import MacSpinner from './MacSpinner.svelte'
   import type { SpinnerProps, SpinnerSize } from './Spinner.types.js'
@@ -12,7 +12,7 @@
     l: 32,
   }
 
-  const { os } = useTheme()
+  const { os } = getTheme()
 
   $: currentSize = spinnerSize[size ?? 'm']
 </script>

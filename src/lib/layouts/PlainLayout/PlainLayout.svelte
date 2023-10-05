@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { useTheme } from '$lib/index.js'
+  import { getTheme } from '$lib/index.js'
 
   import { Typography } from '../../components/Typography/index.js'
   import type { PlainLayoutProps } from './PlainLayout.types.js'
@@ -9,7 +9,7 @@
   export let insetTitle: PlainLayoutProps['insetTitle'] = undefined
   export let disableDrag: PlainLayoutProps['disableDrag'] = false
 
-  const { os } = useTheme()
+  const { os } = getTheme()
 
   $: isInset = inset && $os === 'mac'
   $: hasToolbar = Boolean($$slots.toolbar)
