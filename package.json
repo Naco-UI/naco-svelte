@@ -16,6 +16,7 @@
     "check": "pnpm run '/^check:.*/'",
     "check:files": "./scripts/check-files.mjs",
     "check:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:types": "tsc",
     "test": "vitest --run",
     "test:watch": "vitest",
     "spell-check": "cspell './**/*.{md,mdx}'",
