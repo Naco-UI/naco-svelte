@@ -1,7 +1,7 @@
 import type { StorybookConfig } from '@storybook/sveltekit'
 import { mergeConfig } from 'vite'
 
-const version = process.env.NACO_VERSION ?? ''
+const version = process.env.NACO_VERSION ?? 'preview'
 
 const config: StorybookConfig = {
   stories: ['../docs/**/*.mdx', '../src/**/*.mdx', '../src/**/*.stories.svelte'],
