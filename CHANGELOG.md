@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0-alpha.2](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2023-11-07)
+
+### Bug Fixes
+
+* use correct version ([555132d](https://github.com/Naco-UI/svelte-naco/commit/555132d3641656ae1058c8e18ba52e4782bc9178))
+
 ## [1.2.0-alpha.1](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.0...v1.2.0-alpha.1) (2023-11-07)
 
 ### Features
