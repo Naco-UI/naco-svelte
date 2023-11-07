@@ -25,7 +25,7 @@
   const insetDraggable = macInset?.draggable ?? true
   const hasInsetTitle = Boolean(macInset?.title)
   const isTransparent = Boolean(toolbar?.transparent)
-  const isAnimatedToolbar = Boolean(macInset?.animateToolbar)
+  const isAnimatedToolbar = Boolean(toolbar?.animate)
   $: hasToolbar = toolbar?.show ?? Boolean($$slots.toolbar)
   $: hasTitlebar = (isInset && hasInsetTitle) || hasToolbar
   let resizeObserver: ResizeObserver

@@ -7,7 +7,7 @@ export interface SidebarLayoutProps {
   hideSidebar?: boolean
   transparent?: boolean
   keepDOM?: boolean
-  macInset?: Pick<PlainLayoutMacInsetParams, 'show' | 'title'>
+  macInset?: PlainLayoutMacInsetParams
   toolbar?: PlainLayoutToolbarParams
   sidebarWidth?: number
 }

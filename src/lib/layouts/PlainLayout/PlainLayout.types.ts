@@ -3,13 +3,13 @@ export interface PlainLayoutMacInsetParams {
   safePadding?: boolean
   draggable?: boolean
   title?: string
-  animateToolbar?: boolean
 }
 
 export interface PlainLayoutToolbarParams {
   show?: boolean
   height?: number
   transparent?: boolean
+  animate?: boolean
 }
 
 export interface PlainLayoutProps {

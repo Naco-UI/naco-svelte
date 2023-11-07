@@ -134,11 +134,54 @@
   </Window>
 </Story>
 
+<Story name="Toolbar">
+  <Window height={300} {inset} titlebar title="Naco UI" translucent>
+    <SidebarLayout
+      toolbar={{
+        height: 200,
+      }}
+      macInset={{
+        show: inset,
+        safePadding: false,
+      }}
+      {hideSidebar}
+      keepDOM
+      {transparent}
+    >
+      <SidebarMenu slot="sidebar" items={sidebarItems} />
+      <div class="custom-toolbar" slot="toolbar">
+        <span>Custom toolbar</span>
+      </div>
+      <div class="large-gap">
+        <Typography>Scroll block start</Typography>
+        <Typography>Scroll block end</Typography>
+      </div>
+    </SidebarLayout>
+  </Window>
+</Story>
+
 <style lang="scss">
   .large-gap {
     display: flex;
     flex-direction: column;
     gap: 2000px;
     margin-top: var(--space-l);
+  }
+
+  .custom-toolbar {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: var(--typography-font-family);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--color-content-heavy);
+
+    background-color: rgb(0 145 145 / 16%);
   }
 </style>

@@ -87,7 +87,9 @@
     <PlainLayout
       macInset={{
         title: 'Naco UI',
-        animateToolbar: true,
+      }}
+      toolbar={{
+        animate: true,
       }}
     >
       <div class="scroll">

@@ -11,7 +11,8 @@
   export let hideSidebar: SidebarLayoutProps['hideSidebar'] = false
   export let transparent: SidebarLayoutProps['transparent'] = false
   export let keepDOM: SidebarLayoutProps['keepDOM'] = false
-  export let macInset: SidebarLayoutProps['macInset'] = undefined
+  export let macInset: SidebarLayoutProps['macInset'] = {}
+  export let toolbar: SidebarLayoutProps['toolbar'] = {}
   export let sidebarWidth: SidebarLayoutProps['sidebarWidth'] = 200
 
   const { os } = getTheme()
@@ -83,9 +84,10 @@
     <div class="content-scroll">
       <PlainLayout
         toolbar={{
-          show: isInset,
+          ...toolbar,
         }}
         macInset={{
+          ...macInset,
           show: isInset,
           safePadding: hideSidebar,
         }}
