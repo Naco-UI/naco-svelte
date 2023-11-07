@@ -31,7 +31,7 @@ jobs:
         run: pnpm lint
 
       - name: Check spelling
-        run: pnpm spell-check
+        run: pnpm check:spelling
 
       - name: Run tests
         run: pnpm test
