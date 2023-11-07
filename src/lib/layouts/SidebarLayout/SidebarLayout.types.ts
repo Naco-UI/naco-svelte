@@ -1,7 +1,13 @@
+import type {
+  PlainLayoutMacInsetParams,
+  PlainLayoutToolbarParams,
+} from '../PlainLayout'
+
 export interface SidebarLayoutProps {
   hideSidebar?: boolean
   transparent?: boolean
   keepDOM?: boolean
-  inset?: boolean
-  insetTitle?: string
+  macInset?: Pick<PlainLayoutMacInsetParams, 'show' | 'title'>
+  toolbar?: PlainLayoutToolbarParams
+  sidebarWidth?: number
 }

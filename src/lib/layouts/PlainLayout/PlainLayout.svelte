@@ -1,33 +1,59 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte'
 
+  import Typography from '$lib/components/Typography/Typography.svelte'
   import { getTheme } from '$lib/index.js'
 
+  import { createLayoutContext } from './context.js'
   import type { PlainLayoutProps } from './PlainLayout.types.js'
 
   export let transparent: PlainLayoutProps['transparent'] = false
-  export let inset: PlainLayoutProps['inset'] = false
-  export let insetSafeToolbar: PlainLayoutProps['insetSafeToolbar'] = true
-  export let disableDrag: PlainLayoutProps['disableDrag'] = false
+  export let macInset: PlainLayoutProps['macInset'] = undefined
+  export let toolbar: PlainLayoutProps['toolbar'] = undefined
 
   const { os } = getTheme()
+  const { inset, scrolled } = createLayoutContext(false, true)
 
-  let scrollable = false
-  let scrolled = false
   let scrollRef: HTMLDivElement
+  let toolbarRef: HTMLDivElement
+  let layoutRef: HTMLDivElement
 
+  let layoutHeight = 0
+  let isScrollable = false
+  let isInset = false
+
+  const insetDraggable = macInset?.draggable ?? true
+  const hasInsetTitle = Boolean(macInset?.title)
+  const isTransparent = Boolean(toolbar?.transparent)
+  const isAnimatedToolbar = Boolean(macInset?.animateToolbar)
+  $: hasToolbar = toolbar?.show ?? Boolean($$slots.toolbar)
+  $: hasTitlebar = (isInset && hasInsetTitle) || hasToolbar
   let resizeObserver: ResizeObserver
 
-  function handleScroll(): void {
-    const isScrolled = scrollRef.scrollTop > 0
-    if (scrolled !== isScrolled) {
-      scrolled = isScrolled
+  $: (() => {
+    if ($os !== 'mac' || !macInset) {
+      isInset = false
+    } else {
+      isInset = macInset.show ?? Boolean(macInset)
     }
+    inset.set(isInset)
+  })()
+  $: titlebarHeight = (() => {
+    if (!hasTitlebar) {
+      return '0px'
+    }
+    return toolbar?.height ? `${toolbar.height}px` : 'var(--space-toolbar-height)'
+  })()
+  $: isInsetSafe = macInset?.safePadding ?? true
+
+  function handleScroll(): void {
+    scrolled.set(scrollRef.scrollTop > 0)
   }
 
   onMount(() => {
     resizeObserver = new ResizeObserver(() => {
-      scrollable = scrollRef.scrollHeight > scrollRef.offsetHeight
+      isScrollable = scrollRef.scrollHeight > scrollRef.offsetHeight
+      layoutHeight = layoutRef.offsetHeight
     })
     resizeObserver.observe(scrollRef)
     scrollRef.addEventListener('scroll', handleScroll)
@@ -36,27 +62,38 @@
     resizeObserver.disconnect()
     scrollRef.removeEventListener('scroll', handleScroll)
   })
-
-  $: isInset = inset && $os === 'mac'
-  $: hasToolbar = Boolean($$slots.toolbar)
 </script>
 
-<div class="plain-layout" class:inset class:transparent>
-  {#if isInset}
+<div
+  class="plain-layout"
+  style:--layout-titlebar-height={titlebarHeight}
+  style:--layout-height="{layoutHeight}px"
+  class:inset={$inset}
+  class:transparent
+  bind:this={layoutRef}
+>
+  {#if hasTitlebar}
     <div
-      class="inset-titlebar"
-      class:safe={insetSafeToolbar}
-      class:scrolled
-      class:drag={!disableDrag}
+      class="titlebar"
+      class:transparent={isTransparent}
+      class:drag={insetDraggable}
+      class:animated={isAnimatedToolbar}
+      class:scrolled={$scrolled}
     >
-      {#if hasToolbar}
-        <div class="toolbar">
+      {#if $inset && hasInsetTitle}
+        <div class="inset-title">
+          <Typography fullWidth align="center" variant="heading-s"
+            >{macInset?.title}</Typography
+          >
+        </div>
+      {:else if hasToolbar}
+        <div class="toolbar-wrapper" bind:this={toolbarRef} class:safe={isInsetSafe}>
           <slot name="toolbar" />
         </div>
       {/if}
     </div>
   {/if}
-  <div bind:this={scrollRef} class="scroll" class:scrollable>
+  <div bind:this={scrollRef} class="scroll" class:scrollable={isScrollable}>
     <div class="scroll-wrapper">
       <slot />
     </div>
@@ -73,42 +110,52 @@
     transition: var(--transition-default);
   }
 
-  .inset-titlebar {
-    position: absolute;
-    top: 0;
-    left: 0;
-
+  .titlebar {
     display: flex;
     align-items: center;
 
     width: 100%;
-    height: var(--space-inset-titlebar);
+    height: var(--layout-titlebar-height);
+
+    background-color: var(--color-background-toolbar);
 
     transition: var(--transition-default);
 
-    &.scrolled {
-      box-shadow: 0 1px 0 var(--color-border-main), var(--box-shadow-l);
+    &.animated {
+      background-color: var(--plain-layout-background-color);
+      box-shadow: none;
+
+      &.scrolled {
+        box-shadow: var(--box-shadow-s), var(--box-shadow-m);
+      }
     }
 
     &.drag {
       --wails-draggable: drag;
     }
-
-    &.safe {
-      padding-left: var(--space-inset-toolbar-safe);
-    }
   }
 
-  .toolbar {
+  .inset-title {
+    width: 100%;
+  }
+
+  .toolbar-wrapper {
     display: flex;
     flex: 1;
     align-items: center;
-    height: var(--space-inset-titlebar);
+
+    height: var(--layout-titlebar-height);
+
+    transition: var(--transition-default);
+
+    &.safe {
+      padding-left: var(--space-inset-toolbar-safe-padding);
+    }
   }
 
   .scroll {
     overflow-y: auto;
-    max-height: 100%;
+    max-height: calc(var(--layout-height) - var(--layout-titlebar-height));
     padding: var(--space-l) var(--space-sl);
 
     &.scrollable {
@@ -120,17 +167,21 @@
     .plain-layout {
       --plain-layout-background-color: var(--color-background-primary);
     }
+
+    .titlebar {
+      box-shadow: 0 1px 0 0 var(--color-border-main);
+    }
   }
 
   :global(.os-mac) {
     .plain-layout {
-      &.inset {
-        padding-top: var(--space-inset-titlebar);
-      }
-
       &.transparent {
         background-color: transparent;
       }
+    }
+
+    .titlebar {
+      box-shadow: var(--box-shadow-s), var(--box-shadow-m);
     }
   }
 </style>

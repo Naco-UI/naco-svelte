@@ -89,8 +89,16 @@
 </Story>
 
 <Story name="Inset">
-  <Window {inset} titlebar title="Naco UI" translucent>
-    <SidebarLayout {inset} insetTitle="Naco UI" {hideSidebar} keepDOM {transparent}>
+  <Window {inset} height={200} titlebar title="Naco UI" translucent>
+    <SidebarLayout
+      macInset={{
+        title: 'Naco UI',
+        show: inset,
+      }}
+      {hideSidebar}
+      keepDOM
+      {transparent}
+    >
       <SidebarMenu slot="sidebar" items={sidebarItems} />
       <FormGroup>
         <FormRow title="Hide sidebar">
@@ -106,3 +114,31 @@
     </SidebarLayout>
   </Window>
 </Story>
+
+<Story name="Scroll">
+  <Window height={300} {inset} titlebar title="Naco UI" translucent>
+    <SidebarLayout
+      macInset={{
+        show: inset,
+      }}
+      {hideSidebar}
+      keepDOM
+      {transparent}
+    >
+      <SidebarMenu slot="sidebar" items={sidebarItems} />
+      <div class="large-gap">
+        <Typography>Scroll block start</Typography>
+        <Typography>Scroll block end</Typography>
+      </div>
+    </SidebarLayout>
+  </Window>
+</Story>
+
+<style lang="scss">
+  .large-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 2000px;
+    margin-top: var(--space-l);
+  }
+</style>

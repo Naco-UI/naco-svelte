@@ -1,7 +1,9 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { onDestroy, onMount } from 'svelte'
 
-  import { getTheme, Typography } from '$lib/index.js'
+  import Toolbar from '$lib/components/Toolbar/Toolbar.svelte'
+  import ToolbarInsetTitle from '$lib/components/Toolbar/ToolbarInsetTitle.svelte'
+  import { getTheme } from '$lib/index.js'
 
   import { PlainLayout } from '../PlainLayout/index.js'
   import type { SidebarLayoutProps } from './SidebarLayout.types.js'
@@ -9,22 +11,37 @@
   export let hideSidebar: SidebarLayoutProps['hideSidebar'] = false
   export let transparent: SidebarLayoutProps['transparent'] = false
   export let keepDOM: SidebarLayoutProps['keepDOM'] = false
-  export let inset: SidebarLayoutProps['inset'] = false
-  export let insetTitle: SidebarLayoutProps['insetTitle'] = undefined
+  export let macInset: SidebarLayoutProps['macInset'] = undefined
+  export let sidebarWidth: SidebarLayoutProps['sidebarWidth'] = 200
 
   const { os } = getTheme()
+
+  $: isInset = $os === 'mac' ? macInset?.show ?? Boolean(macInset) : false
 
   // Variable is for internal use, but export it for debugging
   export let shouldRenderSidebar = keepDOM || !hideSidebar
 
   let timeoutId: number | null = null
-  let titleNode: HTMLDivElement
-  $: titleWidth = 0
+  let layoutRef: HTMLDivElement
+  let insetHeight: string
+  let resizeObserver: ResizeObserver
+  let layoutHeight: number = 0
 
   const unmountDelay = 1000
 
-  $: isInset = inset && $os === 'mac'
-  $: hasToolbar = Boolean($$slots.toolbar)
+  const insetTitle = macInset?.title
+  const hasToolbar = $$slots.toolbar
+
+  onMount(() => {
+    resizeObserver = new ResizeObserver(() => {
+      layoutHeight = layoutRef.offsetHeight
+    })
+    resizeObserver.observe(layoutRef)
+  })
+  onDestroy(() => {
+    resizeObserver.disconnect()
+  })
+
   $: !keepDOM &&
     (() => {
       if (hideSidebar) {
@@ -40,42 +57,22 @@
         timeoutId = null
       }
     })()
-  onMount(() => {
-    if (isInset && titleNode) {
-      titleWidth = titleNode.offsetWidth + 1
-    }
-  })
 </script>
 
-<div class="sidebar-layout" class:inset class:transparent class:hide={hideSidebar}>
-  {#if isInset}
-    <div class="inset-titlebar">
-      {#if insetTitle}
-        {#if titleWidth === 0}
-          <!-- Render hidden title to calculate size -->
-          <div aria-hidden bind:this={titleNode} class="title-prerender">
-            <Typography variant="heading-s">{insetTitle}</Typography>
-          </div>
-        {/if}
-        <div
-          class="title"
-          style:--title-width={titleWidth ? `${titleWidth}px` : 'initial'}
-        >
-          <div class="title-limiter">
-            <Typography fullWidth align="center" variant="heading-s"
-              >{insetTitle}</Typography
-            >
-          </div>
-        </div>
-      {/if}
-      {#if hasToolbar}
-        <div class="toolbar">
-          <slot name="toolbar" />
-        </div>
-      {/if}
-    </div>
-  {/if}
+<div
+  style:--layout-toolbar-height={insetHeight}
+  style:--layout-height="{layoutHeight}px"
+  style:--layout-sidebar-width="{sidebarWidth}px"
+  class="sidebar-layout"
+  bind:this={layoutRef}
+  class:inset={isInset}
+  class:transparent
+  class:hide={hideSidebar}
+>
   <div class="sidebar">
+    {#if isInset}
+      <div class="drag" />
+    {/if}
     {#if shouldRenderSidebar}
       <div class="sidebar-content">
         <slot name="sidebar" />
@@ -83,24 +80,52 @@
     {/if}
   </div>
   <div class="content">
-    <PlainLayout disableDrag inset={isInset}>
-      <slot />
-    </PlainLayout>
+    <div class="content-scroll">
+      <PlainLayout
+        toolbar={{
+          show: isInset,
+        }}
+        macInset={{
+          show: isInset,
+          safePadding: hideSidebar,
+        }}
+      >
+        <div class="toolbar" slot="toolbar">
+          {#if hasToolbar}
+            <slot name="toolbar" />
+          {:else if insetTitle}
+            <Toolbar padding="sl">
+              <ToolbarInsetTitle title={insetTitle} />
+            </Toolbar>
+          {/if}
+        </div>
+        <slot />
+      </PlainLayout>
+    </div>
   </div>
 </div>
 
 <style lang="scss">
-  .sidebar-content {
-    opacity: 1;
-    transition: var(--transition-default);
+  .drag {
+    --wails-draggable: drag;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: var(--layout-sidebar-width);
+    height: var(--space-toolbar-height);
+  }
+
+  .toolbar {
+    display: contents;
   }
 
   .sidebar-layout {
-    --sidebar-width: 230px;
     --sidebar-background-color: var(--color-background-primary);
 
     display: grid;
-    grid-template-columns: var(--sidebar-width) 1fr;
+    grid-template-columns: var(--layout-sidebar-width) 1fr;
     flex: 1;
 
     width: 100%;
@@ -120,58 +145,11 @@
     }
   }
 
-  .title {
-    position: absolute;
-    top: 8px;
-    left: 0;
-    left: calc(var(--sidebar-width) + var(--space-l) + var(--space-s));
-
-    width: var(--title-width);
-
-    transition: var(--transition-default);
-  }
-
-  .title-prerender {
-    pointer-events: none;
-
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-
-    width: fit-content;
-
-    opacity: 0;
-  }
-
-  .hide {
-    .title {
-      left: 0;
-      width: 100%;
-    }
-  }
-
-  .title-limiter {
-    // width: fit-content;
-    transition: var(--transition-default);
-  }
-
-  .content {
+  .content-scroll {
     display: flex;
-  }
-
-  .inset-titlebar {
-    --wails-draggable: drag;
-
-    position: absolute;
-    z-index: 9;
-    top: 0;
-    left: 0;
-
-    display: flex;
-    align-items: center;
-
+    flex: 1;
     width: 100%;
-    height: var(--space-inset-titlebar);
+    height: var(--layout-height);
   }
 
   :global(.os-linux) {
@@ -190,7 +168,7 @@
     .sidebar-layout {
       &.inset {
         .sidebar {
-          padding-top: var(--space-inset-titlebar);
+          padding-top: var(--space-toolbar-height);
         }
       }
 
