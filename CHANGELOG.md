@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0-alpha.1](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.0...v1.2.0-alpha.1) (2023-11-07)
+
+### Features
+
+* introduce environment constants ([6da412c](https://github.com/Naco-UI/svelte-naco/commit/6da412ca0e82be0e62061693b314d5d5451a1a64))
+* **PlainLayout:** improve scroll, add manual toolbar ([5afc626](https://github.com/Naco-UI/svelte-naco/commit/5afc626a18603dac2db8eaeda42a36fd84746968))
+* **PlainLayout:** rework title logic ([e8f662c](https://github.com/Naco-UI/svelte-naco/commit/e8f662c9a4d2fea5010ca307fa60b76718bda018))
+* **ThemeProvider:** add scrollbar styles ([4331729](https://github.com/Naco-UI/svelte-naco/commit/43317297ab62236c8a1332f45002c17569865d8c))
+* **ThemeProvider:** add toolbar background color ([9f3583a](https://github.com/Naco-UI/svelte-naco/commit/9f3583abbd287b2c39df4a6804ea5730564b3384))
+* **ThemeProvider:** add toolbar height ([242fd73](https://github.com/Naco-UI/svelte-naco/commit/242fd73658717c585ece5cab23bc0eb6f66dd249))
+* **ThemeProvider:** rename `useTheme` to `getTheme` ([00dd86f](https://github.com/Naco-UI/svelte-naco/commit/00dd86fa78ea2de33b05858a99f71f2329198343))
+
+
+### Bug Fixes
+
+* **SidebarItem:** use SvelteComponent for icon ([9ef4c30](https://github.com/Naco-UI/svelte-naco/commit/9ef4c30a762224f2461a75113dc1cab671dc7b07))
+* **SidebarLayout:** fix theme hook name ([8ea1364](https://github.com/Naco-UI/svelte-naco/commit/8ea13647345002d3a5a1c2971d5f9fca56ae9060))
+* **Stack:** re-export types, add missing `sl` gap ([220f5b7](https://github.com/Naco-UI/svelte-naco/commit/220f5b7a8c0aa7d1ee6fd00ab941099bf195ab88))
+
 ## [1.2.0-alpha.0](https://github.com/Naco-UI/svelte-naco/compare/v1.1.0...v1.2.0-alpha.0) (2023-10-05)
 
 ### Features
