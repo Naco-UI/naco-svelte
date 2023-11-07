@@ -30,6 +30,12 @@ jobs:
       - name: Check code style
         run: pnpm lint
 
+      - name: Check library build
+        run: pnpm build
+
+      - name: Check storybook build
+        run: pnpm build-storybook
+
       - name: Check spelling
         run: pnpm check:spelling
 
