@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0-alpha.3](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.2...v1.2.0-alpha.3) (2023-11-08)
+
+### Bug Fixes
+
+* **SidebarLayout:** pass toolbar props to plain layout ([4f2c79e](https://github.com/Naco-UI/svelte-naco/commit/4f2c79e408c45e6bc86c28da6acff7dae75d2332))
+
 ## [1.2.0-alpha.2](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.1...v1.2.0-alpha.2) (2023-11-07)
 
 ### Bug Fixes
