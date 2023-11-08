@@ -123,6 +123,10 @@
     display: contents;
   }
 
+  .sidebar-content {
+    height: 100%;
+  }
+
   .sidebar-layout {
     --sidebar-background-color: var(--color-background-primary);
 
