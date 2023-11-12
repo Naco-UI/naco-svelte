@@ -93,9 +93,11 @@
     --slider-knob-height: 20px;
     --slider-knob-width: 20px;
     --slider-knob-border-radius: 20px;
+    --slider-padding-bottom: 0px;
 
     position: relative;
     min-width: 150px;
+    padding-bottom: var(--slider-padding-bottom);
 
     &:not(.marked) {
       --slider-track-background: linear-gradient(
@@ -190,6 +192,10 @@
     --slider-mark-top: 0;
     --slider-mark-width: 2px;
     --slider-mark-height: 8px;
+
+    &.marked {
+      --slider-padding-bottom: 16px;
+    }
   }
 
   :global(.os-linux) .slider {
@@ -205,6 +211,7 @@
 
     &.marked {
       --slider-knob-width: 20px;
+      --slider-padding-bottom: 16px;
 
       input::-webkit-slider-thumb {
         transform-origin: center;

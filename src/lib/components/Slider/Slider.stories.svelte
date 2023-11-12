@@ -47,7 +47,7 @@
 </Story>
 
 <Story name="Marks">
-  <Stack maxWidth={500}>
+  <Stack gap="none" maxWidth={500}>
     <Slider
       min={0}
       max={100}
@@ -56,6 +56,17 @@
         { progress: 0, title: 'Left' },
         { progress: 0.5 },
         { progress: 1, title: 'Right' },
+      ]}
+      value={50}
+    />
+    <Slider
+      min={0}
+      max={100}
+      step={2}
+      marks={[
+        { progress: 0, title: 'Silent' },
+        { progress: 0.5 },
+        { progress: 1, title: 'Loud' },
       ]}
       value={50}
     />
