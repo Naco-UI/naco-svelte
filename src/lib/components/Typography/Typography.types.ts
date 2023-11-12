@@ -8,6 +8,7 @@ export type TypographyVariants =
   | 'heading-s'
   | 'heading-s_1'
   | 'heading-m'
+  | 'heading-l'
 export type TypographyColor = 'primary' | 'tertiary' | 'white' | 'inherit'
 export type TypographyAlign = 'left' | 'right' | 'center'
 
