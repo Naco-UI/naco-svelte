@@ -9,6 +9,7 @@ export interface SliderProps {
   step: number
   min: number
   max: number
+  value: number
   marks?: SliderMark[] | SliderMarkGenerator
   disabled?: boolean
 }

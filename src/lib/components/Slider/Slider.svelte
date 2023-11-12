@@ -8,7 +8,7 @@
     SliderProps,
   } from './Slider.types.js'
 
-  export let value: number
+  export let value: SliderProps['value']
   export let min: SliderProps['min']
   export let max: SliderProps['max']
   export let step: SliderProps['step']
