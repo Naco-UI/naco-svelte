@@ -1,11 +1,14 @@
 <script lang="ts">
   import { Meta, Story, Template } from '@storybook/addon-svelte-csf'
 
+  import Select from '../Select/Select.svelte'
   import Typography from '../Typography/Typography.svelte'
   import Segment from './Segment.svelte'
 
   let disableLaze = true
   let titleValue = 'point-click'
+
+  let selectedValue = 'second'
 </script>
 
 <Meta title="Components/Segment" component={Segment} />
@@ -54,6 +57,17 @@
       { value: 'Laze', disabled: disableLaze },
       { value: 'Work' },
     ]}
+  />
+</Story>
+
+<Story name="Controlled value">
+  <Select
+    bind:value={selectedValue}
+    options={[{ value: 'first' }, { value: 'second' }, { value: 'third' }]}
+  />
+  <Segment
+    bind:value={selectedValue}
+    options={[{ value: 'first' }, { value: 'second' }, { value: 'third' }]}
   />
 </Story>
 

@@ -13,9 +13,8 @@
 
   onMount(() => {
     if (!value) {
-      return
+      value = options[0].value
     }
-    value = options[0].value
   })
 
   function handleSelect(e: SegmentChangeEvent): void {
