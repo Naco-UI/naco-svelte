@@ -19,10 +19,9 @@
   }
 
   onMount(() => {
-    if (value) {
-      return
+    if (!value) {
+      value = options[0].value
     }
-    value = options[0].value
   })
 
   $: selected = options.find((o) => o.value === value)
