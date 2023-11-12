@@ -103,6 +103,7 @@
 <style lang="scss">
   .plain-layout {
     --plain-layout-background-color: var(--color-background-secondary);
+    --plain-layout-toolbar-transition-props: box-shadow, background-color, opacity;
 
     position: relative;
     flex: 1;
@@ -120,6 +121,7 @@
     background-color: var(--color-background-toolbar);
 
     transition: var(--transition-default);
+    transition-property: var(--plain-layout-toolbar-transition-props);
 
     &.animated {
       background-color: var(--plain-layout-background-color);
@@ -147,6 +149,7 @@
     height: var(--layout-titlebar-height);
 
     transition: var(--transition-default);
+    transition-property: var(--plain-layout-toolbar-transition-props);
 
     &.safe {
       padding-left: var(--space-inset-toolbar-safe-padding);

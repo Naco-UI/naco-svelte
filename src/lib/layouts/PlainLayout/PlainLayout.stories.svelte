@@ -14,11 +14,12 @@
   import Stack from '$lib/components/Stack/Stack.svelte'
   import { ToolbarInsetTitle } from '$lib/components/Toolbar'
   import Toolbar from '$lib/components/Toolbar/Toolbar.svelte'
-  import { Button, FormGroup, Toggle, Typography } from '$lib/index.js'
+  import { Button, FormGroup, Select, Toggle, Typography } from '$lib/index.js'
   import { Window } from '$storybook/stories'
 
   let transparent = true
   let inset = true
+  let customToolbarSize = '300'
 </script>
 
 <Story name="Basic" let:args>
@@ -164,7 +165,7 @@
   <Window height={500} translucent titlebar {inset}>
     <PlainLayout
       toolbar={{
-        height: 200,
+        height: +customToolbarSize,
       }}
       macInset={{
         show: inset,
@@ -181,6 +182,16 @@
         </FormRow>
         <FormRow title="Inset">
           <Toggle bind:checked={inset} />
+        </FormRow>
+        <FormRow title="Size">
+          <Select
+            bind:value={customToolbarSize}
+            options={[
+              { value: '300', title: 'Large' },
+              { value: '150', title: 'Medium' },
+              { value: '50', title: 'Small' },
+            ]}
+          />
         </FormRow>
       </FormGroup>
     </PlainLayout>
