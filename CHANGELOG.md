@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.3...v1.2.0) (2023-11-12)
+
+### Features
+
+* **Typography:** add `heading-l` variant ([029bbb2](https://github.com/Naco-UI/svelte-naco/commit/029bbb2ee62faad53e4b164245ba709485bb56e9))
+
+
+### Bug Fixes
+
+* **PlainLayout:** makes changing the height of the toolbar instantaneous ([c482038](https://github.com/Naco-UI/svelte-naco/commit/c482038a4985f39bd70b11ab116a2fb4656f1d41))
+* **Segment:** fix value reset ([3a7cdf8](https://github.com/Naco-UI/svelte-naco/commit/3a7cdf8410d43dcdd1fad5e0e035f0a5671ae3e8))
+* **SidebarLayout:** use full height for sidebar ([d4247c7](https://github.com/Naco-UI/svelte-naco/commit/d4247c741c11c71b8877b2c9cc9dc349f6944125))
+* **Slider:** export value correctly ([0dfc392](https://github.com/Naco-UI/svelte-naco/commit/0dfc392e42e4273d799a8667e556897433b52018))
+
 ## [1.2.0-alpha.3](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0-alpha.2...v1.2.0-alpha.3) (2023-11-08)
 
 ### Bug Fixes
