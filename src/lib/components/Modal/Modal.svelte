@@ -74,8 +74,10 @@
   :global(.os-mac) .modal {
     --modal-padding: 16px;
 
-    box-shadow: 0 0 3px 0 var(--color-border-dimmed) inset,
-      0 0 1px 0 var(--color-border-elevated), var(--box-shadow-modal);
+    box-shadow:
+      0 0 3px 0 var(--color-border-dimmed) inset,
+      0 0 1px 0 var(--color-border-elevated),
+      var(--box-shadow-modal);
 
     &.translucent {
       --modal-background-color: var(--color-background-translucent);

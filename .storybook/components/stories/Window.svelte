@@ -100,7 +100,9 @@
 
     background-color: var(--color-background-primary);
     border-radius: var(--window-border-radius);
-    box-shadow: 0 8px 40px 0 rgb(0 0 0 / 25%), 0 0 3px 0 rgb(255 255 255 / 10%) inset;
+    box-shadow:
+      0 8px 40px 0 rgb(0 0 0 / 25%),
+      0 0 3px 0 rgb(255 255 255 / 10%) inset;
 
     &:not(.with-title) {
       padding-top: 0;
@@ -132,7 +134,6 @@
 
     &.translucent {
       background-color: var(--color-background-translucent);
-      backdrop-filter: blur(30px);
       backdrop-filter: blur(30px);
     }
   }
