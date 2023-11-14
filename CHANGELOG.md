@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.0](https://github.com/Naco-UI/svelte-naco/compare/v1.2.1-beta.0...v1.3.0-beta.0) (2023-11-14)
+
+### Features
+
+* **Stack:** add `fullHeight` prop ([c20022f](https://github.com/Naco-UI/svelte-naco/commit/c20022f1f473183e3328c531806509d0a82ea8fc))
+
 ## [1.2.1-beta.0](https://github.com/Naco-UI/svelte-naco/compare/v1.2.0...v1.2.1-beta.0) (2023-11-12)
 
 ### Bug Fixes
