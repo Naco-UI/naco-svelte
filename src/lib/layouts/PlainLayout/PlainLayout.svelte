@@ -5,7 +5,7 @@
   import ToolbarInsetTitle from '$lib/components/Toolbar/ToolbarInsetTitle.svelte'
   import { getTheme } from '$lib/index.js'
 
-  import { createLayoutContext } from './context.js'
+  import { createToolbarContext } from '../../components/Toolbar/context.js'
   import type { PlainLayoutProps } from './PlainLayout.types.js'
 
   export let transparent: PlainLayoutProps['transparent'] = false
@@ -13,11 +13,11 @@
   export let toolbar: PlainLayoutProps['toolbar'] = undefined
 
   const { os } = getTheme()
-  const { isInset, isScrolled, toolbarHeight } = createLayoutContext(
-    false,
-    false,
-    '0px',
-  )
+
+  const stringifyUnit = (v: number | string): string =>
+    typeof v === 'number' ? `${v}px` : v
+
+  const { inset, scrolled } = createToolbarContext(false, false)
 
   let scrollRef: HTMLDivElement
   let layoutRef: HTMLDivElement
@@ -26,13 +26,18 @@
   let layoutHeight = 0
   let isScrollable = false
 
-  $: isInset.set($os === 'mac' && (macInset?.enable ?? Boolean(macInset)))
-  $: hasInsetTitle = Boolean(macInset?.title) && $isInset
+  $: inset.set($os === 'mac' && (macInset?.enable ?? Boolean(macInset)))
+  $: hasInsetTitle = Boolean(macInset?.title) && $inset
   $: hasToolbarSlot = toolbar?.show ?? Boolean($$slots.toolbar)
   $: hasToolbar = hasInsetTitle || hasToolbarSlot
+  $: toolbarHeight = hasToolbar
+    ? toolbar?.height
+      ? stringifyUnit(toolbar.height)
+      : 'var(--space-toolbar-height)'
+    : '0px'
 
   function handleScroll(): void {
-    isScrolled.set(scrollRef.scrollTop > 0)
+    scrolled.set(scrollRef.scrollTop > 0)
   }
 
   onMount(() => {
@@ -51,9 +56,9 @@
 
 <div
   class="plain-layout"
-  style:--layout-toolbar-height={$toolbarHeight}
+  style:--layout-toolbar-height={toolbarHeight}
   style:--layout-height="{layoutHeight}px"
-  class:inset={$isInset}
+  class:inset={$inset}
   class:transparent
   bind:this={layoutRef}
 >

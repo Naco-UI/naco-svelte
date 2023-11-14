@@ -7,6 +7,7 @@ export interface PlainLayoutMacInsetParams {
 
 export type PlainLayoutToolbarParams = ToolbarProps & {
   show?: boolean
+  height?: number | string
 }
 
 export interface PlainLayoutProps {

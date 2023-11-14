@@ -3,5 +3,7 @@ import ToolbarInsetTitle from './ToolbarInsetTitle.svelte'
 import ToolbarItem from './ToolbarItem.svelte'
 
 export { Toolbar, ToolbarInsetTitle, ToolbarItem }
-export * from './Toolbar.types'
-export * from './ToolbarInsetTitle.types'
+export * from './context.js'
+export * from './context.types.js'
+export * from './Toolbar.types.js'
+export * from './ToolbarInsetTitle.types.js'

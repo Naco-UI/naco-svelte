@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { getLayoutContext } from '$lib/layouts/PlainLayout'
-
-  import Stack from '../Stack/Stack.svelte'
+  import { Stack } from '../Stack'
+  import { getToolbarContext } from './context'
   import type { ToolbarProps } from './Toolbar.types'
 
-  export let height: ToolbarProps['height'] = 'var(--space-toolbar-height)'
   export let transparent: ToolbarProps['transparent'] = false
   export let border: ToolbarProps['border'] = 'static'
   export let draggable: ToolbarProps['draggable'] = true
@@ -13,9 +11,7 @@
   export let padding: ToolbarProps['padding'] = 'default'
   export let insetSafe: ToolbarProps['insetSafe'] = true
 
-  const { toolbarHeight, isScrolled, isInset } = getLayoutContext()
-
-  $: height && toolbarHeight.set(typeof height === 'number' ? `${height}px` : height)
+  const { scrolled, inset } = getToolbarContext()
 </script>
 
 <div
@@ -26,8 +22,8 @@
   class:borderStatic={border === 'static'}
   class:paddingDefault={padding === 'default'}
   class:paddingForm={padding === 'form'}
-  class:inset={$isInset && insetSafe}
-  class:scrolled={$isScrolled}
+  class:inset={$inset && insetSafe}
+  class:scrolled={$scrolled}
 >
   <Stack gap="m" direction="horizontal" fullHeight {align} {justify}>
     <slot />
