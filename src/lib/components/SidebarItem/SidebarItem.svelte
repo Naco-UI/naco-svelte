@@ -1,10 +1,13 @@
 <script lang="ts">
-  import { Typography } from '../Typography/index.js'
+  import { Typography, type TypographyVariant } from '../Typography/index.js'
   import type { SidebarItemProps } from './SidebarItem.types.js'
 
   export let selected: SidebarItemProps['selected'] = false
   export let disabled: SidebarItemProps['disabled'] = false
   export let icon: SidebarItemProps['icon'] = undefined
+  export let size: SidebarItemProps['size'] = 'm'
+
+  const typographyVariant: TypographyVariant = size === 'l' ? 'text-l' : 'text-m'
 
   $: hasIcon = Boolean(icon)
 </script>
@@ -15,6 +18,7 @@
   class="sidebar-item"
   class:with-icon={hasIcon}
   class:selected
+  class:large={size === 'l'}
 >
   {#if hasIcon}
     <div class="icon">
@@ -22,7 +26,7 @@
     </div>
   {/if}
   <div class="label">
-    <Typography color="inherit">
+    <Typography variant={typographyVariant} color="inherit">
       <slot />
     </Typography>
   </div>
@@ -38,6 +42,8 @@
     --sidebar-item-active-background: var(--color-border-main);
     --sidebar-item-icon-gap: var(--space-xxs);
     --sidebar-item-icon-color: var(--color-content-accent);
+    --sidebar-item-icon-padding: 4px;
+    --sidebar-item-icon-size: 20px;
     --sidebar-item-active-icon-color: var(--color-content-accent);
 
     display: inline-flex;
@@ -65,6 +71,12 @@
       pointer-events: none;
       opacity: 0.5;
     }
+
+    &.large {
+      --sidebar-item-height: 36px;
+      --sidebar-item-icon-size: 30px;
+      --sidebar-item-icon-padding: 7px;
+    }
   }
 
   .label {
@@ -83,10 +95,10 @@
     align-items: center;
     justify-content: center;
 
-    width: 20px;
-    height: 20px;
+    width: var(--sidebar-item-icon-size);
+    height: var(--sidebar-item-icon-size);
+    padding: var(--sidebar-item-icon-padding);
 
-    font-size: 14px;
     color: var(--sidebar-item-icon-color);
 
     fill: var(--sidebar-item-icon-color);
