@@ -7,6 +7,7 @@ module.exports = {
         ignorePseudoClasses: ['global'],
       },
     ],
+    'selector-class-pattern': null,
   },
   defaultSeverity: 'error',
   customSyntax: 'postcss-html',

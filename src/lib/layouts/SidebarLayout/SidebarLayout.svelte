@@ -1,8 +1,6 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte'
 
-  import Toolbar from '$lib/components/Toolbar/Toolbar.svelte'
-  import ToolbarInsetTitle from '$lib/components/Toolbar/ToolbarInsetTitle.svelte'
   import { getTheme } from '$lib/index.js'
 
   import { PlainLayout } from '../PlainLayout/index.js'
@@ -14,13 +12,11 @@
   export let macInset: SidebarLayoutProps['macInset'] = {}
   export let toolbar: SidebarLayoutProps['toolbar'] = {}
   export let sidebarWidth: SidebarLayoutProps['sidebarWidth'] = 200
+  // Variable is for internal use, but export it for debugging
+  export let isRenderSidebar: SidebarLayoutProps['isRenderSidebar'] =
+    keepDOM || !hideSidebar
 
   const { os } = getTheme()
-
-  $: isInset = $os === 'mac' ? macInset?.show ?? Boolean(macInset) : false
-
-  // Variable is for internal use, but export it for debugging
-  export let shouldRenderSidebar = keepDOM || !hideSidebar
 
   let timeoutId: number | null = null
   let layoutRef: HTMLDivElement
@@ -29,9 +25,6 @@
   let layoutHeight: number = 0
 
   const unmountDelay = 1000
-
-  const insetTitle = macInset?.title
-  const hasToolbar = $$slots.toolbar
 
   onMount(() => {
     resizeObserver = new ResizeObserver(() => {
@@ -43,16 +36,21 @@
     resizeObserver.disconnect()
   })
 
+  $: hasToolbarSlot = Boolean($$slots.toolbar)
+  $: isInset = $os === 'mac' ? macInset?.enable ?? Boolean(macInset) : false
+  $: hasToolbarTitle = isInset && Boolean(macInset?.title)
+  $: hasToolbar = toolbar?.show ?? (hasToolbarSlot || hasToolbarTitle)
+  $: insetSafe = toolbar?.insetSafe ?? (hideSidebar && isInset)
   $: !keepDOM &&
     (() => {
       if (hideSidebar) {
         if (timeoutId) return
         timeoutId = window.setTimeout(() => {
-          shouldRenderSidebar = false
+          isRenderSidebar = false
           timeoutId = null
         }, unmountDelay)
       } else {
-        shouldRenderSidebar = true
+        isRenderSidebar = true
         if (!timeoutId) return
         window.clearTimeout(timeoutId)
         timeoutId = null
@@ -74,7 +72,7 @@
     {#if isInset}
       <div class="drag" />
     {/if}
-    {#if shouldRenderSidebar}
+    {#if isRenderSidebar}
       <div class="sidebar-content">
         <slot name="sidebar" />
       </div>
@@ -85,21 +83,16 @@
       <PlainLayout
         toolbar={{
           ...toolbar,
+          show: hasToolbar,
+          insetSafe,
         }}
         macInset={{
           ...macInset,
-          show: isInset,
-          safePadding: hideSidebar,
+          enable: isInset,
         }}
       >
         <div class="toolbar" slot="toolbar">
-          {#if hasToolbar}
-            <slot name="toolbar" />
-          {:else if insetTitle}
-            <Toolbar padding="sl">
-              <ToolbarInsetTitle title={insetTitle} />
-            </Toolbar>
-          {/if}
+          <slot name="toolbar" />
         </div>
         <slot />
       </PlainLayout>

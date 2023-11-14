@@ -6,13 +6,15 @@ import type { LayoutContext } from './context.types'
 const CONTEXT_KEY = 'naco-layout'
 
 export function createLayoutContext(
-  insetInitial: boolean,
-  scrolledInitial: boolean,
+  isInsetInitial: boolean,
+  isScrolledInitial: boolean,
+  layoutHeightInitial: string,
 ): LayoutContext {
-  const inset = writable(insetInitial)
-  const scrolled = writable(scrolledInitial)
+  const isInset = writable(isInsetInitial)
+  const isScrolled = writable(isScrolledInitial)
+  const toolbarHeight = writable(layoutHeightInitial)
 
-  const stores = { inset, scrolled }
+  const stores = { isInset, isScrolled, toolbarHeight }
 
   setContext(CONTEXT_KEY, stores)
   return stores

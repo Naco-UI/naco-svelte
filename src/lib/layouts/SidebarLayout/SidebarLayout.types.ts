@@ -10,4 +10,5 @@ export interface SidebarLayoutProps {
   macInset?: PlainLayoutMacInsetParams
   toolbar?: PlainLayoutToolbarParams
   sidebarWidth?: number
+  isRenderSidebar?: boolean
 }

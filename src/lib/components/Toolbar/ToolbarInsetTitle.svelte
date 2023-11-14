@@ -1,12 +1,13 @@
 <script lang="ts">
   import { getLayoutContext } from '../../layouts/PlainLayout'
   import Typography from '../Typography/Typography.svelte'
+  import type { ToolbarInsetTitleProps } from './ToolbarInsetTitle.types'
 
-  export let title: string
+  export let value: ToolbarInsetTitleProps['value'] = ''
 
-  const { inset } = getLayoutContext()
+  const { isInset } = getLayoutContext()
 </script>
 
-{#if $inset}
-  <Typography variant="heading-s">{title}</Typography>
+{#if $isInset}
+  <Typography variant="heading-s">{value}</Typography>
 {/if}

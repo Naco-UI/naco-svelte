@@ -13,7 +13,6 @@
   import FormRow from '$lib/components/FormGroup/FormRow.svelte'
   import Stack from '$lib/components/Stack/Stack.svelte'
   import { ToolbarInsetTitle } from '$lib/components/Toolbar'
-  import Toolbar from '$lib/components/Toolbar/Toolbar.svelte'
   import { Button, FormGroup, Select, Toggle, Typography } from '$lib/index.js'
   import { Window } from '$storybook/stories'
 
@@ -70,7 +69,7 @@
   <Window height={200} translucent titlebar {inset}>
     <PlainLayout
       macInset={{
-        show: inset,
+        enable: inset,
         title: 'Naco UI',
       }}
     >
@@ -90,7 +89,8 @@
         title: 'Naco UI',
       }}
       toolbar={{
-        animate: true,
+        transparent: true,
+        border: 'scroll',
       }}
     >
       <div class="scroll">
@@ -139,16 +139,16 @@
   <Window height={300} translucent titlebar {inset}>
     <PlainLayout
       macInset={{
-        show: inset,
+        enable: inset,
       }}
     >
-      <Toolbar justify="space-between" slot="toolbar">
+      <svelte:fragment slot="toolbar">
         <Stack align="center" gap="s" direction="horizontal">
           <Button>Action</Button>
-          <ToolbarInsetTitle title="Naco UI" />
+          <ToolbarInsetTitle value="Naco UI" />
         </Stack>
         <Button>Action</Button>
-      </Toolbar>
+      </svelte:fragment>
       <FormGroup>
         <FormRow>
           <Typography fullWidth align="center">Titlebar app content</Typography>
@@ -166,10 +166,10 @@
     <PlainLayout
       toolbar={{
         height: +customToolbarSize,
+        padding: 'none',
       }}
       macInset={{
-        show: inset,
-        safePadding: false,
+        enable: inset,
       }}
     >
       <div class="custom-toolbar" slot="toolbar">

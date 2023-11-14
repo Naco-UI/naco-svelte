@@ -53,7 +53,11 @@
 
 <Story name="Hide Sidebar">
   <Window>
-    <SidebarLayout bind:keepDOM bind:shouldRenderSidebar {hideSidebar}>
+    <SidebarLayout
+      bind:keepDOM
+      bind:isRenderSidebar={shouldRenderSidebar}
+      {hideSidebar}
+    >
       <SidebarMenu bind:value slot="sidebar" items={sidebarItems} />
       <FormGroup>
         <FormRow title="Hide sidebar">
@@ -91,9 +95,12 @@
 <Story name="Inset">
   <Window {inset} height={200} titlebar title="Naco UI" translucent>
     <SidebarLayout
+      toolbar={{
+        padding: 'form',
+      }}
       macInset={{
         title: 'Naco UI',
-        show: inset,
+        enable: inset,
       }}
       {hideSidebar}
       keepDOM
@@ -119,7 +126,7 @@
   <Window height={300} {inset} titlebar title="Naco UI" translucent>
     <SidebarLayout
       macInset={{
-        show: inset,
+        enable: inset,
       }}
       {hideSidebar}
       keepDOM
@@ -139,10 +146,10 @@
     <SidebarLayout
       toolbar={{
         height: 200,
+        padding: 'none',
       }}
       macInset={{
-        show: inset,
-        safePadding: false,
+        enable: inset,
       }}
       {hideSidebar}
       keepDOM

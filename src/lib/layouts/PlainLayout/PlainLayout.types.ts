@@ -1,15 +1,12 @@
+import type { ToolbarProps } from '$lib/components/Toolbar'
+
 export interface PlainLayoutMacInsetParams {
-  show?: boolean
-  safePadding?: boolean
-  draggable?: boolean
+  enable?: boolean
   title?: string
 }
 
-export interface PlainLayoutToolbarParams {
+export type PlainLayoutToolbarParams = ToolbarProps & {
   show?: boolean
-  height?: number
-  transparent?: boolean
-  animate?: boolean
 }
 
 export interface PlainLayoutProps {
