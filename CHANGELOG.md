@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.2](https://github.com/Naco-UI/svelte-naco/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2023-11-14)
+
+### Features
+
+* **SidebarItem:** add `size` property ([816352c](https://github.com/Naco-UI/svelte-naco/commit/816352c49c476942d7102af5953b7b188f5dcfe2))
+* **SidebarMenu:** add `size` property ([e3a2e34](https://github.com/Naco-UI/svelte-naco/commit/e3a2e345f24f99e9e496e36c7f82c30b59742430))
+
+
+### Bug Fixes
+
+* **Toolbar:** remove background color transition ([a56596d](https://github.com/Naco-UI/svelte-naco/commit/a56596de9ad136bd0b5376b4c87322443de9234e))
+
 ## [1.3.0-beta.1](https://github.com/Naco-UI/svelte-naco/compare/v1.3.0-beta.0...v1.3.0-beta.1) (2023-11-14)
 
 ### Bug Fixes
