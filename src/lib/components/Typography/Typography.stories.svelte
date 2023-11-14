@@ -1,13 +1,13 @@
 <script context="module" lang="ts">
   import Typography from './Typography.svelte'
-  import type { TypographyVariants } from './Typography.types.js'
+  import type { TypographyVariant } from './Typography.types.js'
 
   export const meta = {
     title: 'Components/Typography',
     component: Typography,
   }
   const colorVariants = ['primary', 'tertiary', 'white', 'inherit']
-  const sizeVariants: TypographyVariants[] = [
+  const sizeVariants: TypographyVariant[] = [
     'caption-s',
     'caption-m',
     'caption-l',

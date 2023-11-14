@@ -1,4 +1,4 @@
-export type TypographyVariants =
+export type TypographyVariant =
   | 'caption-s'
   | 'caption-m'
   | 'caption-l'
@@ -13,7 +13,7 @@ export type TypographyColor = 'primary' | 'tertiary' | 'white' | 'inherit'
 export type TypographyAlign = 'left' | 'right' | 'center'
 
 export interface TypographyProps {
-  variant?: TypographyVariants
+  variant?: TypographyVariant
   color?: TypographyColor
   as?: keyof HTMLElementTagNameMap
   fullWidth?: boolean
