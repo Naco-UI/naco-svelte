@@ -9,4 +9,5 @@ export interface StackProps {
   gap?: StackGap
   direction?: StackDirection
   maxWidth?: number
+  fullHeight?: boolean
 }

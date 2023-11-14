@@ -6,10 +6,12 @@
   export let justify: StackProps['justify'] = 'normal'
   export let gap: StackProps['gap'] = 'm'
   export let maxWidth: StackProps['maxWidth'] = undefined
+  export let fullHeight: StackProps['fullHeight'] = false
 </script>
 
 <div
   class="stack align-{align} direction-{direction}"
+  class:full-height={fullHeight}
   style:justify-content={justify}
   style:align-items={align}
   style:max-width={maxWidth ? `${maxWidth}px` : ''}
@@ -33,6 +35,10 @@
 
     &.direction-horizontal {
       align-items: center;
+    }
+
+    &.full-height {
+      height: 100%;
     }
   }
 </style>
