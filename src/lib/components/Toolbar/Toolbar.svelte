@@ -43,10 +43,8 @@
     background-color: var(--color-background-toolbar);
     box-shadow: var(--toolbar-border-shadow);
 
-    transition:
-      background-color var(--transition-default),
-      box-shadow var(--transition-default),
-      padding var(--transition-default);
+    transition: var(--transition-default);
+    transition-property: box-shadow, padding;
 
     &.draggable {
       --wails-draggable: drag;
