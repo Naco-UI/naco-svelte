@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.1](https://github.com/Naco-UI/svelte-naco/compare/v1.3.0-beta.0...v1.3.0-beta.1) (2023-11-14)
+
+### Bug Fixes
+
+* **PlainLayout:** update toolbar height ([5b66063](https://github.com/Naco-UI/svelte-naco/commit/5b660633c5b448d3e12d5d0e713850c3f74cf0d0))
+* **ToolbarInsetTitle:** use updated context ([336b318](https://github.com/Naco-UI/svelte-naco/commit/336b318f10e07524523f2360e696d7483b382c51))
+
 ## [1.3.0-beta.0](https://github.com/Naco-UI/svelte-naco/compare/v1.2.1-beta.0...v1.3.0-beta.0) (2023-11-14)
 
 ### Features
