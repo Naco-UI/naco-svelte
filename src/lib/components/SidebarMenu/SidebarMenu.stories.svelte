@@ -30,3 +30,18 @@
     />
   </Stack>
 </Story>
+
+<Story name="Size" args={{ selected: true }}>
+  <Stack>
+    <Typography>{value} item is selected</Typography>
+    <SidebarMenu
+      bind:value
+      size="l"
+      items={[
+        { value: 'First', icon },
+        { value: 'Second', icon },
+        { value: 'Third', icon },
+      ]}
+    />
+  </Stack>
+</Story>

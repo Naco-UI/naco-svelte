@@ -7,6 +7,7 @@
 
   export let items: SidebarMenuProps['items']
   export let value: SidebarMenuProps['value'] = undefined
+  export let size: SidebarMenuProps['size'] = 'm'
 
   const dispatch = createEventDispatcher()
 
@@ -30,6 +31,7 @@
       selected={value === item.value}
       disabled={item.disabled}
       icon={item.icon}
+      {size}
     >
       {item.title ?? item.value}
     </SidebarItem>
