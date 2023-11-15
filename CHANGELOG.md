@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.3](https://github.com/Naco-UI/svelte-naco/compare/v1.3.0-beta.2...v1.3.0-beta.3) (2023-11-15)
+
+### Bug Fixes
+
+* **SidebarItem:** improve icon size ([a6ebe57](https://github.com/Naco-UI/svelte-naco/commit/a6ebe57cce0a0867039227d5dcd818f560b5eb01))
+
 ## [1.3.0-beta.2](https://github.com/Naco-UI/svelte-naco/compare/v1.3.0-beta.1...v1.3.0-beta.2) (2023-11-14)
 
 ### Features
