@@ -42,7 +42,6 @@
     --sidebar-item-active-background: var(--color-border-main);
     --sidebar-item-icon-gap: var(--space-xxs);
     --sidebar-item-icon-color: var(--color-content-accent);
-    --sidebar-item-icon-padding: 4px;
     --sidebar-item-icon-size: 20px;
     --sidebar-item-active-icon-color: var(--color-content-accent);
 
@@ -74,8 +73,7 @@
 
     &.large {
       --sidebar-item-height: 36px;
-      --sidebar-item-icon-size: 30px;
-      --sidebar-item-icon-padding: 7px;
+      --sidebar-item-icon-size: 24px;
     }
   }
 
@@ -97,11 +95,15 @@
 
     width: var(--sidebar-item-icon-size);
     height: var(--sidebar-item-icon-size);
-    padding: var(--sidebar-item-icon-padding);
 
     color: var(--sidebar-item-icon-color);
 
     fill: var(--sidebar-item-icon-color);
+
+    & > :global(svg) {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .selected .icon {
