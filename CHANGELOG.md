@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.4](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.3...v1.3.0-beta.4) (2023-12-23)
+
+### Features
+
+* **Typography:** use correct font on Safari ([661256f](https://github.com/Naco-UI/naco-svelte/commit/661256f9b14856fb8a3fa34194930fe905b69463))
+
 ## [1.3.0-beta.3](https://github.com/Naco-UI/svelte-naco/compare/v1.3.0-beta.2...v1.3.0-beta.3) (2023-11-15)
 
 ### Bug Fixes
