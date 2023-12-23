@@ -17,6 +17,6 @@ So I started to make this component library. Its tasks:
 
 Information needed to use the library:
 
-- [Getting Started](https://naco-ui.github.io/svelte-naco/?path=/docs/documentation-getting-started--docs)
+- [Getting Started](https://naco.myrt.co/?path=/docs/documentation-getting-started--docs)
 - [Latest (main) Storybook](https://naco-ui.netlify.app/)
 - [Latest release Storybook](https://naco.myrt.co/)
