@@ -84,7 +84,7 @@
 
   :global(.os-linux) {
     .input {
-      --input-padding: 6px 20px;
+      --input-padding: 6px 8px;
       --input-border: 1px solid var(--color-border-main);
     }
   }
