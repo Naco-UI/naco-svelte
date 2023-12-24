@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.6](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.5...v1.3.0-beta.6) (2023-12-24)
+
+### Features
+
+* **Input:** add full width property ([180b043](https://github.com/Naco-UI/naco-svelte/commit/180b0438ee5d873deec5967fff0bda2165b8bb9e))
+
 ## [1.3.0-beta.5](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.4...v1.3.0-beta.5) (2023-12-24)
 
 ### Features
