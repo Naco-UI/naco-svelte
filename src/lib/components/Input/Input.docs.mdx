@@ -1,0 +1,32 @@
+import { Intro, Meta, Props, Story } from '$storybook/docs'
+import * as Stories from './Input.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Input"
+  description="Input field allows users to enter values using the keyboard."
+/>
+
+<Story of={Stories.Basic} />
+
+## Properties
+
+<Props />
+
+## Usage recommendations
+
+- Do not use input fields for bulk text information;
+- Use autofocus in the field when it is obvious;
+
+## Disabled
+
+The input can be locked via the `disabled` property.
+
+<Story of={Stories.Disabled} />
+
+## Borderless
+
+Input can be displayed in simplified mode, without borders. To do this, add the `borderless` property.
+
+<Story of={Stories.Borderless} />
