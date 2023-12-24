@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.5](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.4...v1.3.0-beta.5) (2023-12-24)
+
+### Features
+
+* add Input component ([8696158](https://github.com/Naco-UI/naco-svelte/commit/869615892edb2c95b42fedfe85c1be048ba8effd))
+
 ## [1.3.0-beta.4](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.3...v1.3.0-beta.4) (2023-12-23)
 
 ### Features
