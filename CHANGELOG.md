@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.7](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.6...v1.3.0-beta.7) (2023-12-24)
+
+### Bug Fixes
+
+* **Input:** decrease linux padding ([56cba64](https://github.com/Naco-UI/naco-svelte/commit/56cba64899ecdabdea6d166a36bdd981199e325c))
+
 ## [1.3.0-beta.6](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.5...v1.3.0-beta.6) (2023-12-24)
 
 ### Features
