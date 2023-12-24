@@ -8,6 +8,7 @@
   export let disabled: InputProps['disabled'] = false
   export let autofocus: InputProps['autofocus'] = false
   export let placeholder: InputProps['placeholder'] = undefined
+  export let fullWidth: InputProps['fullWidth'] = false
 
   const dispatch = createEventDispatcher()
 
@@ -20,6 +21,7 @@
 <input
   class="input"
   class:borderless
+  class:fullWidth
   on:change={handleChange}
   bind:value
   {autofocus}
@@ -73,6 +75,10 @@
 
     &:disabled {
       opacity: 0.5;
+    }
+
+    &.fullWidth {
+      width: 100%;
     }
   }
 

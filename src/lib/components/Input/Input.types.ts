@@ -4,6 +4,7 @@ export interface InputProps {
   borderless?: boolean
   disabled?: boolean
   autofocus?: boolean
+  fullWidth?: boolean
 }
 
 export type InputChangeEvent = Event & {
