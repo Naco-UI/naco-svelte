@@ -4,7 +4,8 @@
   import type { FormGroupProps } from './FormGroup.types.js'
 
   export let title: FormGroupProps['title'] = undefined
-  const context = createFormContext({ title })
+  export let largeContent: FormGroupProps['largeContent'] = false
+  const context = createFormContext({ title, largeContent })
 
   const titleChanged = (): void => {
     context.title.set(title)

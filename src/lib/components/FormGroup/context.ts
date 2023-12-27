@@ -6,9 +6,13 @@ import type { FormGroupProps } from './FormGroup.types.js'
 
 const contextName = 'form'
 
-export function createFormContext({ title }: FormGroupProps): FormContext {
+export function createFormContext({
+  title,
+  largeContent,
+}: FormGroupProps): FormContext {
   const stores = {
     title: writable(title),
+    largeContent: writable(largeContent),
   }
 
   setContext(contextName, stores)

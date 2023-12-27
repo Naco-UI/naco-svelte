@@ -3,11 +3,14 @@
 
   import Stack from '../Stack/Stack.svelte'
   import Typography from '../Typography/Typography.svelte'
+  import { getForm } from './context'
   import type { FormRowProps } from './FormRow.types.js'
 
   export let title: FormRowProps['title'] = undefined
   export let subtitle: FormRowProps['subtitle'] = undefined
   export let align: FormRowProps['align'] = 'center'
+
+  const { largeContent } = getForm()
 
   $: controlLayout = title !== undefined
 
@@ -18,7 +21,12 @@
   })
 </script>
 
-<div class="form-row" style:align-items={align} class:control-layout={controlLayout}>
+<div
+  class="form-row"
+  class:control-layout={controlLayout}
+  class:large-content={$largeContent}
+  style:align-items={align}
+>
   {#if controlLayout}
     <div class="left-accessory">
       <Stack direction="vertical" gap="xs">
@@ -50,6 +58,10 @@
 
     &.control-layout {
       grid-template-columns: 70% 30%;
+
+      &.large-content {
+        grid-template-columns: 30% 70%;
+      }
     }
 
     & > * {
