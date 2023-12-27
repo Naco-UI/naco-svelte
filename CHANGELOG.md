@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.8](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.7...v1.3.0-beta.8) (2023-12-27)
+
+### Features
+
+* **FormGroup:** add large content support ([e4c6ea4](https://github.com/Naco-UI/naco-svelte/commit/e4c6ea420f312f54cf7d7f8c19b989ce0df4e12c))
+
 ## [1.3.0-beta.7](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.6...v1.3.0-beta.7) (2023-12-24)
 
 ### Bug Fixes
