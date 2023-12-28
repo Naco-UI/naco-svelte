@@ -46,6 +46,7 @@
       layoutHeight = layoutRef.offsetHeight
     })
     resizeObserver.observe(scrollRef)
+    resizeObserver.observe(layoutRef)
     scrollRef.addEventListener('scroll', handleScroll)
   })
   onDestroy(() => {
