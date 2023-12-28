@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.9](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.8...v1.3.0-beta.9) (2023-12-28)
+
+### Bug Fixes
+
+* **PlainLayout:** resize on parent change ([ae68687](https://github.com/Naco-UI/naco-svelte/commit/ae68687e4f37a6659b3dfe98c70474694537b431))
+
 ## [1.3.0-beta.8](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.7...v1.3.0-beta.8) (2023-12-27)
 
 ### Features
