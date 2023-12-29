@@ -2,17 +2,38 @@
   import Typography from '$lib/components/Typography/Typography.svelte'
   import { getTheme } from '$lib/index.js'
 
-  export let height: number | 'auto' = 'auto'
+  export let height: number = 200
   export let translucent = false
   export let titlebar = true
   export let title = 'Naco UI'
   export let inset = false
 
+  let lastHeight = height
+
+  let dragging = false
+  let startY = 0
+
+  function handleDragStart(e: MouseEvent) {
+    dragging = true
+    startY = e.screenY
+  }
+
+  function handleDrag(e: MouseEvent) {
+    if (dragging) {
+      height = lastHeight + (e.screenY - startY)
+    }
+  }
+
+  function handleDragEnd(e: MouseEvent) {
+    lastHeight = height
+    dragging = false
+  }
+
   const { os } = getTheme()
 
   $: isInset = $os === 'mac' && inset
 
-  $: sheetHeight = typeof height === 'number' ? `${height}px` : height
+  $: sheetHeight = `${height}px`
 </script>
 
 <div
@@ -32,6 +53,15 @@
       </div>
     </div>
     <slot />
+    <div
+      aria-hidden="true"
+      class="drag"
+      class:active={dragging}
+      on:mousedown={handleDragStart}
+      on:mousemove={handleDrag}
+      on:mouseup={handleDragEnd}
+      on:mouseleave={handleDragEnd}
+    />
   </div>
 </div>
 
@@ -54,6 +84,24 @@
       background-image: url('/images/wallpaper.jpg');
       background-position: top;
       background-size: cover;
+    }
+  }
+
+  .drag {
+    cursor: ns-resize;
+
+    position: absolute;
+    bottom: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 15px;
+
+    background-color: transparent;
+
+    &.active {
+      box-shadow: 0 -5px 5px inset rgb(0 0 0 / 15%);
     }
   }
 
