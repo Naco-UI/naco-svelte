@@ -18,12 +18,12 @@ function findMissing(themeKeys: Record<string, string[]>): ValidationResult[] {
   const misses: ValidationResult[] = []
   for (const key in themeKeys) {
     const [os, scheme] = key.split('.')
-    for (let i = 0; i < uniqueProps.length; i++) {
-      if (!themeKeys[key].includes(uniqueProps[i])) {
+    for (const property of uniqueProps) {
+      if (!themeKeys[key].includes(property)) {
         misses.push({
           os,
           scheme,
-          property: uniqueProps[i],
+          property,
         })
       }
     }
