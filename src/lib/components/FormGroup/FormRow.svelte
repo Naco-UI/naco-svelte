@@ -3,7 +3,7 @@
 
   import Stack from '../Stack/Stack.svelte'
   import Typography from '../Typography/Typography.svelte'
-  import { getForm } from './context'
+  import { getForm } from './context.js'
   import type { FormRowProps } from './FormRow.types.js'
 
   export let title: FormRowProps['title'] = undefined
