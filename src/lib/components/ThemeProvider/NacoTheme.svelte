@@ -2,9 +2,9 @@
   import { theme } from '$lib/actions/theme/theme.action.js'
   import type { ThemeManifest } from '$lib/actions/theme/theme.types.js'
 
-  import { useTheme } from '../ThemeProvider/index.js'
+  import { getTheme } from '../ThemeProvider/index.js'
 
-  const { os: osStore, scheme: schemeStore } = useTheme()
+  const { os: osStore, scheme: schemeStore } = getTheme()
   export let manifest: ThemeManifest
   export let debug = false
 
