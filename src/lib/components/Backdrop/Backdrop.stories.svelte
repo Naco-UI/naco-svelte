@@ -1,19 +1,30 @@
+<script context="module">
+  import Backdrop from './Backdrop.svelte'
+
+  export const meta = {
+    title: 'Components/Backdrop',
+    component: Backdrop,
+  }
+</script>
+
 <script lang="ts">
-  import { Meta, Story } from '@storybook/addon-svelte-csf'
+  import { Story } from '@storybook/addon-svelte-csf'
 
   import { Button } from '../Button/index.js'
   import { Spinner } from '../Spinner/index.js'
-  import Backdrop from './Backdrop.svelte'
 
   let showBackdrop = false
 </script>
 
-<Meta title="Components/Backdrop" component={Backdrop} />
-
 <Story
   name="Basic"
-  args={{
-    open: true,
+  argTypes={{
+    open: {
+      control: 'boolean',
+    },
+    transparent: {
+      control: 'boolean',
+    },
   }}
   let:args
 >
