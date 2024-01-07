@@ -1,6 +1,8 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte'
 
+  import { NacoTheme } from '../NacoTheme/index.js'
+  import { manifest } from './Input.theme.js'
   import type { InputChangeEvent, InputProps } from './Input.types.js'
 
   export let value: InputProps['value'] = ''
@@ -18,16 +20,18 @@
 </script>
 
 <!-- svelte-ignore a11y-autofocus -->
-<input
-  class="input"
-  class:borderless
-  class:fullWidth
-  on:change={handleChange}
-  bind:value
-  {autofocus}
-  {placeholder}
-  {disabled}
-/>
+<NacoTheme {manifest} debug>
+  <input
+    class="input"
+    class:borderless
+    class:fullWidth
+    on:change={handleChange}
+    bind:value
+    {autofocus}
+    {placeholder}
+    {disabled}
+  />
+</NacoTheme>
 
 <style lang="scss">
   .input {
