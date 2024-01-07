@@ -3,7 +3,7 @@
   import { quadInOut } from 'svelte/easing'
   import { fade } from 'svelte/transition'
 
-  import { NacoTheme } from '../ThemeProvider/index.js'
+  import { NacoTheme } from '../NacoTheme/index.js'
   import { manifest } from './Backdrop.theme.js'
   import type { BackdropProps } from './Backdrop.types.js'
 

@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte'
 
   import { isForm } from '../FormGroup/index.js'
-  import { NacoTheme } from '../ThemeProvider/index.js'
+  import { NacoTheme } from '../NacoTheme/index.js'
   import { manifest } from './Toggle.theme.js'
   import type { ToggleProps } from './Toggle.types.js'
 
