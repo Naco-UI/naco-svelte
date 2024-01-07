@@ -1,7 +1,7 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["borderless", "Naco", "Autofix", "stylelint"],
+  "words": ["Autofix", "borderless", "Naco", "stylelint", "themeless"],
   "ignorePaths": ["/build", "/dist", "/storybook-static", ".svelte-kit"],
   "ignoreRegExpList": ["href=\"(.*)\"", "\\[(.*)\\]\\((.*)\\)"]
 }

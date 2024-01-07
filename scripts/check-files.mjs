@@ -5,10 +5,39 @@ import kleur from 'kleur'
 import { basename, join } from 'path'
 
 /**
+ * @typedef {[string, string]} Check
  * @typedef Problem
  * @prop {string} message
  * @prop {string} path
  */
+
+const themelessComponents = [
+  'NacoTheme',
+  'ThemeProvider',
+]
+
+/**
+ * @param {string} name
+ * @param {string} path
+ * @returns {Array<Check>}
+ */
+function getChecksFor(name, path) {
+  /** @type {Array<Check>} */
+  const checks = [
+    ['Docs', `${name}.docs.mdx`],
+    ['Stories', `${name}.stories.svelte`],
+    ['Index re-exports', 'index.ts'],
+  ]
+  const type = path.split('/')[2]
+  switch (type) {
+    case 'components':
+      if (!themelessComponents.includes(name)) {
+        checks.push(['Theme manifest', `${name}.theme.ts`])
+      }
+      break
+  }
+  return checks
+}
 
 /**
  * @param {string} name
@@ -17,11 +46,7 @@ import { basename, join } from 'path'
  */
 function assertEntry(name, path) {
   const problems = []
-  const checks = [
-    ['Docs', `${name}.docs.mdx`],
-    ['Stories', `${name}.stories.svelte`],
-    ['Index re-exports', 'index.ts'],
-  ]
+  const checks = getChecksFor(name, path)
   for (const [title, fileName] of checks) {
     const filePath = join(path, fileName)
     if (!existsSync(filePath)) {

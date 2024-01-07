@@ -1,0 +1,78 @@
+import { Intro, Meta, Props, Story } from '$storybook/docs'
+import * as Stories from './theme.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="Theme action"
+  description="Internal action that is used to control design variables."
+  imports={['theme']}
+/>
+
+A low-level action that is used to stylize all components included in Naco UI. The main task of the action is to collect a list of CSS custom properties depending on OS and theme, and set them on the selected HTML node.
+
+<Story of={Stories.Basic} />
+
+## Parameters
+
+Action accepts an object with parameters.
+
+- `os` – Operating system from the list of supported operating systems (`mac` or `linux`).
+- `scheme` — Color scheme of the application. `dark` or `light`.
+- `manifest` – Component theme manifest.
+- `debug` — Optional debug mode flag. In this mode, all changes of variables will be logged in the console, and also additionally validation of consistency of values will be performed.
+
+## Manifest
+
+The theme manifest is an object. The only required key is the component prefix (usually the component name in lower case with dashes instead of spaces). So a minimal (but useless) manifesto looks like this:
+
+```ts
+const manifest: ThemeManifest = {
+  prefix: 'my-component',
+}
+```
+
+In order for the manifest to make sense, we need to add values to it. The values are divided into several logical parts (`common`, `mac` or `linux`). Within each part, a refinement of the theme, `light` or `dark`, is provided. Within the description, variables are divided into 3 logical sections: `color`, `size` and `effect`. Values in `color` and `effect` are substituted as they are, only cast to string. Values in `size` are converted to a string of the form `${value}px` if specified as a number.
+
+For example, if you want the text to be white on macOS and black on Linux, the manifest would look like this:
+
+```ts
+const manifest: ThemeManifest = {
+  prefix: 'my-component',
+  common: {
+    size: {
+      padding: 4,
+    },
+  },
+  mac: {
+    color: {
+      text: '#FFF',
+    },
+  },
+  linux: {
+    color: {
+      text: '#000',
+    },
+  },
+}
+```
+
+It is important that the list of variables ALWAYS be consistent. The set of variables should not change. If some values are not needed in some states, then set them to `null`, For example, if you want to add a separate shadow only in the dark theme on macOS, then the manifest would look like this:
+
+```ts
+const manifest: ThemeManifest = {
+  prefix: 'my-component',
+  common: {
+    effect: {
+      shadow: null, // Disable shadow by default
+    },
+  },
+  mac: {
+    dark: {
+      effect: {
+        shadow: '1px 0 0 3px #000', // Enable shadow for dark macOS
+      },
+    },
+  },
+}
+```

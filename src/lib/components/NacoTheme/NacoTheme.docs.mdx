@@ -1,0 +1,21 @@
+import { Intro, Meta, Props, Story } from '$storybook/docs'
+import * as Stories from './NacoTheme.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="NacoTheme"
+  description="Internal component that is used to control design variables."
+/>
+
+All Naco UI components are wrapped in this component. It allows to separate the list of variables from the layout, and also checks the consistency of variables between operating systems and color schemes.
+
+<Story of={Stories.Basic} />
+
+## Properties
+
+<Props />
+
+## Manifest
+
+The rules for filling out the manifest are described in the documentation for the [theme](/?path=/docs/actions-theme--docs#manifest) action.
