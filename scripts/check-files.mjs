@@ -11,6 +11,11 @@ import { basename, join } from 'path'
  * @prop {string} path
  */
 
+const themelessComponents = [
+  'NacoTheme',
+  'ThemeProvider',
+]
+
 /**
  * @param {string} name
  * @param {string} path
@@ -26,7 +31,7 @@ function getChecksFor(name, path) {
   const type = path.split('/')[2]
   switch (type) {
     case 'components':
-      if (name !== 'NacoTheme') {
+      if (!themelessComponents.includes(name)) {
         checks.push(['Theme manifest', `${name}.theme.ts`])
       }
       break
