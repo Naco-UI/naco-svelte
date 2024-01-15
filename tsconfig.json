@@ -20,8 +20,8 @@
     }
   },
   "include": [
-    "scripts/*.mjs",
-    "scripts/*.cjs",
+    "scripts/**/*.mjs",
+    "scripts/**/*.cjs",
     "scripts/.eslintrc.cjs",
     "src/**/*.d.ts",
     "src/**/*.ts",
@@ -30,6 +30,7 @@
     "docs/**/*.mdx",
     "vite.config.ts",
     "svelte.config.js",
-    ".eslintrc.cjs"
+    ".eslintrc.cjs",
+    "scripts/check-files/index.mjs"
   ]
 }
