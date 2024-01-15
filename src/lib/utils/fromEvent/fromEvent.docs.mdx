@@ -41,4 +41,12 @@ Using the auxiliary function `fromMatchMedia` you can get a boolean value of med
 function fromMatchMedia(query: string): FromMatchMedia {}
 ```
 
+For the dark theme, as the most frequent case, there is a media query constant.
+
+```ts
+import { fromMatchMedia, prefersDarkMediaQuery } from '@naco-ui/svelte'
+
+export const [isDark] = fromMatchMedia(prefersDarkMediaQuery)
+```
+
 <Story of={Stories.Media} />

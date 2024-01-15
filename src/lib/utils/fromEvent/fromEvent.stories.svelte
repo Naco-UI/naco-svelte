@@ -11,6 +11,8 @@
 
   import { Stack, Toggle, Typography } from '$lib/index.js'
 
+  import { prefersDarkMediaQuery } from './fromEvent.types.js'
+
   const [mousePosition, active] = fromEvent(window, 'mousemove', {
     map: (e: MouseEvent) => ({
       x: e.clientX,
@@ -37,7 +39,7 @@
       title: 'Is tablet',
     },
     {
-      query: '(prefers-color-scheme: dark)',
+      query: prefersDarkMediaQuery,
       title: 'Is dark',
     },
     {

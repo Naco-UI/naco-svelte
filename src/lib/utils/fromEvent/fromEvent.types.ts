@@ -18,3 +18,5 @@ export interface FromEventOptions<ReturnType> {
   map?: EventMapper<ReturnType>
   startsInactive?: boolean
 }
+
+export const prefersDarkMediaQuery = '(prefers-color-scheme: dark)'
