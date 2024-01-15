@@ -23,7 +23,8 @@ export * from './actions/hotkey/index.js'
 export * from './actions/portal/index.js'
 export * from './actions/scrollLock/index.js'
 // Utilities
-export * from './utils/environment/index.js'
+export * from './utils/fromEvent/index.js'
+export * from './utils/getOperationSystem/index.js'
 export * from './utils/getUniqueId/index.js'
 // Layouts
 export * from './layouts/PlainLayout/index.js'
