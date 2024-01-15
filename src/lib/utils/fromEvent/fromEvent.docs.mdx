@@ -1,0 +1,44 @@
+import { Intro, Meta, Props, Story, Source } from '$storybook/docs'
+import * as Stories from './fromEvent.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro name="fromEvent" description="Function turning events into svelte stores." />
+
+## Events
+
+```ts
+/**
+ * Creates a Svelte readable and writable store based on an event from an event provider.
+ * @param element - The event provider, typically a DOM element or similar object with addEventListener and removeEventListener methods.
+ * @param type - The type of event to listen for (e.g., 'click', 'change').
+ * @param options - Optional configuration for the event listener.
+ * @returns A tuple containing a Svelte readable store with the event data and a writable store to control the active state of the event listener.
+ */
+function fromEvent<ReturnType = Event>(
+  element: EventProvider,
+  type: string,
+  options?: FromEventOptions<ReturnType>,
+): FromEvent<ReturnType> {}
+```
+
+By using `fromEvent` you can get a template-friendly stor. Using the `map` parameter in the optional argument you can specify a function that will turn the result of the event into the structure you want to use.
+
+<Story of={Stories.Mouse} />
+
+## Media
+
+Using the auxiliary function `fromMatchMedia` you can get a boolean value of media query
+
+```ts
+/**
+ * Creates a Svelte readable and writable store based on a MediaQueryList and its change events.
+ * The store emits a boolean indicating whether the media query matches. Additionally, returns the MediaQueryList object.
+ *
+ * @param query - The media query string to be observed (e.g., '(min-width: 600px)').
+ * @returns A tuple containing a Svelte readable store with a boolean indicating the match state of the media query, a writable store to control the active state of the media query listener, and the MediaQueryList object itself.
+ */
+function fromMatchMedia(query: string): FromMatchMedia {}
+```
+
+<Story of={Stories.Media} />
