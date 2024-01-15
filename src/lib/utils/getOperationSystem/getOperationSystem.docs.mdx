@@ -1,0 +1,35 @@
+import { Intro, Meta, Props, Story } from '$storybook/docs'
+import * as Stories from './getOperationSystem.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="getOperationSystem"
+  description="Utility to determine the current operation system."
+  imports={['getOperationSystem', 'type OperationSystem']}
+/>
+
+This function returns a value from the list of supported `OperationSystem`.
+
+```ts
+enum OperationSystem {
+  Windows = 'windows',
+  MacOS = 'mac',
+  Linux = 'linux',
+  Android = 'android',
+  iOS = 'ios',
+  Unknown = 'unknown',
+}
+```
+
+<Story of={Stories.Basic} />
+
+## Signature
+
+```ts
+/**
+ * Detects and returns the operating system of the user's device based on the user agent string.
+ * @returns {OperationSystem} The detected operating system.
+ */
+export function getOperationSystem() {}
+```
