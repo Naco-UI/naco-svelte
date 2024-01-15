@@ -28,7 +28,7 @@
     "src/**/*.js",
     "src/**/*.svelte",
     "docs/**/*.mdx",
-    "vite.config.ts",
+    "*.ts",
     "svelte.config.js",
     ".eslintrc.cjs",
     "scripts/check-files/index.mjs"
