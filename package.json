@@ -14,7 +14,7 @@
     "preview": "NACO_VERSION='`preview`' pnpm storybook build && pnpm preview:serve",
     "preview:serve": "browser-sync start --port 6006 --server --ss ./storybook-static",
     "check": "pnpm run '/^check:.*/'",
-    "check:files": "./scripts/check-files.mjs",
+    "check:files": "node ./scripts/check-files/index.mjs",
     "check:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:types": "tsc",
     "check:spelling": "pnpm cspell -c .cspell.json './**/*.{md,mdx}'",
