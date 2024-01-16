@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte'
 
-  import { getUniqueId } from '$lib/utils/index.js'
+  import { getUniqueId } from '$lib/utils/getUniqueId/index.js'
 
   import Radio from '../Radio/Radio.svelte'
   import { Stack } from '../Stack/index.js'
