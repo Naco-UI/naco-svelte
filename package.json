@@ -19,7 +19,7 @@
     "check:types": "tsc",
     "check:spelling": "pnpm cspell -c .cspell.json './**/*.{md,mdx}'",
     "test": "vitest --run",
-    "test:watch": "vitest",
+    "test:dev": "vitest --ui",
     "lint": "pnpm run '/^lint:.*/'",
     "lint:format-check": "prettier --check .",
     "lint:scripts": "eslint .",
@@ -66,6 +66,8 @@
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "@vitest/browser": "^1.2.0",
+    "@vitest/coverage-v8": "^1.2.0",
+    "@vitest/ui": "^1.2.0",
     "browser-sync": "^2.29.3",
     "cspell": "^7.3.2",
     "cspell-cli": "github:streetsidesoftware/cspell-cli",
@@ -108,7 +110,8 @@
     "webdriverio": "^8.27.2"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm nano-staged"
+    "pre-commit": "pnpm nano-staged",
+    "pre-push": "pnpm test"
   },
   "nano-staged": {
     "*.{js,jsx,ts}": [
