@@ -1,8 +1,11 @@
 <script lang="ts">
+  import { onDestroy, onMount } from 'svelte'
   import { quintOut } from 'svelte/easing'
+  import { writable } from 'svelte/store'
   import { crossfade } from 'svelte/transition'
 
-  import { scrollLock } from '$lib/actions/scrollLock/index.js'
+  import { scrollLock } from '$lib/utils/scrollLock/scrollLock.js'
+  import type { ScrollLockDestroy } from '$lib/utils/scrollLock/scrollLock.types.js'
 
   import { Backdrop } from '../Backdrop/index.js'
   import { Portal } from '../Portal/index.js'
@@ -12,14 +15,18 @@
   export let translucent: ModalProps['translucent'] = false
   export let width: ModalProps['width'] = undefined
   export let scrollTarget: ModalProps['scrollTarget'] = undefined
+
+  let destroyLock: ScrollLockDestroy
+  const lock = writable(false)
+  const transitionKey = 'modal'
   const transitionDuration = 300
 
-  export const [send, receive] = crossfade({
+  export const [slideIn, slideOut] = crossfade({
     duration: (d) => Math.sqrt(d * transitionDuration),
 
-    fallback(node, params) {
+    fallback() {
       return {
-        duration: 600,
+        duration: transitionDuration * 2,
         easing: quintOut,
         css: (t) => `
           transform: translateY(calc((1 - ${t}) * -50px));
@@ -38,21 +45,36 @@
     }
     return 240
   })()
+
+  function handleLock(isLocked: boolean): void {
+    if (isLocked) {
+      lock.set(true)
+    } else {
+      window.setTimeout(() => {
+        lock.set(false)
+      }, transitionDuration)
+    }
+  }
+
+  onMount(() => {
+    destroyLock = scrollLock(scrollTarget ?? document.body, lock)
+  })
+  onDestroy(() => {
+    destroyLock()
+  })
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  $: open, handleLock(open)
 </script>
 
 <Portal>
   <Backdrop {open}>
     <div
-      use:scrollLock={{
-        lock: open,
-        unlockDelay: transitionDuration,
-        target: scrollTarget ?? document.body,
-      }}
       class="modal"
       class:translucent
       style:--modal-width={widthValue}
-      in:receive={{ key: 'modal' }}
-      out:send={{ key: 'modal' }}
+      in:slideIn={{ key: transitionKey }}
+      out:slideOut={{ key: transitionKey }}
     >
       <slot />
     </div>
