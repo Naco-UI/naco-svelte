@@ -46,5 +46,6 @@ module.exports = {
       },
     ],
     'no-console': 'error',
+    'no-sequences': 'off',
   },
 }

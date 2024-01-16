@@ -1,4 +1,4 @@
-import type { ScrollLockTarget } from '$lib/actions/scrollLock/scrollLock.types.js'
+import type { ScrollLockTarget } from '$lib/utils/scrollLock/scrollLock.types.js'
 
 export interface ModalProps {
   open: boolean
