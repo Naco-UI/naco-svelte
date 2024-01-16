@@ -1,12 +1,33 @@
 import { sveltekit } from '@sveltejs/kit/vite'
 import { resolve } from 'path'
-import { defineConfig } from 'vitest/config'
+import { configDefaults, defineConfig } from 'vitest/config'
+
+const testExclude = [
+  '**/node_modules/**',
+  'src/app.d.ts',
+  '.storybook/**/*',
+  'storybook-static/**/*',
+  'scripts/**/*',
+  '**/*.{md,jsx,tsx,js,cjs}',
+  '**/*.stories.svelte',
+  '**/*.types.ts',
+  '**/index.ts',
+  '**/.svelte-kit/**',
+  '**/.pnpm/**',
+]
 
 export default defineConfig({
   plugins: [sveltekit()],
   test: {
-    include: ['src/**/*.{test,spec}.{js,ts}'],
+    exclude: [...configDefaults.exclude, ...testExclude],
+    include: ['src/**/*.test.ts'],
     environment: 'happy-dom',
+    coverage: {
+      exclude: [...testExclude],
+      enabled: true,
+      provider: 'v8',
+      reporter: ['html'],
+    },
   },
   resolve: {
     alias: {
