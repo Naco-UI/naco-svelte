@@ -1,0 +1,34 @@
+import { Intro, Meta, Story } from '$storybook/docs'
+import * as Stories from './scrollLock.stories.svelte'
+
+<Meta of={Stories} />
+
+<Intro
+  name="scrollLock"
+  description="Utility to lock scrolling of the selected element"
+/>
+
+<Story of={Stories.Basic} />
+
+## Parameters
+
+The function accepts two parameters. The `target` (CSS selector string or `HTMLElement`) and the readable Svelte store.
+
+```ts
+const lock = writable(false)
+let destroyLock
+
+onMount(() => {
+  destroyLock = scrollLock('body', lock)
+})
+
+onDestroy(() => {
+  destroyLock()
+})
+```
+
+## Target
+
+Using the `target` property, you can lock scrolling in a particular container.
+
+<Story of={Stories.Target} />
