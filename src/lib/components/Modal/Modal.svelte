@@ -54,7 +54,10 @@
       in:receive={{ key: 'modal' }}
       out:send={{ key: 'modal' }}
     >
-      <slot />
+      <div class="scroll">
+        <slot />
+      </div>
+      <slot name="actions" />
     </div>
   </Backdrop>
 </Portal>
@@ -65,10 +68,21 @@
     --modal-border-color: var(--color-border-elevated);
     --modal-padding: 20px;
 
+    display: flex;
+    flex-direction: column;
+
     width: var(--modal-width);
-    padding: var(--modal-padding);
+    max-height: calc(100vh - (var(--modal-padding) * 2));
+    padding: 0 var(--modal-padding);
+
     background-color: var(--modal-background-color);
     border-radius: 10px;
+  }
+
+  .scroll {
+    overflow-y: scroll;
+    margin-right: calc(var(--scroll-bar-track-width) * -1);
+    padding: var(--modal-padding) 0;
   }
 
   :global(.os-mac) .modal {

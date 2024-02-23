@@ -98,7 +98,35 @@
         </FormRow>
       </FormGroup>
     </Stack>
-    <ModalActions>
+    <ModalActions slot="actions">
+      <Button
+        on:click={() => {
+          showModal = false
+        }}
+        primary>Done</Button
+      >
+    </ModalActions>
+  </Modal>
+</Story>
+
+<Story name="Scroll">
+  <Button
+    on:click={() => {
+      showModal = true
+    }}
+    primary
+  >
+    Show modal
+  </Button>
+  <Modal width={400} open={showModal}>
+    <Stack gap="m">
+      <Typography variant="text-m">
+        {#each Array(150) as _}
+          i will not sell school property{' '}
+        {/each}
+      </Typography>
+    </Stack>
+    <ModalActions slot="actions">
       <Button
         on:click={() => {
           showModal = false
