@@ -28,7 +28,7 @@
 </script>
 
 <div class="select" class:borderless class:disabled>
-  <select on:change={handleChange} {value}>
+  <select on:mousedown on:mouseup on:click on:change={handleChange} {value}>
     {#each options as option}
       <option disabled={option.disabled} value={option.value}
         >{option.title ?? option.value}</option

@@ -22,6 +22,7 @@
 </script>
 
 <div
+  on:click
   class="form-row"
   class:control-layout={controlLayout}
   class:large-content={$largeContent}
