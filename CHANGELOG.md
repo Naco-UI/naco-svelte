@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0-beta.10](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.9...v1.3.0-beta.10) (2024-02-23)
+
+### Features
+
+* **Modal:** improve scrolling behavior ([3410740](https://github.com/Naco-UI/naco-svelte/commit/34107404cf280184d4a5a200c56fcb9ac6733892))
+* pass on:click on FormRow and Select ([f044763](https://github.com/Naco-UI/naco-svelte/commit/f044763425ca36210dbd99dcb5ed4e2dac565a40))
+
 ## [1.3.0-beta.9](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.8...v1.3.0-beta.9) (2023-12-28)
 
 ### Bug Fixes
