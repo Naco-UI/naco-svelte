@@ -106,6 +106,22 @@
   </FormGroup>
 </Story>
 
+<Story name="Interactive">
+  <Stack gap="m">
+    <FormGroup>
+      <FormRow title="Wi-Fi" subtitle="Connected" interactive />
+    </FormGroup>
+    <FormGroup>
+      <FormRow title="VPN & Filters" subtitle="Active" interactive />
+      <FormRow title="Firewall" subtitle="Inactive" interactive />
+    </FormGroup>
+    <FormGroup title="Other services">
+      <FormRow title="Thunderbolt Bridge" subtitle="Not connected" interactive />
+      <FormRow title="USB Modem" subtitle="Not connected" interactive />
+    </FormGroup>
+  </Stack>
+</Story>
+
 <style lang="scss">
   .raw-row {
     display: flex;

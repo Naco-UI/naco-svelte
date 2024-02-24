@@ -29,6 +29,7 @@
 
 <style lang="scss">
   .rows {
+    overflow: hidden;
     background-color: var(--color-overlay-quinary);
     border: 1px solid var(--color-border-main);
     border-radius: var(--form-border-radius);
@@ -36,7 +37,7 @@
 
   .heading {
     margin-bottom: var(--space-m);
-    padding: 0 var(--form-row-padding-h);
+    padding: 0 var(--form-group-padding-horizontal);
   }
 
   .form-group:not(:first-child) .heading {
@@ -44,16 +45,14 @@
   }
 
   :global(.naco.os-linux) .form-group {
-    --form-row-padding-v: 16px;
-    --form-row-padding-h: 14px;
+    --form-group-padding-vertical: 16px;
+    --form-group-padding-horizontal: 14px;
     --form-border-radius: 8px;
-    --form-row-min-height: 34px;
   }
 
   :global(.naco.os-mac) .form-group {
-    --form-row-padding-v: 9px;
-    --form-row-padding-h: 9px;
+    --form-group-padding-vertical: 9px;
+    --form-group-padding-horizontal: 9px;
     --form-border-radius: 5px;
-    --form-row-min-height: 20px;
   }
 </style>

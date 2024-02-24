@@ -127,9 +127,6 @@
       "eslint --fix",
       "stylelint --fix"
     ],
-    "*.{md,mdx}": [
-      "cspell"
-    ],
     "*.{json,md,mdx}": [
       "prettier --write"
     ]
