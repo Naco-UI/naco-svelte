@@ -1,7 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
-import { getOperationSystem } from './getOperationSystem'
-import { OperationSystem } from './getOperationSystem.types'
+import { getOperationSystem, OperationSystem } from './getOperationSystem'
 
 describe('getOperationSystem', () => {
   function setUserAgent(userAgent: string): void {
