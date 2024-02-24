@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.1](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0...v1.3.1) (2024-02-24)
+
+### Bug Fixes
+
+* **getOperationSystem:** avoid misleading types ([80f9e6e](https://github.com/Naco-UI/naco-svelte/commit/80f9e6e303495a5ef36d64bc086cb735fd2b263b))
+
 ## [1.3.0](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.10...v1.3.0) (2024-02-24)
 
 ### Features
