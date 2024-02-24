@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.10...v1.3.0) (2024-02-24)
+
+### Features
+
+* add `fromEvent` utility ([86fbd7f](https://github.com/Naco-UI/naco-svelte/commit/86fbd7fbc7de2d684a684e32cef07b8a41fddd0a))
+* add `fromEvent` utility ([61230f9](https://github.com/Naco-UI/naco-svelte/commit/61230f9d39cfdd0621c0121e419880efd2b31f31))
+* **Backdrop:** migrate to new theming ([8dfa916](https://github.com/Naco-UI/naco-svelte/commit/8dfa9169c59702b18d215cefcaa1cb48922ab15d))
+* **FormGroup:** improve clickable FormRow styles ([763c738](https://github.com/Naco-UI/naco-svelte/commit/763c7387bca671ef84024ccb95872dba765f3e57))
+* introduce new component theme engine ([ef6214c](https://github.com/Naco-UI/naco-svelte/commit/ef6214c04024fed6b0cf0d5331740cd5c1f8be33))
+* replace `environment` utility with `getOperationSystem` ([f8a6d7d](https://github.com/Naco-UI/naco-svelte/commit/f8a6d7d9c6ca31c20cd9cb6f95cd97b180948d17))
+* **theme:** add validation ([f864a56](https://github.com/Naco-UI/naco-svelte/commit/f864a5638e15baa29c25172f6768835e6b7526a7))
+
+
+### Bug Fixes
+
+* **ColorSelector:** use correct utility import ([d63a67b](https://github.com/Naco-UI/naco-svelte/commit/d63a67b7baf0224e090571544872b0be507415f2))
+* **fromEvent:** add missing root export ([7c4b9e0](https://github.com/Naco-UI/naco-svelte/commit/7c4b9e07f977fe53c60aa474dab9b3befd5d488a))
+* **Input:** use correct theme prefix ([555bd4c](https://github.com/Naco-UI/naco-svelte/commit/555bd4c17799122c6a7c74614ac8f156ec66e562))
+* **theme:** correctly handle string size ([90775e7](https://github.com/Naco-UI/naco-svelte/commit/90775e7d60d6984973e1d41c6c2ac01b43fbf329))
+* update theme hook name usage ([84b6dbc](https://github.com/Naco-UI/naco-svelte/commit/84b6dbcc46bfa9c6f27e3fdcf8d376957f4640ad))
+
 ## [1.3.0-beta.10](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0-beta.9...v1.3.0-beta.10) (2024-02-23)
 
 ### Features
