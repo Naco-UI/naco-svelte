@@ -8,6 +8,11 @@ import type {
 } from './fromEvent.types'
 
 /**
+ * Media query string to detect dark theme preference.
+ */
+export const prefersDarkMediaQuery = '(prefers-color-scheme: dark)'
+
+/**
  * Creates a Svelte readable and writable store based on an event from an event provider.
  * @param element - The event provider, typically a DOM element or similar object with addEventListener and removeEventListener methods.
  * @param type - The type of event to listen for (e.g., 'click', 'change').

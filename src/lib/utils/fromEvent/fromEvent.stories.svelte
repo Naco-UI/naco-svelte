@@ -1,5 +1,5 @@
 <script context="module">
-  import { fromEvent, fromMatchMedia } from './fromEvent.js'
+  import { fromEvent, fromMatchMedia, prefersDarkMediaQuery } from './fromEvent.js'
   export const meta = {
     title: 'Utilities/fromEvent',
     component: fromEvent,
@@ -10,8 +10,6 @@
   import { Story } from '@storybook/addon-svelte-csf'
 
   import { Stack, Toggle, Typography } from '$lib/index.js'
-
-  import { prefersDarkMediaQuery } from './fromEvent.types.js'
 
   const [mousePosition, active] = fromEvent(window, 'mousemove', {
     map: (e: MouseEvent) => ({
