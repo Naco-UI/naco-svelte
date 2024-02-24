@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.2](https://github.com/Naco-UI/naco-svelte/compare/v1.3.1...v1.3.2) (2024-02-24)
+
+### Bug Fixes
+
+* **fromEvent:** move constant away from types ([7fb2d1e](https://github.com/Naco-UI/naco-svelte/commit/7fb2d1ec2f129b5efba3ce852b17bdec2b23ea0a))
+
 ## [1.3.1](https://github.com/Naco-UI/naco-svelte/compare/v1.3.0...v1.3.1) (2024-02-24)
 
 ### Bug Fixes
