@@ -1,7 +1,7 @@
 import type { ThemeManifest } from '$lib/actions/theme/theme.types.js'
 
 export const manifest: ThemeManifest = {
-  prefix: 'backdrop',
+  prefix: 'input',
   common: {
     color: {
       text: 'var(--color-content-primary)',
