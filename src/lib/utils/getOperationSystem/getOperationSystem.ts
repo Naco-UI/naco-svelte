@@ -1,4 +1,14 @@
-import { OperationSystem } from './getOperationSystem.types'
+/**
+ * Enum for Operating Systems.
+ */
+export enum OperationSystem {
+  Windows = 'windows',
+  MacOS = 'mac',
+  Linux = 'linux',
+  Android = 'android',
+  iOS = 'ios',
+  Unknown = 'unknown',
+}
 
 /**
  * Detects and returns the operating system of the user's device based on the user agent string.
