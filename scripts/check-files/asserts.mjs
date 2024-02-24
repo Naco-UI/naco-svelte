@@ -1,3 +1,4 @@
+// @ts-check
 import { existsSync } from 'fs'
 import { join } from 'path'
 
@@ -24,22 +25,26 @@ export function applyModuleChecks({ directory, module, type }, checks) {
      * @param {import("./types.mjs").Check} check
      */
     (problems, check) => {
-      // If 'all' or module type is in the types array, apply the check
       if (check.types === 'all' || check.types.includes(type)) {
         const fileName = check.fileName(module)
         const filePath = directory + '/' + fileName
 
-        if (!check.assert({
-          directory,
-          file: fileName,
-          module,
-        })) {
+        if (
+          !check.assert({
+            file: fileName,
+            directory,
+            module,
+          })
+        ) {
           problems.push({
-            message: check.title,
             filePath,
+            message: check.title,
+            level: check.level,
           })
         }
       }
       return problems
-    }, [])
+    },
+    [],
+  )
 }
