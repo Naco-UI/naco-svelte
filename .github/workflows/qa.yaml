@@ -4,20 +4,29 @@ on:
   - push
   - pull_request
 
+env:
+  NODE_VERSION: '20.4'
+  NPM_REGISTRY: 'https://registry.npmjs.org'
+  PNPM_VERSION: '8.6.2'
+
 jobs:
   test:
-    env:
-      PNPM_VERSION: '8.6.2'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.NPM_REGISTRY }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         with:
           run_install: |
             cwd: ./
