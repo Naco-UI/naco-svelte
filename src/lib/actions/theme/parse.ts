@@ -12,7 +12,7 @@ import { px } from './theme-utils.js'
 import { camelToSnakeCase, mergeProps } from './utils.js'
 
 const categoryTransformers: Partial<Record<ThemeCategoryTypes, ValueTransformer>> = {
-  size: px,
+  size: (v) => (typeof v === 'string' ? v : px(v)),
 }
 
 const defaultTransofrmer = (v: any): string => `${v}`
