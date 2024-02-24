@@ -1,3 +1,4 @@
+// @ts-check
 import fg from 'fast-glob'
 import { join } from 'path'
 
@@ -13,9 +14,9 @@ const fgOptions = {
  */
 export async function getModules() {
   const categories = await fg([MODULES_GLOB], fgOptions)
-  const moduleGlobs = categories.map(category => join(category, '*'))
+  const moduleGlobs = categories.map((category) => join(category, '*'))
   const modules = await fg(moduleGlobs, fgOptions)
-  return modules.map(directory => {
+  return modules.map((directory) => {
     const segments = directory.split('/')
     const module = segments.pop()
     const type = segments.pop()
@@ -40,11 +41,6 @@ export async function getModules() {
  */
 function isAllowedType(value) {
   /** @type {import("./types.mjs").ModuleType[]} */
-  const allowedTypes = [
-    'actions',
-    'components',
-    'layouts',
-    'utils',
-  ]
+  const allowedTypes = ['actions', 'components', 'layouts', 'utils']
   return allowedTypes.includes(value)
 }
