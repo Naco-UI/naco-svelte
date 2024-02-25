@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/Naco-UI/naco-svelte/compare/v1.3.2...v1.4.0) (2024-02-25)
+
+### Features
+
+* **Modal:** add fixed prop ([b092047](https://github.com/Naco-UI/naco-svelte/commit/b092047d66c9ae6e2e47dbb1b994499f26a860c5))
+
 ## [1.3.2](https://github.com/Naco-UI/naco-svelte/compare/v1.3.1...v1.3.2) (2024-02-24)
 
 ### Bug Fixes
