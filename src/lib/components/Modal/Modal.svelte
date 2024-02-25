@@ -15,6 +15,7 @@
   export let translucent: ModalProps['translucent'] = false
   export let width: ModalProps['width'] = undefined
   export let scrollTarget: ModalProps['scrollTarget'] = undefined
+  export let fixed: ModalProps['fixed'] = false
 
   let destroyLock: ScrollLockDestroy
   const lock = writable(false)
@@ -76,7 +77,7 @@
       in:slideIn={{ key: transitionKey }}
       out:slideOut={{ key: transitionKey }}
     >
-      <div class="scroll">
+      <div class="scroll" class:fixed>
         <slot />
       </div>
       <slot name="actions" />
@@ -105,6 +106,11 @@
     overflow-y: scroll;
     margin-right: calc(var(--scroll-bar-track-width) * -1);
     padding: var(--modal-padding) 0;
+
+    &.fixed {
+      overflow: hidden;
+      margin-right: 0;
+    }
   }
 
   :global(.os-mac) .modal {

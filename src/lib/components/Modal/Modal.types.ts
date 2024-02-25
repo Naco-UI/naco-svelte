@@ -6,4 +6,5 @@ export interface ModalProps {
   // maxHeight?: number | string
   translucent?: boolean
   scrollTarget?: ScrollLockTarget
+  fixed?: boolean
 }
