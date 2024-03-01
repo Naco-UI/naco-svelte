@@ -7,11 +7,9 @@
   export let largeContent: FormGroupProps['largeContent'] = false
   const context = createFormContext({ title, largeContent })
 
-  const titleChanged = (): void => {
-    context.title.set(title)
-  }
-
-  $: title && titleChanged()
+  $: title && context.title.set(title)
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+  $: largeContent, context.largeContent.set(largeContent as boolean)
 </script>
 
 <div class="form-group">
