@@ -98,7 +98,7 @@
   .layout {
     display: grid;
     grid-template-columns: 1fr;
-    min-height: var(--form-row-min-height);
+    min-height: var(--form-row-size-min-height);
     padding: var(--form-row-size-padding-vertical)
       var(--form-row-size-padding-horizontal);
 
