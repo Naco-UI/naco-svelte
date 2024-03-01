@@ -60,7 +60,7 @@
           </Stack>
         </div>
         <div class="right-accessory">
-          <Stack direction="horizontal" justify="end" align="center">
+          <Stack fullHeight direction="horizontal" justify="end" align="center">
             {#if interactive}
               <NavigationChevron />
             {:else}
@@ -98,6 +98,8 @@
   .layout {
     display: grid;
     grid-template-columns: 1fr;
+    gap: var(--space-m);
+
     min-height: var(--form-row-size-min-height);
     padding: var(--form-row-size-padding-vertical)
       var(--form-row-size-padding-horizontal);
@@ -121,15 +123,20 @@
     }
 
     &.control-layout {
-      grid-template-columns: 70% 30%;
+      grid-template-columns: 7fr 3fr;
 
       &.large-content {
-        grid-template-columns: 30% 70%;
+        grid-template-columns: 3fr 7fr;
       }
     }
 
     & > * {
       display: block;
     }
+  }
+
+  .right-accessory,
+  .left-accessory {
+    height: 100%;
   }
 </style>
