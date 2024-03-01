@@ -15,6 +15,8 @@
   import Toggle from '../Toggle/Toggle.svelte'
   import Typography from '../Typography/Typography.svelte'
   import FormRow from './FormRow.svelte'
+
+  let largeContent = false
 </script>
 
 <Story name="Basic" let:args>
@@ -122,11 +124,44 @@
   </Stack>
 </Story>
 
+<Story name="Large content">
+  <div class="content-story">
+    <Stack gap="m">
+      <Stack align="center" direction="horizontal" gap="m">
+        <Typography>Large content</Typography>
+        <Toggle bind:checked={largeContent} />
+      </Stack>
+      <FormGroup bind:largeContent>
+        <FormRow title=" ">
+          <div class="filler" />
+        </FormRow>
+      </FormGroup>
+    </Stack>
+  </div>
+</Story>
+
 <style lang="scss">
   .raw-row {
     display: flex;
     align-items: center;
+
     height: 100px;
+
     background-color: rgb(255 83 83 / 12%);
+    border-radius: 2px;
+  }
+
+  .content-story {
+    :global(.left-accessory) {
+      background-color: rgb(255 31 26 / 63%);
+      border-radius: 2px;
+    }
+
+    .filler {
+      width: 100%;
+      height: 100px;
+      background-color: rgb(21 100 255 / 56%);
+      border-radius: 2px;
+    }
   }
 </style>
