@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/Naco-UI/naco-svelte/compare/v1.4.0...v1.5.0) (2024-03-01)
+
+### Features
+
+* **FormRow:** improve accessory layout ([03f1f18](https://github.com/Naco-UI/naco-svelte/commit/03f1f18fa5b0b96e64c0973eebe416fee18cb0e9))
+
+
+### Bug Fixes
+
+* **FormGroup:** update `largeContent` context on change ([1020a77](https://github.com/Naco-UI/naco-svelte/commit/1020a77fb68660709f6a576e2647fa29ae89a9d1))
+* **FormRow:** use correct min height variable name ([b0ef7e9](https://github.com/Naco-UI/naco-svelte/commit/b0ef7e9def592f37a92c1332ec451ebd63a5021c))
+
 ## [1.4.0](https://github.com/Naco-UI/naco-svelte/compare/v1.3.2...v1.4.0) (2024-02-25)
 
 ### Features
