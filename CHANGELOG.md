@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/Naco-UI/naco-svelte/compare/v1.5.0...v1.6.0) (2024-03-05)
+
+### Features
+
+* fine-tune sidebar shadow ([832371b](https://github.com/Naco-UI/naco-svelte/commit/832371b0ae176b2268bdae40c5704d40294e0687))
+
 ## [1.5.0](https://github.com/Naco-UI/naco-svelte/compare/v1.4.0...v1.5.0) (2024-03-01)
 
 ### Features
