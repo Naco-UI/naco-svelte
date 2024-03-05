@@ -158,12 +158,24 @@
     }
   }
 
-  :global(.os-mac) {
-    .sidebar {
-      padding: var(--space-sl) var(--space-m);
-      border-right: 1px solid var(--color-border-secondary);
-    }
+  :global(.os-mac) .sidebar {
+    padding: var(--space-sl) var(--space-m);
+  }
 
+  :global(.os-mac.dark) {
+    .sidebar {
+      border-right: 0.5px solid #000;
+    }
+  }
+
+  :global(.os-mac.light) {
+    .sidebar {
+      border-right: 1px solid var(--color-border-secondary);
+      box-shadow: inset -2px 0 5px -3px var(--color-border-secondary);
+    }
+  }
+
+  :global(.os-mac) {
     .sidebar-layout {
       &.inset {
         .sidebar {
