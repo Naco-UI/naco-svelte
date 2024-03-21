@@ -5,7 +5,6 @@ import { theme } from './theme'
 import { withThemeProvider, globalTypes } from './decorators/withThemeProvider'
 
 export const parameters: Parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,

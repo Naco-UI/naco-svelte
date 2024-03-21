@@ -12,6 +12,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-svelte-csf',
+    '@storybook/addon-mdx-gfm',
   ],
   framework: {
     name: '@storybook/sveltekit',
