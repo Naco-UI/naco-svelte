@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.1](https://github.com/Naco-UI/naco-svelte/compare/v1.6.0...v1.6.1) (2024-03-21)
+
+### Bug Fixes
+
+* **Toolbar:** avoid padding transition ([c97cf30](https://github.com/Naco-UI/naco-svelte/commit/c97cf30b696d75f30ab6bc9ae655e7caed87640e))
+
 ## [1.6.0](https://github.com/Naco-UI/naco-svelte/compare/v1.5.0...v1.6.0) (2024-03-05)
 
 ### Features
