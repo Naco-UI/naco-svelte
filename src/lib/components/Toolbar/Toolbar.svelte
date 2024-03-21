@@ -44,7 +44,7 @@
     box-shadow: var(--toolbar-border-shadow);
 
     transition: var(--transition-default);
-    transition-property: box-shadow, padding;
+    transition-property: box-shadow;
 
     &.draggable {
       --wails-draggable: drag;
