@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/Naco-UI/naco-svelte/compare/v1.6.1...v1.7.0) (2024-04-02)
+
+### Features
+
+* add form row hover ([ff82eb6](https://github.com/Naco-UI/naco-svelte/commit/ff82eb666bde5671e3644dfe5426d4084312d3fa))
+
 ## [1.6.1](https://github.com/Naco-UI/naco-svelte/compare/v1.6.0...v1.6.1) (2024-03-21)
 
 ### Bug Fixes
