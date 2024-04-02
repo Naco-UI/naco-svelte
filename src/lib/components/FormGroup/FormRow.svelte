@@ -30,6 +30,11 @@
     dispatch('click', e)
   }
 
+  function handleHover(e: MouseEvent): void {
+    const isHovered = e.type === 'mouseenter'
+    dispatch('hover', isHovered)
+  }
+
   onMount(() => {
     if (!title && subtitle) {
       throw new Error("Subtitled can't be used without title")
@@ -42,6 +47,8 @@
     <div
       on:keydown={handleKeydown}
       on:click={handleClick}
+      on:mouseenter={handleHover}
+      on:mouseleave={handleHover}
       class="layout"
       class:interactive
       class:control-layout={controlLayout}
