@@ -1,30 +1,17 @@
 <script lang="ts">
-  import './themes/styles.js'
-
-  import { createThemeContext } from './context.js'
+  import AbstractThemeProvider from './AbstractThemeProvider.svelte'
   import type { ThemeProviderProps } from './ThemeProvider.types.js'
 
   export let os: ThemeProviderProps['os']
   export let scheme: ThemeProviderProps['scheme']
   export let container: ThemeProviderProps['container'] = false
-
-  const context = createThemeContext({ os, scheme })
-
-  function osChanged(): void {
-    context.os.set(os)
-  }
-
-  function schemeChanged(): void {
-    context.scheme.set(scheme)
-  }
-
-  $: os && osChanged()
-  $: scheme && schemeChanged()
 </script>
 
-<div class="naco os-{os} {scheme}" class:no-container={!container}>
-  <slot />
-</div>
+<AbstractThemeProvider {os} {scheme} let:themeClass>
+  <div class={themeClass} class:no-container={!container}>
+    <slot />
+  </div>
+</AbstractThemeProvider>
 
 <style lang="scss">
   .naco.no-container {

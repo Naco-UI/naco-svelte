@@ -6,6 +6,17 @@ import * as Stories from './ThemeProvider.stories.svelte'
 <Intro
   name="ThemeProvider"
   description="The ThemeProvider is the core of the design system that defines how your application's interfaces will look like."
+  imports={['ThemeProvider', 'BodyThemeProvider']}
 />
 
 <Story of={Stories.Basic} />
+
+## Properties
+
+<Props />
+
+## Body class
+
+In some situations, you may need to draw something themed outside of the theme container. In this case you can use `BodyThemeProvider`, which writes theme classes to the root `body` element.
+
+<Story of={Stories.Body} />

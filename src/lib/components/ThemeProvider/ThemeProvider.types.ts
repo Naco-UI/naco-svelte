@@ -1,8 +1,5 @@
-export type OS = 'mac' | 'linux'
-export type ColorScheme = 'light' | 'dark'
+import type { AbstractThemeProviderProps } from './AbstractThemeProvider.types.js'
 
-export interface ThemeProviderProps {
-  os: OS
-  scheme: ColorScheme
+export interface ThemeProviderProps extends AbstractThemeProviderProps {
   container?: boolean
 }
